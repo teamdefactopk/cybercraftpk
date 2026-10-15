@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="CyberCraft icon">
+  <defs>
+    <linearGradient id="ccg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E40AF"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <path d="M48 4 86 26v44L48 92 10 70V26z" fill="url(#ccg)"/>
+  <path d="M64 34a20 20 0 1 0 0 28" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <path d="M64 34h10M64 62h10M44 48h-8" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="77" cy="34" r="4.5" fill="#fff"/>
+  <circle cx="77" cy="62" r="4.5" fill="#fff"/>
+  <circle cx="48" cy="48" r="5" fill="#fff"/>
+</svg>
