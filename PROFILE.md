@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/brand/cybercraft-logo-color.svg" alt="CyberCraft — An Innovation Technology Company" width="440"></p>
+<p align="center"><img src="assets/brand/cybercraft-logo-stacked.svg" alt="CyberCraft — An Innovation Technology Company" width="360"></p>
 
 <h1 align="center">CyberCraft Pvt. Ltd.</h1>
 <p align="center"><b><i>An Innovation Technology Company</i></b><br>IT · Telecom · Innovation</p>

@@ -1,14 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="CyberCraft icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="CyberCraft">
   <defs>
-    <linearGradient id="ccg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1E40AF"/>
-      <stop offset="1" stop-color="#06B6D4"/>
-    </linearGradient>
+    <radialGradient id="ao" cx="38%" cy="30%" r="80%"><stop offset="0" stop-color="#4C86DA"/><stop offset=".55" stop-color="#1F4FA8"/><stop offset="1" stop-color="#173A80"/></radialGradient>
+    <radialGradient id="ai" cx="40%" cy="32%" r="75%"><stop offset="0" stop-color="#A9C8F2"/><stop offset="1" stop-color="#5A8FDA"/></radialGradient>
+    <linearGradient id="ad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B8FDB"/><stop offset="1" stop-color="#2A5CB8"/></linearGradient>
+    <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="aw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F4FA8"/><stop offset="1" stop-color="#3B7DD8"/></linearGradient>
   </defs>
-  <path d="M48 4 86 26v44L48 92 10 70V26z" fill="url(#ccg)"/>
-  <path d="M64 34a20 20 0 1 0 0 28" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
-  <path d="M64 34h10M64 62h10M44 48h-8" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="77" cy="34" r="4.5" fill="#fff"/>
-  <circle cx="77" cy="62" r="4.5" fill="#fff"/>
-  <circle cx="48" cy="48" r="5" fill="#fff"/>
+  <circle cx="95.8" cy="42.7" r="19.4" fill="url(#ad)"/>
+  <circle cx="63.4" cy="78.3" r="13.0" fill="url(#ad)"/>
+  <circle cx="175.7" cy="162.6" r="13.0" fill="url(#ad)"/>
+  <circle cx="207.0" cy="177.7" r="17.8" fill="url(#ad)"/>
+  <circle cx="52.6" cy="204.7" r="17.8" fill="url(#ad)"/>
+  <circle cx="112" cy="128" r="54" fill="url(#ao)"/>
+  <circle cx="112" cy="128" r="43.2" fill="none" stroke="#FFFFFF" stroke-width="3.0"/>
+  <circle cx="112" cy="128" r="38.9" fill="url(#ai)"/>
+  <path d="M129.9 114.0A22.7 22.7 0 1 0 129.9 142.0" fill="none" stroke="#1F4FA8" stroke-width="9.2" stroke-linecap="round"/>
+  <circle cx="112" cy="128" r="10.8" fill="#C9DCF6"/>
+  <path d="M61.8 125.3A50.2 50.2 0 0 1 162.2 125.3C139.0 116.1 85.0 116.1 61.8 125.3Z" fill="url(#ag)"/>
 </svg>
