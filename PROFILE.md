@@ -10,23 +10,23 @@
 1. [Company Overview](#1-company-overview)
 2. [Our Three Core Pillars](#2-our-three-core-pillars)
 3. [At a Glance](#3-at-a-glance)
-4. [Our Story](#4-our-story)
-5. [Vision, Mission & Values](#5-vision-mission--values)
-6. [Message from the CEO](#6-message-from-the-ceo)
-7. [Global Presence](#7-global-presence)
-8. [Pillar 1 — Managed Services Provider](#8-pillar-1--managed-services-provider)
-9. [Pillar 2 — Cyber Security Compliance & Audit](#9-pillar-2--cyber-security-compliance--audit)
-10. [Pillar 3 — New Inventions & Horizons](#10-pillar-3--new-inventions--horizons)
-11. [Supporting Capabilities](#11-supporting-capabilities)
-12. [Products & Platforms](#12-products--platforms)
-13. [Industries We Serve](#13-industries-we-serve)
-14. [How We Engage](#14-how-we-engage)
-15. [Delivery Methodology](#15-delivery-methodology)
-16. [Technology Ecosystem](#16-technology-ecosystem)
-17. [Partnerships & Joint Ventures](#17-partnerships--joint-ventures)
-18. [Our Own Standards](#18-our-own-standards)
-19. [Why CyberCraft](#19-why-cybercraft)
-20. [Our Clients](#20-our-clients)
+4. [Industries We Serve](#4-industries-we-serve)
+5. [Pillar 1 — Managed Services Provider](#5-pillar-1--managed-services-provider)
+6. [Pillar 2 — Cyber Security Compliance & Audit](#6-pillar-2--cyber-security-compliance--audit)
+7. [Pillar 3 — New Inventions & Horizons](#7-pillar-3--new-inventions--horizons)
+8. [Supporting Capabilities](#8-supporting-capabilities)
+9. [Products & Platforms](#9-products--platforms)
+10. [Our Clients](#10-our-clients)
+11. [Our Story](#11-our-story)
+12. [Vision, Mission & Values](#12-vision-mission--values)
+13. [Message from the CEO](#13-message-from-the-ceo)
+14. [Global Presence](#14-global-presence)
+15. [How We Engage](#15-how-we-engage)
+16. [Delivery Methodology](#16-delivery-methodology)
+17. [Technology Ecosystem](#17-technology-ecosystem)
+18. [Partnerships & Joint Ventures](#18-partnerships--joint-ventures)
+19. [Our Own Standards](#19-our-own-standards)
+20. [Why CyberCraft](#20-why-cybercraft)
 21. [Sustainability & Social Responsibility](#21-sustainability--social-responsibility)
 22. [People & Careers](#22-people--careers)
 23. [Contact Us](#23-contact-us)
@@ -56,7 +56,7 @@ CyberCraft delivers through its own teams and a network of **joint-venture (JV) 
 | **Client outcome** | Predictable cost, SLA-backed uptime, no hiring overhead | Audit-ready, regulator-ready, measurably safer | New capabilities, lower energy cost, competitive edge |
 | **Lead product family** | **CyberCraft Care** | **CyberCraft Secure** | **CyberCraft Horizons** |
 
-Everything else we do (software, ERP, data centers, networks, cloud hosting, procurement and contact center) supports these three pillars. See [Supporting Capabilities](#11-supporting-capabilities).
+Everything else we do (software, ERP, data centers, networks, cloud hosting, procurement and contact center) supports these three pillars. See [Supporting Capabilities](#8-supporting-capabilities).
 
 ---
 
@@ -78,84 +78,26 @@ Everything else we do (software, ERP, data centers, networks, cloud hosting, pro
 
 ---
 
-## 4. Our Story
+## 4. Industries We Serve
 
-CyberCraft started in 2007 with a simple idea: **help businesses work better with technology.** Our first work was bringing computers, networks and software into offices across Lahore.
-
-Over the years we built software, our own ERP platform **CyberERP**, and data centers and networks for our clients. Clients kept asking us to stay on and run what we had built, so we became a **Managed Services Provider**, placing resident engineers inside client organizations and, in many cases, running a client's entire IT function.
-
-Running clients' systems made one thing clear: **every system we manage must also be secure, and our clients must be able to prove it** to regulators, auditors and customers. That led to our second pillar, **Cyber Security Compliance & Audit**.
-
-In **2024** we incorporated as **CyberCraft Pvt. Ltd.**, expanded to five more countries, and launched our third pillar, **New Inventions & Horizons**, where we develop and deploy the technologies of the next decade: clean energy, automation, embedded systems, IoT and AI.
-
-| Year | Milestone |
-|---|---|
-| **2007** | CyberCraft founded in Lahore as a sole proprietorship |
-| **2007 onward** | Computerization, networking, software and ERP for businesses |
-| **Growth years** | Data center, network, IP communications and surveillance projects |
-| **Growth years** | Managed services and the resident-engineer model launched |
-| **Growth years** | Cyber security audit and compliance practice established; b2cloud.io launched |
-| **2024** | Incorporated as CyberCraft Pvt. Ltd.; identity: *An Innovation Technology Company* |
-| **2024 onward** | Presence in UAE, KSA, UK, Czech Republic and Canada; New Inventions & Horizons pillar launched |
-
-> *Exact years for the milestones marked "Growth years" can be added later.*
+| Industry | Managed Services | Compliance & Audit | Horizons |
+|---|---|---|---|
+| **Banking, Financial Services & Insurance** | Branch IT, NOC, resident engineers | SBP / SAMA frameworks, PCI DSS, ISO 27001, VAPT | AI fraud and document automation |
+| **Government & Public Sector** | IT outsourcing, data center operations | National standards, audits, awareness | Smart city, e-governance |
+| **Telecom & ISPs** | Network operations, NOC | PTA requirements, VAPT | Tower solar power, IoT |
+| **Healthcare & Life Sciences** | Hospital IT management | HIPAA, ADHICS, data protection | Remote patient monitoring |
+| **Education** | Campus IT management | Data protection, awareness | Smart campus |
+| **Manufacturing** | Plant IT and OT support | OT security, ISO 27001 | Industrial automation, machine vision |
+| **Retail, FMCG & Distribution** | Store and warehouse IT | PCI DSS, VAPT | Energy, analytics |
+| **Energy, Oil & Gas, Utilities** | Remote site IT, satellite links | OT and SCADA security | Solar, SCADA, smart metering |
+| **Real Estate & Construction** | Site connectivity, surveillance | Access-control audits | Smart buildings |
+| **Transportation & Logistics** | Fleet and depot IT | Data protection | Fleet IoT |
+| **Hospitality & Travel** | Hotel IT, guest Wi-Fi | PCI DSS | Smart rooms |
+| **NGOs & Development Sector** | Low-cost IT management | Donor data protection | Solar for communities |
 
 ---
 
-## 5. Vision, Mission & Values
-
-### Vision
-*To be the trusted partner that runs, secures and reinvents technology for organizations, from Pakistan to the world.*
-
-### Mission
-*To keep our clients' technology running, secure and compliant through managed services and cyber security assurance, and to invent the solutions that open new horizons for them.*
-
-### Core Values
-
-| Value | What it means at CyberCraft |
-|---|---|
-| **Accountability** | When we manage a system, we own its outcome |
-| **Integrity** | Honest findings in every audit and honest advice in every proposal |
-| **Vigilance** | Security and compliance are continuous work, not an annual event |
-| **Innovation** | We adapt, innovate and improvise, and invest in new inventions, not just existing products |
-| **Value for Money** | Enterprise-grade service at a cost that makes sense |
-| **Continuous Learning** | Threats, standards and technology change, and so do our skills |
-
----
-
-## 6. Message from the CEO
-
-> *"When I started CyberCraft in 2007, our goal was simple: help businesses use technology to work better. Over the years we built software, ERP systems, data centers and networks, and our clients trusted us to keep running them. That trust is the heart of our first pillar, managed services.*
->
-> *Today every organization faces the same two questions: is our technology secure, and can we prove it? Our second pillar, cyber security compliance and audit, exists to answer both, honestly and to international standards.*
->
-> *Our third pillar, new inventions and horizons, is our commitment to the future. Clean energy, automation, embedded systems and AI will change how every business works, and we intend to help invent that change, not just watch it.*
->
-> *Becoming CyberCraft Pvt. Ltd. in 2024, and expanding to the UAE, KSA, UK, Czech Republic and Canada, is a new chapter for us. What we stand for has not changed: accountability, honest advice and real value for every client.*
->
-> *Thank you for trusting CyberCraft. We look forward to building the future with you."*
->
-> **— Tauseef Ahmed**
-> Founder & CEO, CyberCraft Pvt. Ltd.
-
----
-
-## 7. Global Presence
-
-| Location | Role | Focus |
-|---|---|---|
-| 🇵🇰 **Lahore, Pakistan** | Headquarters and delivery center | Managed services, NOC/SOC, audit team, R&D lab |
-| 🇦🇪 **United Arab Emirates** | Regional presence (Middle East) | Managed services, UAE IA / DESC compliance, smart solutions |
-| 🇸🇦 **Kingdom of Saudi Arabia** | Regional presence (Middle East) | Managed services, NCA / SAMA compliance, energy |
-| 🇬🇧 **United Kingdom** | Regional presence (Europe) | Managed services, Cyber Essentials, ISO 27001, UK GDPR |
-| 🇨🇿 **Czech Republic** | Regional presence (Central Europe) | Managed services, GDPR and NIS2 readiness, automation |
-| 🇨🇦 **Canada** | Regional presence (North America) | Managed services, PIPEDA and SOC 2 readiness |
-
-**Global delivery model:** clients in every region work with a local point of contact, backed by our 24/7 operations, security and engineering center in Lahore.
-
----
-
-## 8. Pillar 1 — Managed Services Provider
+## 5. Pillar 1 — Managed Services Provider
 
 > ***We run your IT.*** CyberCraft takes responsibility for your technology operations, so your team can focus on your business.
 
@@ -199,7 +141,7 @@ In **2024** we incorporated as **CyberCraft Pvt. Ltd.**, expanded to five more c
 
 ---
 
-## 9. Pillar 2 — Cyber Security Compliance & Audit
+## 6. Pillar 2 — Cyber Security Compliance & Audit
 
 > ***We secure it and prove it.*** Independent, honest assessment against the standards your regulators, customers and board expect, followed by the help to close the gaps and stay compliant.
 
@@ -266,7 +208,7 @@ We prepare clients for certification and regulatory inspection: gap assessment, 
 
 ---
 
-## 10. Pillar 3 — New Inventions & Horizons
+## 7. Pillar 3 — New Inventions & Horizons
 
 > ***We invent what comes next.*** **Adapt · Innovate · Improvise.** The CyberCraft Horizons lab turns emerging technology into practical products and deployments that work in the real world.
 
@@ -309,7 +251,7 @@ We prepare clients for certification and regulatory inspection: gap assessment, 
 
 ---
 
-## 11. Supporting Capabilities
+## 8. Supporting Capabilities
 
 These are the engineering capabilities CyberCraft has built since 2007. They support our three pillars and are also available as standalone services.
 
@@ -329,7 +271,7 @@ These are the engineering capabilities CyberCraft has built since 2007. They sup
 
 ---
 
-## 12. Products & Platforms
+## 9. Products & Platforms
 
 | Product family | Pillar | Offerings |
 |---|---|---|
@@ -343,26 +285,121 @@ These are the engineering capabilities CyberCraft has built since 2007. They sup
 
 ---
 
-## 13. Industries We Serve
+## 10. Our Clients
 
-| Industry | Managed Services | Compliance & Audit | Horizons |
-|---|---|---|---|
-| **Banking, Financial Services & Insurance** | Branch IT, NOC, resident engineers | SBP / SAMA frameworks, PCI DSS, ISO 27001, VAPT | AI fraud and document automation |
-| **Government & Public Sector** | IT outsourcing, data center operations | National standards, audits, awareness | Smart city, e-governance |
-| **Telecom & ISPs** | Network operations, NOC | PTA requirements, VAPT | Tower solar power, IoT |
-| **Healthcare & Life Sciences** | Hospital IT management | HIPAA, ADHICS, data protection | Remote patient monitoring |
-| **Education** | Campus IT management | Data protection, awareness | Smart campus |
-| **Manufacturing** | Plant IT and OT support | OT security, ISO 27001 | Industrial automation, machine vision |
-| **Retail, FMCG & Distribution** | Store and warehouse IT | PCI DSS, VAPT | Energy, analytics |
-| **Energy, Oil & Gas, Utilities** | Remote site IT, satellite links | OT and SCADA security | Solar, SCADA, smart metering |
-| **Real Estate & Construction** | Site connectivity, surveillance | Access-control audits | Smart buildings |
-| **Transportation & Logistics** | Fleet and depot IT | Data protection | Fleet IoT |
-| **Hospitality & Travel** | Hotel IT, guest Wi-Fi | PCI DSS | Smart rooms |
-| **NGOs & Development Sector** | Low-cost IT management | Donor data protection | Solar for communities |
+> ⚠️ **Sample placeholders.** Every name below is fictitious, grouped by the countries we serve. Replace them with real clients, with their permission, before publishing. Placeholder logo files for the original eight samples are in `assets/clients/`.
+
+| Country | Sample clients |
+|---|---|
+| 🇵🇰 **Pakistan** | Ravi Steel Works · Margalla Health · Indus Microfinance · Shalimar Logistics |
+| 🇦🇪 **United Arab Emirates** | Desert Rose Hotels · Al Noor Trading · Palm Coast Energy |
+| 🇸🇦 **Saudi Arabia** | Najd Industrial Bank · Hijaz Medical Center · Qassim Agro |
+| 🇬🇧 **United Kingdom** | Thamesbridge Finance · Pennine Engineering |
+| 🇨🇿 **Czech Republic** | Vltava Systems · Morava Glassworks |
+| 🇨🇦 **Canada** | Maple North Logistics · Laurentian Clinics |
+
+### Sample Case Studies (placeholders)
+
+**Ravi Steel Works: complete IT outsourcing** *(sample, Managed Services)*
+- **Challenge:** high IT costs and an unreliable in-house setup across two plants
+- **Solution:** CyberCraft Care Enterprise with resident engineers and 24/7 NOC
+- **Result:** predictable monthly IT costs and SLA-backed uptime
+
+**Najd Industrial Bank: NCA compliance and SOC** *(sample, Compliance & Audit)*
+- **Challenge:** an NCA ECC deadline and no 24/7 monitoring
+- **Solution:** Secure Comply gap assessment and remediation, then Secure SOC
+- **Result:** inspection-ready controls and round-the-clock monitoring
+
+**Thamesbridge Finance: ISO 27001 readiness** *(sample, Compliance & Audit)*
+- **Challenge:** a major client demanding certification within a year
+- **Solution:** Secure Audit, policy framework, VAPT and internal audit
+- **Result:** ready for the external certification audit
+
+**Desert Rose Hotels: solar and smart rooms** *(sample, Horizons)*
+- **Challenge:** rising energy costs across three properties
+- **Solution:** Horizons Energy solar with storage and Horizons Smart room controls
+- **Result:** lower energy bills and better guest comfort
 
 ---
 
-## 14. How We Engage
+## 11. Our Story
+
+CyberCraft started in 2007 with a simple idea: **help businesses work better with technology.** Our first work was bringing computers, networks and software into offices across Lahore.
+
+Over the years we built software, our own ERP platform **CyberERP**, and data centers and networks for our clients. Clients kept asking us to stay on and run what we had built, so we became a **Managed Services Provider**, placing resident engineers inside client organizations and, in many cases, running a client's entire IT function.
+
+Running clients' systems made one thing clear: **every system we manage must also be secure, and our clients must be able to prove it** to regulators, auditors and customers. That led to our second pillar, **Cyber Security Compliance & Audit**.
+
+In **2024** we incorporated as **CyberCraft Pvt. Ltd.**, expanded to five more countries, and launched our third pillar, **New Inventions & Horizons**, where we develop and deploy the technologies of the next decade: clean energy, automation, embedded systems, IoT and AI.
+
+| Year | Milestone |
+|---|---|
+| **2007** | CyberCraft founded in Lahore as a sole proprietorship |
+| **2007 onward** | Computerization, networking, software and ERP for businesses |
+| **Growth years** | Data center, network, IP communications and surveillance projects |
+| **Growth years** | Managed services and the resident-engineer model launched |
+| **Growth years** | Cyber security audit and compliance practice established; b2cloud.io launched |
+| **2024** | Incorporated as CyberCraft Pvt. Ltd.; identity: *An Innovation Technology Company* |
+| **2024 onward** | Presence in UAE, KSA, UK, Czech Republic and Canada; New Inventions & Horizons pillar launched |
+
+> *Exact years for the milestones marked "Growth years" can be added later.*
+
+---
+
+## 12. Vision, Mission & Values
+
+### Vision
+*To be the trusted partner that runs, secures and reinvents technology for organizations, from Pakistan to the world.*
+
+### Mission
+*To keep our clients' technology running, secure and compliant through managed services and cyber security assurance, and to invent the solutions that open new horizons for them.*
+
+### Core Values
+
+| Value | What it means at CyberCraft |
+|---|---|
+| **Accountability** | When we manage a system, we own its outcome |
+| **Integrity** | Honest findings in every audit and honest advice in every proposal |
+| **Vigilance** | Security and compliance are continuous work, not an annual event |
+| **Innovation** | We adapt, innovate and improvise, and invest in new inventions, not just existing products |
+| **Value for Money** | Enterprise-grade service at a cost that makes sense |
+| **Continuous Learning** | Threats, standards and technology change, and so do our skills |
+
+---
+
+## 13. Message from the CEO
+
+> *"When I started CyberCraft in 2007, our goal was simple: help businesses use technology to work better. Over the years we built software, ERP systems, data centers and networks, and our clients trusted us to keep running them. That trust is the heart of our first pillar, managed services.*
+>
+> *Today every organization faces the same two questions: is our technology secure, and can we prove it? Our second pillar, cyber security compliance and audit, exists to answer both, honestly and to international standards.*
+>
+> *Our third pillar, new inventions and horizons, is our commitment to the future. Clean energy, automation, embedded systems and AI will change how every business works, and we intend to help invent that change, not just watch it.*
+>
+> *Becoming CyberCraft Pvt. Ltd. in 2024, and expanding to the UAE, KSA, UK, Czech Republic and Canada, is a new chapter for us. What we stand for has not changed: accountability, honest advice and real value for every client.*
+>
+> *Thank you for trusting CyberCraft. We look forward to building the future with you."*
+>
+> **— Tauseef Ahmed**
+> Founder & CEO, CyberCraft Pvt. Ltd.
+
+---
+
+## 14. Global Presence
+
+| Location | Role | Focus |
+|---|---|---|
+| 🇵🇰 **Lahore, Pakistan** | Headquarters and delivery center | Managed services, NOC/SOC, audit team, R&D lab |
+| 🇦🇪 **United Arab Emirates** | Regional presence (Middle East) | Managed services, UAE IA / DESC compliance, smart solutions |
+| 🇸🇦 **Kingdom of Saudi Arabia** | Regional presence (Middle East) | Managed services, NCA / SAMA compliance, energy |
+| 🇬🇧 **United Kingdom** | Regional presence (Europe) | Managed services, Cyber Essentials, ISO 27001, UK GDPR |
+| 🇨🇿 **Czech Republic** | Regional presence (Central Europe) | Managed services, GDPR and NIS2 readiness, automation |
+| 🇨🇦 **Canada** | Regional presence (North America) | Managed services, PIPEDA and SOC 2 readiness |
+
+**Global delivery model:** clients in every region work with a local point of contact, backed by our 24/7 operations, security and engineering center in Lahore.
+
+---
+
+## 15. How We Engage
 
 ### Run → Secure → Invent
 
@@ -387,7 +424,7 @@ These are the engineering capabilities CyberCraft has built since 2007. They sup
 
 ---
 
-## 15. Delivery Methodology
+## 16. Delivery Methodology
 
 1. **Discover**: understand the business, systems, risks and goals
 2. **Design**: service design, audit scope or solution architecture
@@ -400,7 +437,7 @@ These are the engineering capabilities CyberCraft has built since 2007. They sup
 
 ---
 
-## 16. Technology Ecosystem
+## 17. Technology Ecosystem
 
 | Area | Technologies we work with |
 |---|---|
@@ -415,7 +452,7 @@ These are the engineering capabilities CyberCraft has built since 2007. They sup
 
 ---
 
-## 17. Partnerships & Joint Ventures
+## 18. Partnerships & Joint Ventures
 
 CyberCraft works through a network of **joint-venture (JV) partners** in Pakistan and abroad. These partnerships let us:
 
@@ -430,7 +467,7 @@ CyberCraft works through a network of **joint-venture (JV) partners** in Pakista
 
 ---
 
-## 18. Our Own Standards
+## 19. Our Own Standards
 
 We apply to ourselves the standards we audit for others:
 
@@ -446,7 +483,7 @@ We apply to ourselves the standards we audit for others:
 
 ---
 
-## 19. Why CyberCraft
+## 20. Why CyberCraft
 
 | | |
 |---|---|
@@ -460,39 +497,6 @@ We apply to ourselves the standards we audit for others:
 | 🤝 **Scalable delivery** | Own teams plus a JV partner network |
 | ⚖️ **Honest audits** | Independent audit teams and clear, risk-rated findings |
 | 🙋 **Personal attention** | Senior leadership involved in every key account |
-
----
-
-## 20. Our Clients
-
-> ⚠️ **Sample placeholders.** The names below are fictitious and must be replaced with real client names and logos before the website goes live.
-
-| | | | |
-|---|---|---|---|
-| ![Contoso Group](assets/clients/contoso-group.svg) | ![Fabrikam Industries](assets/clients/fabrikam-industries.svg) | ![Northwind Traders](assets/clients/northwind-traders.svg) | ![Woodgrove Bank](assets/clients/woodgrove-bank.svg) |
-| ![Adventure Works](assets/clients/adventure-works.svg) | ![Tailspin Airways](assets/clients/tailspin-airways.svg) | ![Litware Health](assets/clients/litware-health.svg) | ![Proseware Telecom](assets/clients/proseware-telecom.svg) |
-
-### Sample Case Studies (placeholders)
-
-**Contoso Group: complete IT outsourcing** *(sample, Managed Services)*
-- **Challenge:** high IT costs and an unreliable in-house setup
-- **Solution:** CyberCraft Care Enterprise with resident engineers and 24/7 NOC
-- **Result:** predictable monthly IT costs and SLA-backed uptime
-
-**Woodgrove Bank: regulatory compliance and SOC** *(sample, Compliance & Audit)*
-- **Challenge:** a regulator's cyber framework deadline and no 24/7 monitoring
-- **Solution:** Secure Comply gap assessment and remediation, then Secure SOC
-- **Result:** inspection-ready controls and round-the-clock monitoring
-
-**Litware Health: ISO 27001 readiness** *(sample, Compliance & Audit)*
-- **Challenge:** patient data across many systems and a client demanding certification
-- **Solution:** Secure Audit, policy framework, VAPT and internal audit
-- **Result:** ready for the external ISO 27001 certification audit
-
-**Fabrikam Industries: solar and plant automation** *(sample, Horizons)*
-- **Challenge:** rising energy costs and manual production monitoring
-- **Solution:** Horizons Energy solar with storage, plus Horizons Automate SCADA dashboards
-- **Result:** lower energy bills and real-time production visibility
 
 ---
 
@@ -523,18 +527,43 @@ CyberCraft's strength is its people: service desk and NOC engineers, resident en
 
 ## 23. Contact Us
 
+**Website:** [www.cybercraft.biz](https://www.cybercraft.biz)
+
 | | |
 |---|---|
 | **Head Office** | Lahore, Pakistan *(full address to be added)* |
-| **UAE** | *(address to be added)* |
-| **KSA** | *(address to be added)* |
-| **UK** | *(address to be added)* |
-| **Czech Republic** | *(address to be added)* |
-| **Canada** | *(address to be added)* |
+| **Regional offices** | UAE · KSA · UK · Czech Republic · Canada *(addresses to be added)* |
 | **Phone / WhatsApp** | *(to be added)* |
-| **Email** | *(to be added)* |
-| **Website** | *(to be added)* |
 | **Cloud & Hosting** | b2cloud.io |
+
+### Email Directory
+
+| General | | By pillar | | By country | |
+|---|---|---|---|---|---|
+| General enquiries | info@cybercraft.biz | Managed services | msp@cybercraft.biz | Pakistan | pk@cybercraft.biz |
+| Sales & quotations | sales@cybercraft.biz | Service desk (clients) | support@cybercraft.biz | UAE | uae@cybercraft.biz |
+| Partnerships & JV | partners@cybercraft.biz | NOC alerts | noc@cybercraft.biz | Saudi Arabia | ksa@cybercraft.biz |
+| Careers | careers@cybercraft.biz | Compliance & audit | audit@cybercraft.biz | United Kingdom | uk@cybercraft.biz |
+| Accounts & billing | accounts@cybercraft.biz | Report a security incident | security@cybercraft.biz | Czech Republic | cz@cybercraft.biz |
+| Office of the CEO | ceo@cybercraft.biz | Horizons lab | horizons@cybercraft.biz | Canada | ca@cybercraft.biz |
+
+> *These addresses are proposed. Create them (or aliases) on the cybercraft.biz mail server before publishing.*
+
+### Social Media
+
+| Network | Proposed handle |
+|---|---|
+| LinkedIn | linkedin.com/company/cybercraftbiz |
+| Facebook | facebook.com/cybercraftbiz |
+| X | x.com/cybercraftbiz |
+| Instagram | instagram.com/cybercraftbiz |
+| YouTube | youtube.com/@cybercraftbiz |
+| WhatsApp Business | *(number to be added)* |
+
+> *Confirm each handle is available and register it before printing.*
+
+### Contact Form
+The website will carry a contact form (name, company, email, phone, country, area of interest, message). Each message is routed to the matching pillar mailbox above: managed services → msp@, compliance & audit → audit@, Horizons → horizons@, products → sales@, partnerships → partners@, careers → careers@, anything else → info@.
 
 ---
 
