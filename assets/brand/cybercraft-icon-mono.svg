@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="CyberCraft">
+  <circle cx="95.8" cy="42.7" r="19.4" fill="#FFFFFF"/>
+  <circle cx="63.4" cy="78.3" r="13.0" fill="#FFFFFF"/>
+  <circle cx="175.7" cy="162.6" r="13.0" fill="#FFFFFF"/>
+  <circle cx="207.0" cy="177.7" r="17.8" fill="#FFFFFF"/>
+  <circle cx="52.6" cy="204.7" r="17.8" fill="#FFFFFF"/>
+  <circle cx="112" cy="128" r="48.6" fill="none" stroke="#FFFFFF" stroke-width="10.8"/>
+  <circle cx="112" cy="128" r="38.9" fill="#FFFFFF" fill-opacity=".22"/>
+  <path d="M129.9 114.0A22.7 22.7 0 1 0 129.9 142.0" fill="none" stroke="#FFFFFF" stroke-width="9.2" stroke-linecap="round"/>
+  <circle cx="112" cy="128" r="10.8" fill="#FFFFFF"/>
+</svg>
