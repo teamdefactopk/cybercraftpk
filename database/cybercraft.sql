@@ -325,7 +325,7 @@ INSERT IGNORE INTO `settings` VALUES ('animations','1');
 INSERT IGNORE INTO `settings` VALUES ('announcement','');
 INSERT IGNORE INTO `settings` VALUES ('b2cloud_url','https://b2cloud.io');
 INSERT IGNORE INTO `settings` VALUES ('client_login_url','');
-INSERT IGNORE INTO `settings` VALUES ('content_version','3');
+INSERT IGNORE INTO `settings` VALUES ('content_version','4');
 INSERT IGNORE INTO `settings` VALUES ('email_accounts','accounts@cybercraft.biz');
 INSERT IGNORE INTO `settings` VALUES ('email_audit','audit@cybercraft.biz');
 INSERT IGNORE INTO `settings` VALUES ('email_careers','careers@cybercraft.biz');

@@ -198,3 +198,8 @@ form.form > .form-actions.sticky { background: var(--bg); }
 }
 @media (max-width: 520px) { .stats, .quick { grid-template-columns: 1fr; } .search input { min-width: 0; width: 100%; } .search { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Photo fields */
+.img-field { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.img-preview { width: 220px; max-width: 100%; aspect-ratio: 10 / 7; object-fit: cover; border-radius: 8px; border: 1px solid var(--line, #DCE3EE); background: #EEF3FA; }
+.img-inputs { display: grid; gap: 10px; flex: 1; min-width: 220px; }

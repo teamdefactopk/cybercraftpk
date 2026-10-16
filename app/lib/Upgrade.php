@@ -7,7 +7,7 @@ declare(strict_types=1);
  */
 final class Upgrade
 {
-    private const VERSION = '3';
+    private const VERSION = '4';
 
     public static function run(): void
     {
@@ -49,6 +49,9 @@ final class Upgrade
         Db::exec("UPDATE blocks SET v = REPLACE(v, ', and to invent what comes next.', ', and to put new technology to work for our clients.') WHERE k IN ('ceo_quote')");
         Db::exec("UPDATE blocks SET v = REPLACE(v, 'We run your IT, secure it and prove it, and invent what comes next: three pillars under one accountable partner.', ?) WHERE k = 'pillars_intro'", [$blocks['pillars_intro']]);
         Db::exec("DELETE FROM blocks WHERE k IN ('home_eyebrow', 'home_title', 'home_intro', 'home_meta', 'home_services_title')");
+        foreach (Seed::practices() as $p) {
+            Db::exec("UPDATE practices SET image = ? WHERE (slug = ? OR accent = ?) AND (image IS NULL OR image = '')", [$p[10], $p[0], $p[8]]);
+        }
         Db::exec('INSERT INTO settings (k, v) VALUES (?, ?) ON DUPLICATE KEY UPDATE v = VALUES(v)', ['content_version', self::VERSION]);
     }
 }

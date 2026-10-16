@@ -41,7 +41,7 @@ final class Seed
             'stats' => "17+ | Years in technology\n6 | Countries\n24/7 | Operations & security\n20+ | Standards we audit to\n3 | Core pillars",
             'footer_text' => 'Managed services, cyber security compliance and audit, and new inventions, from Pakistan to the world.',
             'show_sample_badges' => '1',
-            'content_version' => '3',
+            'content_version' => '4',
         ];
     }
 

@@ -14,6 +14,15 @@ function url(string $path = '/'): string
     return $base . '/' . ltrim($path, '/');
 }
 
+/** Address of an image setting: an https:// URL, a site path, or a file under assets/img/. */
+function image_url(string $v): string
+{
+    if ($v === '' || preg_match('#^https?://#i', $v)) {
+        return $v;
+    }
+    return $v[0] === '/' ? url($v) : asset('img/' . $v);
+}
+
 function asset(string $path): string
 {
     $file = PUBLIC_DIR . '/assets/' . ltrim($path, '/');

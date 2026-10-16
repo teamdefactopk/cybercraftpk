@@ -1,10 +1,10 @@
 <p><a class="back" href="<?= e(url('admin/c/' . $key)) ?>">← <?= e($def['title']) ?></a></p>
-<form method="post" class="card form" data-dirty>
+<form method="post" class="card form" enctype="multipart/form-data" data-dirty>
   <?= csrf_field() ?>
   <?php if ($errors): ?><div class="flash flash-error" role="alert"><?= icon('close') ?><span>Please fix the highlighted fields.</span></div><?php endif ?>
   <div class="grid-2">
   <?php foreach ($fields as $f): ?>
-    <div class="<?= in_array($f['type'], ['textarea', 'lines', 'markdown'], true) || in_array($f['name'], ['summary', 'ideal', 'external_url', 'promise', 'msp', 'audit', 'horizons', 'result', 'logo_url'], true) ? 'span-2' : '' ?>">
+    <div class="<?= in_array($f['type'], ['textarea', 'lines', 'markdown'], true) || in_array($f['name'], ['summary', 'ideal', 'external_url', 'promise', 'msp', 'audit', 'horizons', 'result', 'logo_url', 'image'], true) ? 'span-2' : '' ?>">
       <?= view('admin/_field', ['f' => $f, 'value' => $row[$f['name']] ?? ($f['type'] === 'select' ? '' : ''), 'error' => $errors[$f['name']] ?? '']) ?>
     </div>
   <?php endforeach ?>

@@ -12,6 +12,15 @@ $err = $error ?? '';
   <label for="<?= e($id) ?>"><?= e($f['label']) ?><?= !empty($f['required']) ? ' <span class="req" aria-hidden="true">*</span>' : '' ?></label>
   <?php if (in_array($f['type'], ['textarea', 'lines', 'markdown'], true)): ?>
     <textarea id="<?= e($id) ?>" name="<?= e($n) ?>" rows="<?= $f['type'] === 'markdown' ? 14 : ($f['type'] === 'lines' ? 6 : 4) ?>" data-autosize<?= $f['type'] === 'markdown' ? ' class="mono"' : '' ?>><?= e($v) ?></textarea>
+  <?php elseif ($f['type'] === 'image'): ?>
+    <div class="img-field">
+      <?php if ($v !== ''): ?><img src="<?= e(image_url($v)) ?>" alt="" class="img-preview"><?php endif ?>
+      <div class="img-inputs">
+        <input id="<?= e($id) ?>" name="<?= e($n) ?>_file" type="file" accept="image/jpeg,image/png,image/webp">
+        <input name="<?= e($n) ?>" value="<?= e($v) ?>" type="text" aria-label="<?= e($f['label']) ?> path or address" placeholder="Or a path / https:// address">
+        <?php if ($v !== ''): ?><label class="switch"><input type="checkbox" name="<?= e($n) ?>_remove" value="1"><span class="track" aria-hidden="true"></span><span>Remove photo</span></label><?php endif ?>
+      </div>
+    </div>
   <?php elseif ($f['type'] === 'select' || $f['type'] === 'selectstr'): ?>
     <select id="<?= e($id) ?>" name="<?= e($n) ?>"><?php if ($f['type'] === 'selectstr'): ?><option value="">—</option><?php endif ?><?php foreach ($f['options'] as $ok => $ol): ?><option value="<?= e($ok) ?>"<?= (string)$ok === $v ? ' selected' : '' ?>><?= e($ol) ?></option><?php endforeach ?></select>
   <?php else: ?>

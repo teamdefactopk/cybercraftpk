@@ -3,3 +3,6 @@
 !/app/storage/.htaccess
 .DS_Store
 /build
+
+/public/assets/img/uploads/*
+!/public/assets/img/uploads/.htaccess

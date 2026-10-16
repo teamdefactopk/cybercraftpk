@@ -34,6 +34,7 @@ final class Collections
                     ['intro', 'Introduction', 'textarea', false],
                     ['lead_product', 'Lead product', 'text', false],
                     ['accent', 'Colour', 'selectstr', false, '', $accents],
+                    ['image', 'Photo', 'image', false, 'JPG, PNG or WebP, up to 5 MB, landscape (about 1600 × 1100 px). Shown on the homepage card and at the top of the page.'],
                     ['is_core', 'Show as a core pillar on the homepage', 'checkbox', false],
                     ['sort', 'Order', 'number', false, 'Lower numbers appear first.'],
                 ],
@@ -91,7 +92,8 @@ final class Collections
                     ['intro', 'Introduction (optional)', 'textarea', false],
                     ['msp', 'Managed services for this industry', 'text', false],
                     ['audit', 'Compliance & audit for this industry', 'text', false],
-                    ['horizons', 'Horizons for this industry', 'text', false],
+                    ['horizons', 'Innovation for this industry', 'text', false],
+                    ['image', 'Photo (optional)', 'image', false, 'JPG, PNG or WebP, up to 5 MB, landscape.'],
                     ['is_active', 'Visible on website', 'checkbox', false],
                     ['sort', 'Order', 'number', false],
                 ],
@@ -216,6 +218,45 @@ final class Collections
         ], $def['fields']);
     }
 
+    /**
+     * An image field: a newly uploaded file (saved under assets/img/uploads/) or the typed path/URL.
+     * SVG uploads are refused because an SVG file can carry scripts. Returns [value, error].
+     */
+    private static function image(string $n, string $typed): array
+    {
+        if (isset($_POST[$n . '_remove'])) {
+            return ['', ''];
+        }
+        $file = $_FILES[$n . '_file'] ?? null;
+        if (!$file || ($file['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE) {
+            if ($typed !== '' && (str_contains($typed, '..') || !preg_match('#^(https://|/|[a-z0-9][a-z0-9/_.-]*$)#i', $typed))) {
+                return [$typed, 'Enter a path like scenes/managed-it.svg or an address starting with https://'];
+            }
+            return [$typed, ''];
+        }
+        if ($file['error'] !== UPLOAD_ERR_OK || !is_uploaded_file($file['tmp_name'])) {
+            return [$typed, 'The upload failed. Try again with a file under 5 MB.'];
+        }
+        if ($file['size'] > 5 * 1024 * 1024) {
+            return [$typed, 'The file is larger than 5 MB.'];
+        }
+        $info = @getimagesize($file['tmp_name']);
+        $ext = [IMAGETYPE_JPEG => 'jpg', IMAGETYPE_PNG => 'png', IMAGETYPE_WEBP => 'webp'][$info[2] ?? 0] ?? null;
+        if (!$ext) {
+            return [$typed, 'Upload a JPG, PNG or WebP image.'];
+        }
+        $dir = PUBLIC_DIR . '/assets/img/uploads';
+        if (!is_dir($dir) && !@mkdir($dir, 0755, true)) {
+            return [$typed, 'The uploads folder (assets/img/uploads) could not be created. Check its permissions.'];
+        }
+        $name = date('Ymd') . '-' . bin2hex(random_bytes(6)) . '.' . $ext;
+        if (!move_uploaded_file($file['tmp_name'], $dir . '/' . $name)) {
+            return [$typed, 'The file could not be saved. Check that assets/img/uploads is writable.'];
+        }
+        @chmod($dir . '/' . $name, 0644);
+        return ['uploads/' . $name, ''];
+    }
+
     /** Validate POSTed values into a row. Returns [data, errors]. */
     public static function fromPost(array $def, ?int $id): array
     {
@@ -245,6 +286,12 @@ final class Collections
                 case 'url':
                     if ($v !== '' && !preg_match('#^https?://#i', $v)) {
                         $errors[$n] = 'Enter a full address starting with https://';
+                    }
+                    break;
+                case 'image':
+                    [$v, $err] = self::image($n, $v);
+                    if ($err) {
+                        $errors[$n] = $err;
                     }
                     break;
                 case 'email':
