@@ -25,6 +25,7 @@ require APP_DIR . '/lib/Seed.php';
 require APP_DIR . '/lib/Collections.php';
 require APP_DIR . '/lib/Mailer.php';
 require APP_DIR . '/lib/ui.php';
+require APP_DIR . '/lib/Upgrade.php';
 require APP_DIR . '/views/partials/icons.php';
 
 header('X-Content-Type-Options: nosniff');
@@ -44,4 +45,5 @@ set_exception_handler(function (Throwable $ex) use ($debug) {
 
 if (APP_INSTALLED) {
     Db::init(APP_CONFIG['db']);
+    Upgrade::run();
 }

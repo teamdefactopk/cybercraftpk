@@ -1,6 +1,6 @@
 <div class="cases">
   <?php foreach ($cases as $i => $c):
-    $acc = stripos((string)$c['pillar'], 'managed') !== false ? 'msp' : (stripos((string)$c['pillar'], 'compliance') !== false ? 'audit' : (stripos((string)$c['pillar'], 'horizons') !== false ? 'horizons' : 'support')); ?>
+    $acc = stripos((string)$c['pillar'], 'managed') !== false ? 'msp' : ((stripos((string)$c['pillar'], 'compliance') !== false || stripos((string)$c['pillar'], 'security') !== false) ? 'audit' : ((stripos((string)$c['pillar'], 'horizons') !== false || stripos((string)$c['pillar'], 'innovation') !== false) ? 'horizons' : 'support')); ?>
   <article class="case reveal" style="--c:<?= accent_var($acc) ?>;--d:<?= $i % 4 ?>">
     <small><?= e($c['pillar']) ?><?= $c['country'] ? ' · ' . e($c['country']) : '' ?></small>
     <h3><?= e($c['client']) ?><?= sample_badge($c) ?></h3>

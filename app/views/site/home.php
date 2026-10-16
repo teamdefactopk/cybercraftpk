@@ -1,20 +1,18 @@
 <?php
 $pillars = core_pillars();
-$titleWords = lines(block('home_title', "Run.\nSecure.\nInvent."));
 $stats = pairs(setting('stats'));
 $showSample = setting('show_sample_badges', '1') === '1' && array_filter($clients, fn($c) => $c['is_sample']);
 ?>
 <section class="hero">
   <canvas class="net" aria-hidden="true"></canvas>
   <div class="wrap">
-    <p class="kicker rise"><?= e(block('home_eyebrow')) ?></p>
-    <h1 class="rise d1"><?php foreach ($titleWords as $i => $w): ?><span class="w<?= $i % 3 + 1 ?>"><?= e($w) ?></span><?php endforeach ?></h1>
-    <p class="lead rise d2"><?= e(block('home_intro')) ?></p>
+    <p class="kicker rise"><?= e(block('home_label')) ?></p>
+    <h1 class="rise d1"><?= e(block('home_headline')) ?></h1>
+    <p class="lead rise d2"><?= e(block('home_sub')) ?></p>
     <div class="hero-ctas rise d3">
       <a class="btn btn-light" href="<?= e(url('contact')) ?>"><?= e(block('home_cta_primary', 'Talk to us')) ?> <?= icon('arrow') ?></a>
       <a class="btn btn-outline-light" href="<?= e(url('what-we-do')) ?>"><?= e(block('home_cta_secondary', 'Explore what we do')) ?></a>
     </div>
-    <ul class="hero-meta rise d4"><?php foreach (lines(block('home_meta')) as $m): ?><li><?= e($m) ?></li><?php endforeach ?></ul>
   </div>
 </section>
 
@@ -58,10 +56,10 @@ $showSample = setting('show_sample_badges', '1') === '1' && array_filter($client
 <section class="section" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><p class="kicker">Services</p><h2><?= e(block('home_services_title')) ?></h2></div>
-      <p class="lead">Choose a pillar to see what we deliver.</p>
+      <div><p class="kicker">Services</p><h2>What each service includes</h2></div>
+      <p class="lead">Choose a service to see what we deliver.</p>
     </div>
-    <div class="tabs" role="tablist" aria-label="Service pillars">
+    <div class="tabs" role="tablist" aria-label="Services">
       <?php foreach ($pillars as $i => $p): ?>
       <button class="tab" type="button" role="tab" id="t-<?= e($p['slug']) ?>" aria-controls="p-<?= e($p['slug']) ?>" aria-selected="<?= $i ? 'false' : 'true' ?>"<?= $i ? ' tabindex="-1"' : '' ?>><?= e($p['short_name']) ?></button>
       <?php endforeach ?>
@@ -69,7 +67,7 @@ $showSample = setting('show_sample_badges', '1') === '1' && array_filter($client
     <?php foreach ($pillars as $i => $p): ?>
     <div class="tabpanel" role="tabpanel" id="p-<?= e($p['slug']) ?>" aria-labelledby="t-<?= e($p['slug']) ?>" style="--c:<?= accent_var($p['accent']) ?>"<?= $i ? ' hidden' : '' ?>>
       <div class="tp-intro">
-        <p class="kicker" style="color:var(--c)">Pillar <?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></p>
+        <p class="kicker" style="color:var(--c)">Service <?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></p>
         <h3><?= e($p['name']) ?></h3>
         <p class="promise"><?= e($p['promise']) ?><?= $p['motto'] ? ' ' . e($p['motto']) . '.' : '' ?></p>
         <p><?= e($p['intro']) ?></p>

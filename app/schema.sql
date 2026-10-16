@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS practices (
   lead_product VARCHAR(150) NULL,
   accent VARCHAR(20) NULL,
   is_core TINYINT(1) NOT NULL DEFAULT 1,
+  image VARCHAR(255) NULL,
   sort INT NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -105,6 +106,7 @@ CREATE TABLE IF NOT EXISTS industries (
   msp TEXT NULL,
   audit TEXT NULL,
   horizons TEXT NULL,
+  image VARCHAR(255) NULL,
   is_active TINYINT(1) NOT NULL DEFAULT 1,
   sort INT NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

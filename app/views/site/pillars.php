@@ -18,7 +18,7 @@
 <?php if ($steps): ?>
 <section class="section section-tint">
   <div class="wrap">
-    <div class="sec-head reveal"><div><p class="kicker">How we engage</p><h2>Run, secure, invent</h2></div><p class="lead">Most clients start with one pillar. Many end up with all three under one agreement.</p></div>
+    <div class="sec-head reveal"><div><p class="kicker">How we engage</p><h2>Start with one service, or combine all three</h2></div><p class="lead">Most clients start with one service. Many combine all three under one agreement.</p></div>
     <?= view('partials/steps', ['steps' => $steps]) ?>
   </div>
 </section>

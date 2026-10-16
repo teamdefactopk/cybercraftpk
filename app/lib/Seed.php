@@ -41,6 +41,7 @@ final class Seed
             'stats' => "17+ | Years in technology\n6 | Countries\n24/7 | Operations & security\n20+ | Standards we audit to\n3 | Core pillars",
             'footer_text' => 'Managed services, cyber security compliance and audit, and new inventions, from Pakistan to the world.',
             'show_sample_badges' => '1',
+            'content_version' => '3',
         ];
     }
 
@@ -48,29 +49,28 @@ final class Seed
     public static function blocks(): array
     {
         return [
-            ['home_eyebrow', 'Home', 'Hero eyebrow', 'text', 'CyberCraft Pvt. Ltd. · An Innovation Technology Company'],
-            ['home_title', 'Home', 'Hero title (one word per line)', 'lines', "Run.\nSecure.\nInvent."],
-            ['home_intro', 'Home', 'Hero introduction', 'textarea', 'We run your IT as your managed services provider, secure it and prove it through compliance and audit, and invent what comes next in our Horizons lab.'],
-            ['home_cta_primary', 'Home', 'Primary button text', 'text', 'Talk to us'],
-            ['home_cta_secondary', 'Home', 'Secondary button text', 'text', 'Explore what we do'],
-            ['home_meta', 'Home', 'Hero footer line (one item per line)', 'lines', "Since 2007\nLahore · Dubai · Riyadh · London · Prague · Toronto\n24/7 NOC & SOC"],
-            ['home_pillars_title', 'Home', 'Pillars title', 'text', 'Three pillars. One accountable partner.'],
-            ['home_pillars_intro', 'Home', 'Pillars introduction', 'textarea', 'Seventeen years of building software, ERP, data centers and networks now power three things we do for every client.'],
+            ['home_label', 'Home', 'Small line above the headline', 'text', 'Corporate managed service provider · Since 2007'],
+            ['home_headline', 'Home', 'Headline', 'text', 'Managed IT services, cyber security and compliance for corporate organizations.'],
+            ['home_sub', 'Home', 'Text under the headline', 'textarea', 'We run your servers, networks, cloud and users around the clock, audit and secure them to ISO 27001 and your regulator\'s standards, and deliver solar, automation and AI projects. Offices in Lahore, Dubai, Riyadh, London, Prague and Toronto.'],
+            ['home_cta_primary', 'Home', 'Primary button text', 'text', 'Get a free consultation'],
+            ['home_cta_secondary', 'Home', 'Secondary button text', 'text', 'See our services'],
+            ['home_pillars_title', 'Home', 'Services title', 'text', 'Three core services. One accountable partner.'],
+            ['home_pillars_intro', 'Home', 'Services introduction', 'textarea', 'Most clients start with one service. Many combine all three under a single agreement.'],
             ['home_industries_title', 'Home', 'Industries title', 'text', 'Built for regulated, always-on industries.'],
             ['home_industries_intro', 'Home', 'Industries introduction', 'textarea', 'Each pillar, applied to the realities of your sector: its regulators, its uptime demands and its opportunities.'],
-            ['home_services_title', 'Home', 'Services title', 'text', 'From the service desk to the boardroom to the lab.'],
-            ['home_products_title', 'Home', 'Products title', 'text', 'Packaged, repeatable, ready to deploy.'],
-            ['home_clients_title', 'Home', 'Clients title', 'text', 'Trusted across six countries.'],
-            ['home_why_title', 'Home', 'Why CyberCraft title', 'text', 'Ten reasons clients stay.'],
-            ['home_cta_band_title', 'Home', 'Bottom call-to-action title', 'text', "Let's run, secure and build the future together"],
-            ['home_cta_band_body', 'Home', 'Bottom call-to-action text', 'textarea', 'Tell us what you need. The right team, from managed services, compliance and audit or our Horizons lab, will reply within one business day.'],
+            ['home_also_title', 'Home', 'Supporting services title', 'text', 'We also deliver'],
+            ['home_products_title', 'Home', 'Products title', 'text', 'Our products and platforms'],
+            ['home_clients_title', 'Home', 'Clients title', 'text', 'Trusted by organizations in six countries'],
+            ['home_why_title', 'Home', 'Why CyberCraft title', 'text', 'Why organizations choose CyberCraft'],
+            ['home_cta_band_title', 'Home', 'Bottom call-to-action title', 'text', 'Talk to us about your IT and security'],
+            ['home_cta_band_body', 'Home', 'Bottom call-to-action text', 'textarea', 'Book a free consultation. We review your IT and security and reply with a clear proposal within one business day.'],
 
-            ['ceo_quote', 'About', 'CEO pull-quote', 'textarea', 'Every organization now asks two questions: is our technology secure, and can we prove it? We exist to answer both, and to invent what comes next.'],
+            ['ceo_quote', 'About', 'CEO pull-quote', 'textarea', 'Every organization now asks two questions: is our technology secure, and can we prove it? We exist to answer both, and to put new technology to work for our clients.'],
             ['ceo_name', 'About', 'CEO name', 'text', 'Tauseef Ahmed'],
             ['ceo_role', 'About', 'CEO title', 'text', 'Founder & CEO, CyberCraft Pvt. Ltd.'],
             ['ceo_message', 'About', 'CEO message (Markdown)', 'markdown', "When I started CyberCraft in 2007, our goal was simple: help businesses use technology to work better. Over the years we built software, ERP systems, data centers and networks, and our clients trusted us to keep running them. That trust is the heart of our first pillar, managed services.\n\nToday every organization faces the same two questions: is our technology secure, and can we prove it? Our second pillar, cyber security compliance and audit, exists to answer both, honestly and to international standards.\n\nOur third pillar, new inventions and horizons, is our commitment to the future. Clean energy, automation, embedded systems and AI will change how every business works, and we intend to help invent that change, not just watch it.\n\nBecoming CyberCraft Pvt. Ltd. in 2024, and expanding to the UAE, KSA, UK, Czech Republic and Canada, is a new chapter for us. What we stand for has not changed: accountability, honest advice and real value for every client."],
             ['about_title', 'About', 'Page title', 'text', 'From Lahore, since 2007.'],
-            ['about_intro', 'About', 'Introduction', 'textarea', 'We started by building systems. Clients asked us to run them, then to secure them. Now we invent what comes next.'],
+            ['about_intro', 'About', 'Introduction', 'textarea', 'We started by building systems. Clients asked us to run them, then to secure them. Today we are a corporate managed service provider with our own innovation lab.'],
             ['about_body', 'About', 'Our story (Markdown)', 'markdown', "CyberCraft started in 2007 with a simple idea: **help businesses work better with technology.** Our first work was bringing computers, networks and software into offices across Lahore.\n\nOver the years we built software, our own ERP platform CyberERP, and data centers and networks. Clients kept asking us to stay on and run what we had built, so we became a **managed services provider**, placing resident engineers inside client organizations and, often, running a client's entire IT function.\n\nRunning clients' systems made one thing clear: every system must be secure, and clients must be able to prove it. That became our second pillar, **cyber security compliance and audit**.\n\nIn 2024 we incorporated as **CyberCraft Pvt. Ltd.**, expanded to five more countries and launched our third pillar, **new inventions and horizons**."],
             ['about_timeline', 'About', 'Timeline (one per line: Year | text)', 'lines', "2007 | Founded in Lahore as a sole proprietorship: computerization, networking and software\nGrowth years | CyberERP, data centers, networks, IP communications and surveillance\nGrowth years | Managed services and the resident-engineer model\nGrowth years | Cyber security audit and compliance practice; b2cloud.io launched\n2024 | Incorporated as CyberCraft Pvt. Ltd.: An Innovation Technology Company\n2024 onward | UAE, KSA, UK, Czech Republic and Canada; Horizons lab launched"],
             ['about_vision', 'About', 'Vision', 'textarea', 'To be the trusted partner that runs, secures and reinvents technology for organizations, from Pakistan to the world.'],
@@ -80,8 +80,8 @@ final class Seed
 
             ['services_title', 'Services', 'Page title', 'text', 'Everything we deliver'],
             ['services_intro', 'Services', 'Introduction', 'textarea', 'Three core pillars, backed by seventeen years of engineering. Take any service on its own or combine them under one agreement.'],
-            ['pillars_title', 'Services', '"What we do" page title', 'text', 'Run. Secure. Invent.'],
-            ['pillars_intro', 'Services', '"What we do" introduction', 'textarea', 'We run your IT, secure it and prove it, and invent what comes next: three pillars under one accountable partner.'],
+            ['pillars_title', 'Services', '"What we do" page title', 'text', 'Managed IT, cyber security and innovation'],
+            ['pillars_intro', 'Services', '"What we do" introduction', 'textarea', 'Three core services under one accountable partner: we manage your IT, audit and secure it, and deliver new technology such as solar, automation and AI.'],
 
             ['industries_title', 'Industries', 'Page title', 'text', 'Built for regulated, always-on industries'],
             ['industries_intro', 'Industries', 'Introduction', 'textarea', 'Each pillar, applied to the realities of your sector: its regulators, its uptime demands and its opportunities.'],
@@ -90,9 +90,9 @@ final class Seed
             ['products_intro', 'Products', 'Introduction', 'textarea', 'A lead product for each pillar, and two platforms built in-house.'],
 
             ['clients_title', 'Clients', 'Page title', 'text', 'Trusted across six countries'],
-            ['clients_intro', 'Clients', 'Introduction', 'textarea', 'Organizations in banking, government, healthcare, manufacturing, energy and hospitality rely on CyberCraft to run, secure and reinvent their technology.'],
+            ['clients_intro', 'Clients', 'Introduction', 'textarea', 'Corporate, government, healthcare, manufacturing, energy and hospitality organizations rely on CyberCraft to run and secure their IT.'],
 
-            ['careers_title', 'Careers', 'Page title', 'text', 'Build a career that runs, secures and invents'],
+            ['careers_title', 'Careers', 'Page title', 'text', 'Build your career at CyberCraft'],
             ['careers_intro', 'Careers', 'Introduction', 'textarea', 'Service desk and NOC engineers, auditors and penetration testers, SOC analysts, solar and automation engineers, developers and ERP consultants.'],
             ['careers_body', 'Careers', 'Main text (Markdown)', 'markdown', "## Why work with us\n- Real responsibility for live client systems\n- Security and audit work to international standards\n- Invention projects in the Horizons lab\n- International exposure across six countries\n- Certification support: ITIL, CEH, OSCP, CISA, ISO 27001 Lead Auditor and more\n\n## Career areas\nManaged services · Cyber security & audit · Horizons R&D · Infrastructure & networks · Cloud · Software & ERP · Sales & business development\n\n## How to apply\nSend your CV and the area you're interested in through the contact form (choose **Careers**) or email careers@cybercraft.biz."],
 
@@ -105,14 +105,14 @@ final class Seed
         ];
     }
 
-    /** [slug, name, short, promise, motto, summary, intro, lead_product, accent, is_core] */
+    /** [slug, name, short, promise, motto, summary, intro, lead_product, accent, is_core, image] */
     public static function practices(): array
     {
         return [
-            ['managed-services', 'Managed Services Provider', 'Managed Services', 'We run your IT, so your team can run your business.', '', 'Complete IT outsourcing, resident engineers, service desk and 24/7 NOC.', 'CyberCraft takes responsibility for your technology operations under agreed SLAs, with ITIL processes, monthly service reviews and security built into every managed environment.', 'CyberCraft Care', 'msp', 1],
-            ['compliance-audit', 'Cyber Security Compliance & Audit', 'Compliance & Audit', 'We secure it, and help you prove it.', '', 'Security audits, VAPT, compliance readiness, GRC and managed SOC.', 'Independent, honest assessment against the standards your regulators, customers and board expect, followed by hands-on help to close the gaps. When we also manage your systems, a separate team performs the audit.', 'CyberCraft Secure', 'audit', 1],
-            ['horizons', 'New Inventions & Horizons', 'Horizons', 'We invent what comes next.', 'Adapt · Innovate · Improvise', 'Clean energy, automation, embedded systems, IoT, AI and future technology.', 'Adapt proven global technology to local conditions. Innovate new products in our Lahore lab. Improvise on the ground with power outages, remote sites, tight budgets and harsh environments.', 'CyberCraft Horizons', 'horizons', 1],
-            ['supporting', 'Supporting Services', 'Supporting', 'The engineering behind the pillars.', '', 'Software and ERP, infrastructure and telecom, cloud, digitization, procurement and contact center.', 'Built since 2007, these services support everything we manage, secure and invent, and are also available on their own.', 'CyberERP · b2cloud.io', 'support', 0],
+            ['managed-services', 'Managed IT Services', 'Managed IT Services', 'We run your IT so your team can focus on the business.', '', 'Complete IT outsourcing, resident engineers, service desk and 24/7 monitoring.', 'CyberCraft is a corporate managed service provider. We take responsibility for your servers, networks, cloud, devices and users under agreed service levels, with a 24/7 operations center, monthly reports and security built into everything we manage.', 'Service plans from remote support to full outsourcing', 'msp', 1, 'scenes/managed-it.svg'],
+            ['compliance-audit', 'Cyber Security Audit & Compliance', 'Cyber Security & Audit', 'We secure your systems and get you audit-ready.', '', 'Security audits, penetration testing, ISO 27001 and regulatory compliance, 24/7 SOC.', 'Independent security audits and penetration tests against the standards your regulators, customers and board expect, followed by hands-on help to close the gaps and 24/7 monitoring to stay secure. When we also manage your systems, a separate team performs the audit.', 'Audit, compliance readiness and managed SOC', 'audit', 1, 'scenes/cyber-security.svg'],
+            ['innovation', 'Innovation & Smart Technology', 'Innovation', 'Solar, automation, IoT and AI that cut costs and add capability.', 'Adapt · Innovate · Improvise', 'Solar and clean energy, industrial automation, IoT, smart buildings and AI.', 'Our innovation lab in Lahore adapts proven global technology to local conditions, designs new solutions and improvises on the ground: power outages, remote sites, tight budgets and harsh environments.', 'Solar, automation, IoT and AI projects', 'horizons', 1, 'scenes/innovation.svg'],
+            ['solutions', 'IT Solutions & Infrastructure', 'IT Solutions', 'The engineering behind our services.', '', 'Software and ERP, data centers and networks, cloud hosting, licensing and hardware.', 'Built since 2007, these capabilities support everything we manage and secure, and are also available as projects on their own.', 'CyberERP · b2cloud.io', 'support', 0, 'scenes/network-infrastructure.svg'],
         ];
     }
 
@@ -129,20 +129,20 @@ final class Seed
                 ['virtual-cio', 'Advisory', 'Virtual CIO', 'IT strategy, budgets and roadmaps for growing companies.', 'Senior IT leadership on a part-time basis: strategy, budgets, vendor selection and board reporting.', "IT strategy and roadmaps\nBudgeting and vendor selection\nProject and risk oversight\nBoard and management reporting", "Senior expertise without a full-time hire\nClear technology priorities", 'Growing companies without a CIO.'],
             ],
             'compliance-audit' => [
-                ['security-audit-vapt', 'Audit', 'Security Audit & VAPT', 'Independent audits and penetration testing with a risk-rated report.', 'Information security audits, gap assessments and vulnerability assessment and penetration testing for networks, web, mobile, APIs, cloud and wireless.', "Security audits and gap assessments\nVAPT: network, web, mobile, API, cloud, wireless\nRed teaming and phishing simulation\nHardening, code and IT general controls reviews\nThird-party and OT/SCADA assessments", "Risk-rated findings with clear remediation steps\nRe-test to confirm closure\nIndependent audit team", 'Banks, insurers, telecoms, government and any regulated organization.'],
+                ['security-audit-vapt', 'Audit', 'Security Audit & VAPT', 'Independent audits and penetration testing with a risk-rated report.', 'Information security audits, gap assessments and vulnerability assessment and penetration testing for networks, web, mobile, APIs, cloud and wireless.', "Security audits and gap assessments\nVAPT: network, web, mobile, API, cloud, wireless\nRed teaming and phishing simulation\nHardening, code and IT general controls reviews\nThird-party and OT/SCADA assessments", "Risk-rated findings with clear remediation steps\nRe-test to confirm closure\nIndependent audit team", 'Corporates, insurers, telecoms, government and any regulated organization.'],
                 ['compliance-readiness', 'Compliance', 'Compliance Readiness', 'Get ready for ISO 27001, PCI DSS, SOC 2 and regional regulators.', 'Gap assessment, remediation roadmap, policies, evidence collection, internal audit and support during certification and regulatory inspection.', "Gap assessment and remediation roadmap\nPolicies, standards and procedures\nEvidence collection and internal audit\nSupport during certification and regulator audits\nContinuous compliance dashboards", "Audit-ready, regulator-ready controls\nA clear path to certification", 'Organizations facing a certification, regulator or customer deadline.'],
                 ['grc-privacy', 'Governance', 'Governance, Risk & Privacy', 'Risk registers, business continuity, privacy programs and a virtual CISO.', 'The governance that keeps security working: risk management, business continuity, privacy and leadership.', "Risk registers and treatment plans\nBusiness continuity and DR planning and testing\nPrivacy programs, DPIAs and DPO support\nSecurity awareness training\nVirtual CISO and board reporting", "Security leadership on demand\nBoard-ready reporting", 'Boards and executives accountable for cyber risk.'],
                 ['managed-soc', 'SOC', 'Managed SOC & Security', '24/7 monitoring, detection, response and protection.', 'A 24/7 security operations center with SIEM monitoring, incident response, and managed protection for endpoints, email, firewalls and identity.', "24/7 SOC and SIEM monitoring\nIncident response and digital forensics\nManaged EDR, email, firewall, MFA, PAM and DLP\nVulnerability management, DDoS protection and WAF", "Threats detected and contained around the clock\nMonthly security reports", 'Organizations without a 24/7 security team.'],
             ],
-            'horizons' => [
+            'innovation' => [
                 ['solar-clean-energy', 'Energy', 'Solar & Clean Energy', 'Solar, storage and EV charging for homes, businesses and telecom sites.', 'Residential, commercial and industrial solar; hybrid and solar–wind systems for telecom sites; battery storage, net metering and EV charging, with monitoring and O&M.', "On-grid, off-grid and hybrid solar\nSolar–wind hybrids for telecom sites\nBattery energy storage and net metering\nEV charging\nEnergy monitoring software and O&M", "Lower energy bills\nBackup through outages\nMonitored performance", 'Homes, factories, hotels, telecom towers and remote sites.'],
                 ['industrial-automation', 'Automation', 'Industrial Automation', 'PLC, SCADA, MES, machine vision and Industry 4.0.', 'Automation and control for plants and utilities, from PLC and SCADA to MES, machine vision and predictive maintenance.', "PLC, SCADA, HMI and DCS\nMES and Industry 4.0\nMachine vision and quality inspection\nControl panels, drives and instrumentation\nPredictive maintenance and digital twins", "Higher throughput and quality\nReal-time production visibility", 'Manufacturing, food & beverage, water and energy.'],
                 ['embedded-iot', 'IoT', 'Embedded Systems & IoT', 'Custom hardware, firmware, sensors and remote monitoring.', 'We design and build custom electronics and connected devices, and the platforms that monitor them.', "Custom hardware and PCB design\nFirmware development\nSensors, gateways and telemetry\nRemote monitoring dashboards and M2M connectivity", "Devices built for your problem\nData from the field in real time", 'Utilities, agriculture, logistics and product companies.'],
                 ['smart-living-cities', 'Smart', 'Smart Living & Smart Cities', 'Smart homes, buildings, metering and intelligent transport.', 'Home automation, smart buildings and BMS, smart metering, street lighting, intelligent transport and city surveillance.', "Home automation\nSmart buildings and BMS\nSmart metering and street lighting\nIntelligent transport and city surveillance", "Lower running costs\nSafer, more comfortable spaces", 'Developers, hotels, municipalities and campuses.'],
-                ['artificial-intelligence', 'AI', 'Artificial Intelligence', 'AI assistants, document AI, analytics and computer vision.', 'Practical AI that saves time and money: assistants and chatbots, intelligent document processing, predictive analytics, computer vision and agentic automation.', "AI assistants and chatbots\nIntelligent document processing\nPredictive analytics and computer vision\nAgentic AI automation", "Less manual work\nFaster decisions from your data", 'Banks, insurers, retailers, hospitals and government.'],
+                ['artificial-intelligence', 'AI', 'Artificial Intelligence', 'AI assistants, document AI, analytics and computer vision.', 'Practical AI that saves time and money: assistants and chatbots, intelligent document processing, predictive analytics, computer vision and agentic automation.', "AI assistants and chatbots\nIntelligent document processing\nPredictive analytics and computer vision\nAgentic AI automation", "Less manual work\nFaster decisions from your data", 'Corporates, insurers, retailers, hospitals and government.'],
                 ['robotics-health-tech', 'R&D', 'Robotics, Health-tech & Beyond', 'Drones, remote patient monitoring and emerging technology R&D.', 'Research and pilots in robotics, drones, health-tech, biotech, blockchain and AR/VR.', "Inspection, survey and agriculture drones\nRemote patient monitoring and wearables\nBiotech and life-science technology\nBlockchain and AR/VR", "Pilots built with you\nA path from prototype to product", 'Organizations exploring new technology.'],
             ],
-            'supporting' => [
+            'solutions' => [
                 ['software-erp', 'Software', 'Software & ERP', 'Web, mobile and desktop apps; CyberERP, Dynamics 365, SAP and Oracle.', 'Custom software and our own ERP platform CyberERP, plus implementation, consultancy and support for Microsoft Dynamics 365, SAP and Oracle.', "Web, mobile and desktop applications\nAPIs, integration, UI/UX, QA and DevOps\nCyberERP implementation\nDynamics 365, SAP and Oracle implementation and support\nIndustry solutions for hospitals, schools, distribution and lending", "Software that fits how you work\nOne partner from build to support", 'Organizations that need custom systems or ERP.'],
                 ['infrastructure-telecom', 'Infrastructure', 'Infrastructure & Telecom', 'Data centers, fiber, networks, satellite links, IP telephony and surveillance.', 'Design and build of data centers, networks and communications.', "Data center design and build\nLAN/WAN, fiber and structured cabling, Wi-Fi, SD-WAN\nWireless and satellite links, tower and fiber rollout\nIP PBX, unified communications, IP surveillance and access control", "Standards-based design\nDocumented handover\nOption to have us run it", 'New offices, plants, campuses and telecom operators.'],
                 ['cloud-digitization', 'Cloud', 'Cloud & Digitization', 'b2cloud.io hosting, cloud migration, scanning and document management.', 'Hosting and cloud through our brand b2cloud.io, migrations to AWS, Azure and Google Cloud, and digitization of paper records.', "Hosting, VPS, email and ERP hosting on b2cloud.io\nCloud migration and management\nDocument scanning and digital archives\nDocument management systems and workflows", "Local and global cloud options\nSearchable, secure records", 'Organizations moving to the cloud or going paperless.'],
@@ -155,10 +155,10 @@ final class Seed
     public static function levels(): array
     {
         return [
-            ['Care Essential', 'For small businesses that need reliable remote support.', "Remote service desk\nMonitoring and patching\nBackup checks\nMonthly report", 0],
-            ['Care Professional', 'For growing businesses that need people on site sometimes.', "Everything in Essential\nScheduled onsite visits\nAMC for hardware and network\nAsset and license management", 0],
-            ['Care Enterprise', 'For large organizations that want to outsource IT fully.', "Complete IT outsourcing\n24/7 NOC\nDedicated service manager\nCustom SLAs and reporting", 1],
-            ['Care Resident', 'For any size of organization that needs engineers on site full-time.', "Dedicated resident engineers\nBackfill during absence\nRemote specialist escalation\nCyberCraft tools and processes", 0],
+            ['Essential', 'Remote support for small offices.', "Remote service desk (business hours)\nMonitoring and patching\nBackup checks\nMonthly report", 0],
+            ['Professional', 'Remote support plus scheduled visits for growing companies.', "Everything in Essential\nScheduled onsite visits\nHardware and network maintenance (AMC)\nAsset and license management", 0],
+            ['Enterprise', 'Complete IT outsourcing for corporate organizations.', "Your entire IT function, run by CyberCraft\n24/7 monitoring and support\nDedicated service manager\nCustom SLAs and monthly reviews", 1],
+            ['Resident Engineer', 'Engineers working full-time at your premises.', "Dedicated onsite engineers\nBackfill during leave\nRemote specialist escalation\nCyberCraft tools and processes", 0],
         ];
     }
 
@@ -167,8 +167,8 @@ final class Seed
         return [
             ['We run it', 'Resident engineers and complete outsourcing.'],
             ['We prove it', 'Audits to international and regional standards.'],
-            ['We invent', 'A dedicated lab for energy, automation and AI.'],
-            ['One partner', 'Run, secure and innovate under one agreement.'],
+            ['We innovate', 'A dedicated lab for energy, automation and AI.'],
+            ['One partner', 'IT, security and innovation under one agreement.'],
             ['Lower cost', 'A Lahore delivery center and the resident model.'],
             ['Six countries', 'Local contact, global standards.'],
             ['Engineering depth', 'Our own ERP, software and network expertise.'],
@@ -181,9 +181,10 @@ final class Seed
     public static function steps(): array
     {
         return [
-            ['Run', 'Take over and stabilize your IT under a managed services agreement.'],
-            ['Secure', 'Audit, harden and bring the environment to compliance, then monitor it continuously.'],
-            ['Invent', 'Introduce new technology (energy, automation, AI) that lowers cost or creates new capability.'],
+            ['Assess', 'A free consultation and a review of your systems, risks and goals.'],
+            ['Propose', 'A clear written proposal with scope, service levels and cost.'],
+            ['Deliver', 'We take over, audit or build, with minimal disruption and full documentation.'],
+            ['Support', 'Monthly reviews, reports and continuous improvement.'],
         ];
     }
 
@@ -191,9 +192,9 @@ final class Seed
     public static function offices(): array
     {
         return [
-            ['Pakistan', 'PK', 'Lahore', 'Headquarters & delivery center', 'Managed services, 24/7 NOC and SOC, audit team and the Horizons lab.', 'pk@cybercraft.biz', 1],
+            ['Pakistan', 'PK', 'Lahore', 'Headquarters & delivery center', 'Managed IT, 24/7 NOC and SOC, audit team and innovation lab.', 'pk@cybercraft.biz', 1],
             ['United Arab Emirates', 'AE', 'Dubai', 'Middle East', 'Managed services, UAE IA and DESC compliance, smart solutions.', 'uae@cybercraft.biz', 0],
-            ['Saudi Arabia', 'SA', 'Riyadh', 'Middle East', 'Managed services, NCA and SAMA compliance, energy.', 'ksa@cybercraft.biz', 0],
+            ['Saudi Arabia', 'SA', 'Riyadh', 'Middle East', 'Managed IT, NCA compliance and energy projects.', 'ksa@cybercraft.biz', 0],
             ['United Kingdom', 'GB', 'London', 'Europe', 'Managed services, Cyber Essentials, ISO 27001 and UK GDPR.', 'uk@cybercraft.biz', 0],
             ['Czech Republic', 'CZ', 'Prague', 'Central Europe', 'Managed services, GDPR and NIS2 readiness, automation.', 'cz@cybercraft.biz', 0],
             ['Canada', 'CA', 'Toronto', 'North America', 'Managed services, PIPEDA and SOC 2 readiness.', 'ca@cybercraft.biz', 0],
@@ -204,7 +205,7 @@ final class Seed
     public static function industries(): array
     {
         return [
-            ['banking-finance', 'Banking & finance', 'bank', 'SBP and SAMA frameworks, PCI DSS, branch IT and 24/7 SOC.', 'Branch IT, NOC and resident engineers', 'SBP / SAMA frameworks, PCI DSS, ISO 27001, VAPT', 'AI fraud detection and document automation'],
+            ['corporate-enterprise', 'Corporate & enterprise', 'building', 'Head offices and multi-site companies that need IT run reliably and securely.', 'Complete IT outsourcing and resident engineers', 'ISO 27001, VAPT and security awareness', 'Solar and smart offices'],
             ['government', 'Government', 'gov', 'IT outsourcing, data center operations, national standards and smart city.', 'IT outsourcing and data center operations', 'National standards, audits and awareness', 'Smart city and e-governance'],
             ['telecom-isps', 'Telecom & ISPs', 'tower', 'Network operations, NOC, PTA requirements and tower solar power.', 'Network operations and NOC', 'PTA requirements and VAPT', 'Tower solar power and IoT'],
             ['healthcare', 'Healthcare', 'health', 'Hospital IT, HIPAA and ADHICS compliance, remote patient monitoring.', 'Hospital IT management', 'HIPAA, ADHICS and data protection', 'Remote patient monitoring'],
@@ -223,11 +224,8 @@ final class Seed
     public static function products(): array
     {
         return [
-            ['cybercraft-care', 'CyberCraft Care', 'Managed services', 'Managed IT plans from remote service desk to complete outsourcing.', "Care Essential\nCare Professional\nCare Enterprise\nCare Resident", 'msp', ''],
-            ['cybercraft-secure', 'CyberCraft Secure', 'Compliance & audit', 'Audit, compliance readiness and 24/7 managed security.', "Secure Audit\nSecure Comply\nSecure SOC\nSecure Shield\nSecure Aware\nSecure vCISO", 'audit', ''],
-            ['cybercraft-horizons', 'CyberCraft Horizons', 'New inventions', 'Products from our invention lab: adapt, innovate, improvise.', "Horizons Energy\nHorizons Automate\nHorizons IoT\nHorizons Smart\nHorizons AI\nHorizons Labs", 'horizons', ''],
-            ['cybererp', 'CyberERP', 'Platform', 'Our own ERP, from finance and HR to POS, manufacturing and BI.', "Retail & distribution\nManufacturing\nEducation\nHealthcare\nReal estate\nFinance", 'sky', ''],
-            ['b2cloud', 'b2cloud.io', 'Platform', 'Hosting and cloud, from one website to hosted ERP and disaster recovery.', "Hosting and VPS\nDedicated servers\nBusiness email and domains\nBackup and DR\nColocation\nERP cloud", 'support', 'https://b2cloud.io'],
+            ['cybererp', 'CyberERP', 'Our ERP platform', 'Our own ERP for finance, HR and payroll, inventory, sales, POS, manufacturing and reporting.', "Retail & distribution\nManufacturing\nEducation\nHealthcare\nReal estate\nServices", 'sky', ''],
+            ['b2cloud', 'b2cloud.io', 'Our cloud & hosting brand', 'Business hosting and cloud: websites, email, servers, backup, disaster recovery and hosted ERP.', "Web hosting and VPS\nDedicated servers\nBusiness email and domains\nBackup and disaster recovery\nColocation\nERP cloud", 'support', 'https://b2cloud.io'],
         ];
     }
 
@@ -236,14 +234,14 @@ final class Seed
     {
         return [
             ['Ravi Steel Works', 'PK', 'Manufacturing', '#1F4FA8'], ['Margalla Health', 'PK', 'Healthcare', '#0E7490'],
-            ['Indus Microfinance', 'PK', 'Banking & finance', '#7C3AED'], ['Shalimar Logistics', 'PK', 'Logistics', '#B45309'],
+            ['Indus Pharma', 'PK', 'Healthcare', '#7C3AED'], ['Shalimar Logistics', 'PK', 'Logistics', '#B45309'],
             ['Desert Rose Hotels', 'AE', 'Hospitality', '#BE123C'], ['Al Noor Trading', 'AE', 'Retail & FMCG', '#0F766E'],
-            ['Palm Coast Energy', 'AE', 'Energy & utilities', '#CA8A04'], ['Najd Industrial Bank', 'SA', 'Banking & finance', '#15803D'],
+            ['Palm Coast Energy', 'AE', 'Energy & utilities', '#CA8A04'], ['Najd Industrial Group', 'SA', 'Manufacturing', '#15803D'],
             ['Hijaz Medical Center', 'SA', 'Healthcare', '#0369A1'], ['Qassim Agro', 'SA', 'Manufacturing', '#A16207'],
-            ['Thamesbridge Finance', 'GB', 'Banking & finance', '#1E3A8A'], ['Pennine Engineering', 'GB', 'Manufacturing', '#9F1239'],
+            ['Thamesbridge Consulting', 'GB', 'Corporate & enterprise', '#1E3A8A'], ['Pennine Engineering', 'GB', 'Manufacturing', '#9F1239'],
             ['Vltava Systems', 'CZ', 'Telecom & ISPs', '#0F766E'], ['Morava Glassworks', 'CZ', 'Manufacturing', '#6D28D9'],
             ['Maple North Logistics', 'CA', 'Logistics', '#B91C1C'], ['Laurentian Clinics', 'CA', 'Healthcare', '#0E7490'],
-            ['Indus Cloud Telecom', 'PK', 'Telecom & ISPs', '#2563EB'], ['Gulf Crest Insurance', 'AE', 'Banking & finance', '#0E9AA7'],
+            ['Indus Cloud Telecom', 'PK', 'Telecom & ISPs', '#2563EB'], ['Gulf Crest Holdings', 'AE', 'Corporate & enterprise', '#0E9AA7'],
         ];
     }
 
@@ -251,10 +249,10 @@ final class Seed
     public static function caseStudies(): array
     {
         return [
-            ['Complete IT outsourcing across two plants', 'Ravi Steel Works', 'Managed services', 'PK', 'High IT costs and an unreliable in-house setup across two plants.', 'CyberCraft Care Enterprise with resident engineers and a 24/7 NOC.', 'Predictable monthly IT cost, SLA-backed uptime'],
-            ['NCA compliance and 24/7 SOC', 'Najd Industrial Bank', 'Compliance & audit', 'SA', 'An NCA ECC deadline and no round-the-clock monitoring.', 'Secure Comply closed the gaps, then Secure SOC took over monitoring.', 'Inspection-ready controls, 24/7 SOC'],
-            ['ISO 27001 readiness in a year', 'Thamesbridge Finance', 'Compliance & audit', 'GB', 'A major client demanded ISO 27001 certification within a year.', 'Secure Audit, a policy framework, VAPT and internal audit.', 'Ready for the external certification audit'],
-            ['Solar and smart rooms', 'Desert Rose Hotels', 'Horizons', 'AE', 'Rising energy costs across three properties.', 'Horizons Energy solar with storage and Horizons Smart room controls.', 'Lower energy bills, better guest comfort'],
+            ['Complete IT outsourcing across two plants', 'Ravi Steel Works', 'Managed IT', 'PK', 'High IT costs and an unreliable in-house setup across two plants.', 'Enterprise managed IT plan with resident engineers and 24/7 monitoring.', 'Predictable monthly IT cost, SLA-backed uptime'],
+            ['NCA compliance and 24/7 SOC', 'Najd Industrial Group', 'Cyber security & audit', 'SA', 'An NCA ECC deadline and no round-the-clock security monitoring.', 'Gap assessment and remediation, then 24/7 managed SOC.', 'Inspection-ready controls, 24/7 monitoring'],
+            ['ISO 27001 readiness in a year', 'Thamesbridge Consulting', 'Cyber security & audit', 'GB', 'A major customer required ISO 27001 certification within a year.', 'Security audit, policy framework, penetration testing and internal audit.', 'Ready for the external certification audit'],
+            ['Solar power and smart rooms', 'Desert Rose Hotels', 'Innovation', 'AE', 'Rising energy costs across three properties.', 'Solar with battery storage and smart room controls.', 'Lower energy bills, better guest comfort'],
         ];
     }
 
@@ -263,8 +261,8 @@ final class Seed
     {
         return [
             ['International', "ISO 27001\nISO 27701\nISO 22301\nISO 20000\nPCI DSS\nSOC 2\nNIST CSF\nCIS Controls\nHIPAA"],
-            ['Pakistan', "SBP frameworks\nSECP\nPTA\nPECA 2016"],
-            ['Saudi Arabia', "NCA ECC\nSAMA CSF\nKSA PDPL"],
+            ['Pakistan', "PECA 2016\nPTA\nSECP"],
+            ['Saudi Arabia', "NCA ECC\nKSA PDPL"],
             ['United Arab Emirates', "UAE IA\nDESC ISR\nADHICS\nUAE PDPL"],
             ['United Kingdom', "Cyber Essentials\nUK GDPR"],
             ['European Union', "GDPR\nNIS2"],
@@ -275,12 +273,12 @@ final class Seed
     public static function faqs(): array
     {
         return [
-            ['What does CyberCraft do?', 'Three things: we run your IT as a managed services provider, we secure it and prove it through cyber security compliance and audit, and we invent what comes next in our Horizons lab (clean energy, automation, IoT and AI).'],
+            ['What does CyberCraft do?', 'CyberCraft is a corporate managed service provider. We run and support your IT (servers, networks, cloud, devices and users), audit and secure it against international and regional standards, and deliver innovation projects such as solar, automation and AI.'],
+            ['What is included in managed IT services?', 'A service desk for your users, 24/7 monitoring, patching and backups, network and cloud management, hardware maintenance and vendor management. You can also have resident engineers at your site, or hand over your entire IT function.'],
             ['Can you audit systems you also manage for us?', 'Yes. When we both manage and audit a client\'s systems, the audit is performed by a separate team, and you can request third-party validation.'],
-            ['Which standards can you prepare us for?', 'International standards such as ISO 27001, PCI DSS and SOC 2, and regional frameworks including SBP (Pakistan), NCA and SAMA (Saudi Arabia), UAE IA and DESC (UAE), Cyber Essentials (UK), GDPR and NIS2 (EU) and PIPEDA (Canada).'],
-            ['What are resident engineers?', 'Qualified CyberCraft engineers placed full-time at your site. They work inside your team every day and are backed by our service desk, NOC and specialists.'],
+            ['Which standards can you prepare us for?', 'International standards such as ISO 27001, PCI DSS and SOC 2, and regional frameworks including NCA ECC (Saudi Arabia), UAE IA and DESC (UAE), PECA and PTA (Pakistan), Cyber Essentials (UK), GDPR and NIS2 (EU) and PIPEDA (Canada).'],
             ['Do you work outside Pakistan?', 'Yes. We have a presence in the UAE, Saudi Arabia, the United Kingdom, the Czech Republic and Canada, backed by our 24/7 operations center in Lahore.'],
-            ['How do we start?', 'Send us a message through the contact form or email info@cybercraft.biz. We begin with a short discovery call and a proposal.'],
+            ['How do we start?', 'Book a free consultation through the contact form or email info@cybercraft.biz. We review your setup and send a written proposal with scope, service levels and cost.'],
         ];
     }
 
@@ -297,8 +295,8 @@ final class Seed
             return; // content already present
         }
         $pids = [];
-        foreach (self::practices() as $i => [$slug, $name, $short, $promise, $motto, $summary, $intro, $lead, $accent, $core]) {
-            $pids[$slug] = Db::insert('practices', ['slug' => $slug, 'name' => $name, 'short_name' => $short, 'promise' => $promise, 'motto' => $motto, 'summary' => $summary, 'intro' => $intro, 'lead_product' => $lead, 'accent' => $accent, 'is_core' => $core, 'sort' => ($i + 1) * 10]);
+        foreach (self::practices() as $i => [$slug, $name, $short, $promise, $motto, $summary, $intro, $lead, $accent, $core, $img]) {
+            $pids[$slug] = Db::insert('practices', ['slug' => $slug, 'name' => $name, 'short_name' => $short, 'promise' => $promise, 'motto' => $motto, 'summary' => $summary, 'intro' => $intro, 'lead_product' => $lead, 'accent' => $accent, 'is_core' => $core, 'image' => $img, 'sort' => ($i + 1) * 10]);
         }
         $n = 0;
         foreach (self::services() as $p => $list) {
