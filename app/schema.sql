@@ -1,0 +1,213 @@
+-- CyberCraft website schema (MySQL 5.7+ / MariaDB 10.3+)
+-- The web installer (/install) runs this file automatically.
+
+CREATE TABLE IF NOT EXISTS settings (
+  k VARCHAR(100) NOT NULL PRIMARY KEY,
+  v TEXT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS blocks (
+  k VARCHAR(100) NOT NULL PRIMARY KEY,
+  page VARCHAR(50) NOT NULL,
+  label VARCHAR(150) NOT NULL,
+  type VARCHAR(20) NOT NULL DEFAULT 'text',
+  v MEDIUMTEXT NULL,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- The three core pillars (plus "Supporting services"). Services belong to a pillar.
+CREATE TABLE IF NOT EXISTS practices (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(100) NOT NULL UNIQUE,
+  name VARCHAR(150) NOT NULL,
+  short_name VARCHAR(60) NULL,
+  promise VARCHAR(200) NULL,
+  motto VARCHAR(150) NULL,
+  summary VARCHAR(255) NULL,
+  intro TEXT NULL,
+  lead_product VARCHAR(150) NULL,
+  accent VARCHAR(20) NULL,
+  is_core TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS services (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  practice_id INT UNSIGNED NULL,
+  slug VARCHAR(120) NOT NULL UNIQUE,
+  tag VARCHAR(80) NULL,
+  name VARCHAR(150) NOT NULL,
+  summary VARCHAR(300) NULL,
+  description TEXT NULL,
+  do_items TEXT NULL,
+  get_items TEXT NULL,
+  ideal TEXT NULL,
+  price_from TINYINT(1) NOT NULL DEFAULT 1,
+  price_amount VARCHAR(50) NULL,
+  price_unit VARCHAR(80) NULL,
+  external_url VARCHAR(255) NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0,
+  updated_at DATETIME NULL,
+  KEY practice_idx (practice_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- CyberCraft Care plans (managed services tiers)
+CREATE TABLE IF NOT EXISTS levels (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  audience TEXT NULL,
+  items TEXT NULL,
+  price_from TINYINT(1) NOT NULL DEFAULT 1,
+  price_amount VARCHAR(50) NULL,
+  price_unit VARCHAR(80) NULL,
+  featured TINYINT(1) NOT NULL DEFAULT 0,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- "Why CyberCraft" reasons
+CREATE TABLE IF NOT EXISTS commitments (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(150) NOT NULL,
+  body TEXT NULL,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- "How we engage" steps
+CREATE TABLE IF NOT EXISTS steps (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(150) NOT NULL,
+  body TEXT NULL,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS offices (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  country VARCHAR(100) NOT NULL,
+  code VARCHAR(8) NULL,
+  city VARCHAR(100) NULL,
+  region VARCHAR(150) NULL,
+  description TEXT NULL,
+  address TEXT NULL,
+  phone VARCHAR(60) NULL,
+  email VARCHAR(190) NULL,
+  is_hq TINYINT(1) NOT NULL DEFAULT 0,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS industries (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(120) NOT NULL UNIQUE,
+  name VARCHAR(150) NOT NULL,
+  icon VARCHAR(40) NULL,
+  summary VARCHAR(300) NULL,
+  intro TEXT NULL,
+  msp TEXT NULL,
+  audit TEXT NULL,
+  horizons TEXT NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS products (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(120) NOT NULL UNIQUE,
+  name VARCHAR(150) NOT NULL,
+  label VARCHAR(100) NULL,
+  summary VARCHAR(300) NULL,
+  description TEXT NULL,
+  items TEXT NULL,
+  accent VARCHAR(20) NULL,
+  external_url VARCHAR(255) NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS clients (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  country VARCHAR(8) NULL,
+  industry VARCHAR(100) NULL,
+  logo_url VARCHAR(255) NULL,
+  color VARCHAR(20) NULL,
+  website VARCHAR(255) NULL,
+  is_sample TINYINT(1) NOT NULL DEFAULT 0,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS case_studies (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  client VARCHAR(150) NULL,
+  pillar VARCHAR(100) NULL,
+  country VARCHAR(8) NULL,
+  challenge TEXT NULL,
+  solution TEXT NULL,
+  result VARCHAR(300) NULL,
+  is_sample TINYINT(1) NOT NULL DEFAULT 0,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Compliance standards and regulations, grouped by region
+CREATE TABLE IF NOT EXISTS standards (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  region VARCHAR(100) NOT NULL,
+  items TEXT NULL,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS faqs (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  question VARCHAR(255) NOT NULL,
+  answer TEXT NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS messages (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  email VARCHAR(190) NOT NULL,
+  company VARCHAR(190) NULL,
+  phone VARCHAR(60) NULL,
+  country VARCHAR(100) NULL,
+  service VARCHAR(150) NULL,
+  route_to VARCHAR(190) NULL,
+  body TEXT NOT NULL,
+  ip VARCHAR(45) NULL,
+  user_agent VARCHAR(255) NULL,
+  status VARCHAR(20) NOT NULL DEFAULT 'new',
+  created_at DATETIME NOT NULL,
+  KEY status_idx (status),
+  KEY created_idx (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  email VARCHAR(190) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(20) NOT NULL DEFAULT 'editor',
+  created_at DATETIME NOT NULL,
+  last_login_at DATETIME NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS login_attempts (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  ip VARCHAR(45) NOT NULL,
+  email VARCHAR(190) NULL,
+  created_at DATETIME NOT NULL,
+  KEY ip_idx (ip, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS activity (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id INT UNSIGNED NULL,
+  user_name VARCHAR(150) NULL,
+  action VARCHAR(100) NOT NULL,
+  details VARCHAR(255) NULL,
+  created_at DATETIME NOT NULL,
+  KEY created_idx (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

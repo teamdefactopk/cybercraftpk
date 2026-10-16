@@ -1,0 +1,10 @@
+---
+# cPanel Git deployment: public/ goes to the web root, app/ goes next to it (outside public view).
+# app/config.php and app/storage are created by the installer on the server and are never overwritten.
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/
+    - export APPPATH=$HOME/cybercraft_app/
+    - /bin/mkdir -p $APPPATH/storage
+    - /bin/cp -R public/. $DEPLOYPATH
+    - /bin/cp -R app/. $APPPATH

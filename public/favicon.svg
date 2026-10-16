@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="360 130 500 500" role="img" aria-label="CyberCraft">
+  <circle cx="528.1" cy="187.6" r="51.5" fill="#6D8BC3"/>
+  <circle cx="447.3" cy="276.0" r="32.8" fill="#6D8BC3"/>
+  <circle cx="719.8" cy="477.3" r="34.3" fill="#3F75AF"/>
+  <circle cx="798.3" cy="514.6" r="44.4" fill="#3472AD"/>
+  <circle cx="416.0" cy="582.0" r="45.0" fill="#517FB3"/>
+  <circle cx="563.5" cy="402.5" r="134.0" fill="#194988"/>
+  <circle cx="563.5" cy="402.5" r="104" fill="#F7F8FA"/>
+  <circle cx="563.5" cy="402.5" r="93" fill="#194988"/>
+  <circle cx="563.5" cy="402.5" r="74" fill="#7E97CA"/>
+  <circle cx="563.5" cy="402.5" r="46" fill="#275291"/>
+  <circle cx="563.5" cy="402.5" r="32" fill="#7E97CA"/>
+  <clipPath id="igl"><circle cx="563.5" cy="118.5" r="300.0"/></clipPath>
+  <g clip-path="url(#igl)">
+  <circle cx="563.5" cy="402.5" r="134.0" fill="#6D87BB"/>
+  <circle cx="563.5" cy="402.5" r="104" fill="#F7F8FA"/>
+  <circle cx="563.5" cy="402.5" r="93" fill="#6D87BB"/>
+  <circle cx="563.5" cy="402.5" r="74" fill="#C3C8E0"/>
+  <circle cx="563.5" cy="402.5" r="46" fill="#7388BE"/>
+  <circle cx="563.5" cy="402.5" r="32" fill="#C3C8E0"/>
+  </g>
+  <rect x="593.5" y="393.5" width="34.0" height="17.0" fill="#275291"/>
+  <circle cx="563.5" cy="402.5" r="32" fill="none"/>
+</svg>

@@ -1,0 +1,198 @@
+CYBERCRAFT WEBSITE (www.cybercraft.biz): STEP-BY-STEP INSTALL ON cPANEL
+=======================================================================
+
+What you need
+  - cPanel hosting with PHP 8.1 or newer and MySQL 5.7+ / MariaDB 10.3+
+  - The file cybercraft-website.zip
+    (made with: sh tools/build-zip.sh  ->  build/cybercraft-website.zip)
+  - About 15 minutes
+
+In these steps your cPanel user is called "cybercraft", so your home folder
+is /home/cybercraft. Replace it with your own cPanel username.
+
+At the end your home folder must look like this:
+
+  /home/cybercraft/
+     public_html/              <- website files only
+        .htaccess
+        index.php
+        install.php
+        favicon.svg
+        assets/
+        .well-known/           (cPanel's own, leave it)
+        cgi-bin/               (cPanel's own, leave it)
+     cybercraft_app/           <- the whole app folder, NEXT TO public_html
+        bootstrap.php
+        routes.php
+        admin.php
+        install.php
+        schema.sql
+        lib/
+        views/
+        storage/
+
+
+STEP 1: SHOW HIDDEN FILES
+-------------------------
+  cPanel > File Manager > Settings (top right)
+  > tick "Show Hidden Files (dotfiles)" > Save.
+  (.htaccess is a hidden file. Without it, every page except the
+  homepage shows "Not Found".)
+
+
+STEP 2: EMPTY public_html
+-------------------------
+  Open public_html. Select EVERYTHING except ".well-known" and "cgi-bin"
+  and click Delete (tick "Skip the trash" if offered).
+  public_html should now contain only .well-known and cgi-bin.
+  Keep a backup first if an old website is there.
+
+
+STEP 3: UPLOAD AND EXTRACT THE ZIP IN YOUR HOME FOLDER
+------------------------------------------------------
+  1. Click "Home" (top left) so you are in /home/cybercraft
+     (NOT inside public_html).
+  2. Upload > choose cybercraft-website.zip > wait for 100% > Go Back.
+  3. Right-click cybercraft-website.zip > Extract > Extract Files.
+     You now have the folder /home/cybercraft/cybercraft-website
+
+
+STEP 4: MOVE THE WEBSITE FILES INTO public_html
+-----------------------------------------------
+  1. Open /home/cybercraft/cybercraft-website/public_html
+     You should see: .htaccess, index.php, install.php, favicon.svg, assets
+  2. Click "Select All" (check .htaccess is selected too).
+  3. Click "Move", type:   /public_html   and click "Move Files".
+
+
+STEP 5: MOVE THE APP FOLDER (AS A WHOLE FOLDER)
+-----------------------------------------------
+  1. Go to /home/cybercraft/cybercraft-website
+  2. Right-click the folder "cybercraft_app" itself (do not open it)
+     > Move > type:   /   > Move Files.
+     It is now at /home/cybercraft/cybercraft_app, next to public_html.
+
+  If your host only lets you use public_html, move cybercraft_app INSIDE
+  public_html instead. Its own .htaccess blocks web access to it.
+
+
+STEP 6: SET PERMISSIONS
+-----------------------
+  1. In /home/cybercraft, right-click "cybercraft_app" > Change Permissions
+     > set 755 (Owner: Read Write Execute, Group: Read Execute,
+       World: Read Execute) > Change Permissions.
+  2. Open cybercraft_app, right-click "storage" > Change Permissions > 755.
+  Files can stay at 644.
+
+
+STEP 7: CLEAN UP
+----------------
+  In /home/cybercraft delete the folder "cybercraft-website" and the zip.
+  Keep database/cybercraft.sql on your computer for Step 9.
+
+
+STEP 8: SET PHP VERSION
+-----------------------
+  cPanel > MultiPHP Manager > tick www.cybercraft.biz > PHP 8.2 (or 8.3)
+  > Apply.
+  If you have "Select PHP Version": Extensions tab > tick pdo_mysql and
+  mbstring.
+
+
+STEP 9: CREATE THE DATABASE
+---------------------------
+  1. cPanel > MySQL(R) Databases > Create New Database: website
+  2. Add New User: website + a strong password (write it down).
+  3. Add User To Database > select both > tick ALL PRIVILEGES > Make Changes.
+  4. Optional: cPanel > phpMyAdmin > click the database > Import
+     > choose cybercraft.sql > Go.
+     (The installer creates the same tables and content if you skip this.)
+  Note the full names cPanel shows, e.g. cybercraft_website.
+
+
+STEP 10: RUN THE INSTALLER
+--------------------------
+  Open:   https://www.cybercraft.biz/install.php
+  Fill in:
+     Site address    https://www.cybercraft.biz
+     Host            localhost
+     Port            3306
+     Database name   (full name from Step 9, e.g. cybercraft_website)
+     Database user   (full name from Step 9)
+     Password        (from Step 9)
+     Admin name, email, password (10+ characters, twice)
+  Click "Install website". You are taken to the sign-in page.
+
+  The installer writes cybercraft_app/config.php (permissions 600) and
+  cybercraft_app/storage/installed.lock. To reinstall, delete both files.
+
+
+STEP 11: SIGN IN AND REPLACE THE PLACEHOLDERS
+---------------------------------------------
+  https://www.cybercraft.biz/admin
+
+  Do these first:
+  1. Settings (administrators only)
+       - Email addresses: check every team mailbox. Create these mailboxes
+         (or forwarders) in cPanel > Email Accounts first:
+         info@, sales@, msp@, support@, noc@, audit@, security@,
+         horizons@, partners@, careers@, accounts@, ceo@
+         and per country: pk@, uae@, ksa@, uk@, cz@, ca@
+       - Contact-form notifications: leave "Send each message to the
+         matching team mailbox" ticked to route enquiries automatically
+       - Phone and WhatsApp number
+       - Social links (LinkedIn, X, Facebook, Instagram, YouTube).
+         Empty links show as disabled "coming soon" icons.
+  2. Offices: add the address and phone for each country.
+  3. Clients: the 18 clients are SAMPLES (fictitious names). Edit each one
+     with a real client (only with their permission), untick "Sample",
+     or untick "Visible" to hide it. Logos: upload the image to
+     public_html/assets/img/clients/ and enter /assets/img/clients/name.svg
+  4. Case studies: replace the 4 samples the same way.
+  5. Page text > Legal: have the privacy policy and terms reviewed.
+  6. Users: add your team as Editors (content and messages) or
+     Administrators (also settings and users).
+
+  When every sample is replaced, Settings > untick "Mark sample clients
+  and case studies with a Sample badge".
+
+
+STEP 12: SSL (HTTPS)
+--------------------
+  cPanel > SSL/TLS Status > Run AutoSSL. When the padlock works, edit
+  public_html/.htaccess and remove the "#" from the two lines under
+  "Uncomment to force HTTPS".
+
+
+STEP 13: EMAIL DELIVERY (RECOMMENDED)
+-------------------------------------
+  The contact form sends notifications with PHP mail(). To keep them out
+  of spam: cPanel > Email Deliverability > fix SPF and DKIM for
+  cybercraft.biz. Every message is also saved in the dashboard under
+  Messages, so nothing is lost if an email is delayed.
+
+
+UPDATING THE WEBSITE LATER
+--------------------------
+  Option A: cPanel > Git(TM) Version Control > clone this repository >
+  "Deploy HEAD Commit". .cpanel.yml copies public/ into public_html and
+  app/ into ~/cybercraft_app. Your config.php and storage are never
+  overwritten.
+  Option B: upload a new zip and repeat Steps 4 and 5, but do NOT replace
+  cybercraft_app/config.php or cybercraft_app/storage.
+
+
+IF SOMETHING GOES WRONG
+-----------------------
+  Blank page      cybercraft_app is in the wrong place or not writable
+                  (Steps 5 and 6), or PHP is older than 8.1 (Step 8).
+  "Not Found"     index.php or .htaccess is not directly in public_html
+                  (Steps 1 and 4).
+  "Forbidden"     public_html/.htaccess was replaced by the app's
+                  .htaccess. Repeat Step 4 to restore the right one.
+  "Application folder not found"   Repeat Step 5.
+  Database error  Use the full database and user names with the cPanel
+                  prefix, and check ALL PRIVILEGES (Step 9).
+  No emails       Check Settings > Contact-form notifications and
+                  Step 13. Messages are still saved under Messages.
+  Error details   cybercraft_app/storage/php-error.log

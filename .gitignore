@@ -1,0 +1,5 @@
+/app/config.php
+/app/storage/*
+!/app/storage/.htaccess
+.DS_Store
+/build

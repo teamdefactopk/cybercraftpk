@@ -1,0 +1,415 @@
+-- CyberCraft website: tables and default content.
+-- Optional: import with phpMyAdmin before running /install.php. The installer keeps this content
+-- and only adds config.php and your administrator account.
+
+
+CREATE TABLE IF NOT EXISTS `activity` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `user_name` varchar(150) DEFAULT NULL,
+  `action` varchar(100) NOT NULL,
+  `details` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `created_idx` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `blocks` (
+  `k` varchar(100) NOT NULL,
+  `page` varchar(50) NOT NULL,
+  `label` varchar(150) NOT NULL,
+  `type` varchar(20) NOT NULL DEFAULT 'text',
+  `v` mediumtext DEFAULT NULL,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`k`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `blocks` VALUES ('about_body','About','Our story (Markdown)','markdown','CyberCraft started in 2007 with a simple idea: **help businesses work better with technology.** Our first work was bringing computers, networks and software into offices across Lahore.\n\nOver the years we built software, our own ERP platform CyberERP, and data centers and networks. Clients kept asking us to stay on and run what we had built, so we became a **managed services provider**, placing resident engineers inside client organizations and, often, running a client\'s entire IT function.\n\nRunning clients\' systems made one thing clear: every system must be secure, and clients must be able to prove it. That became our second pillar, **cyber security compliance and audit**.\n\nIn 2024 we incorporated as **CyberCraft Pvt. Ltd.**, expanded to five more countries and launched our third pillar, **new inventions and horizons**.',22);
+INSERT IGNORE INTO `blocks` VALUES ('about_intro','About','Introduction','textarea','We started by building systems. Clients asked us to run them, then to secure them. Now we invent what comes next.',21);
+INSERT IGNORE INTO `blocks` VALUES ('about_mission','About','Mission','textarea','To keep our clients\' technology running, secure and compliant through managed services and cyber security assurance, and to invent the solutions that open new horizons for them.',25);
+INSERT IGNORE INTO `blocks` VALUES ('about_partners','About','Partnerships text (Markdown)','markdown','CyberCraft delivers through its own teams and a network of **joint-venture (JV) partners** in Pakistan and abroad. These partnerships let us bid for and deliver large and government programs, bring in certified auditors, testers and engineers when needed, source equipment competitively and support clients locally in five countries.\n\nWe welcome partnerships with technology vendors, audit firms, system integrators, distributors and investors.',27);
+INSERT IGNORE INTO `blocks` VALUES ('about_timeline','About','Timeline (one per line: Year | text)','lines','2007 | Founded in Lahore as a sole proprietorship: computerization, networking and software\nGrowth years | CyberERP, data centers, networks, IP communications and surveillance\nGrowth years | Managed services and the resident-engineer model\nGrowth years | Cyber security audit and compliance practice; b2cloud.io launched\n2024 | Incorporated as CyberCraft Pvt. Ltd.: An Innovation Technology Company\n2024 onward | UAE, KSA, UK, Czech Republic and Canada; Horizons lab launched',23);
+INSERT IGNORE INTO `blocks` VALUES ('about_title','About','Page title','text','From Lahore, since 2007.',20);
+INSERT IGNORE INTO `blocks` VALUES ('about_values','About','Values (one per line: Value | meaning)','lines','Accountability | When we manage a system, we own its outcome\nIntegrity | Honest findings in every audit and honest advice in every proposal\nVigilance | Security and compliance are continuous work, not an annual event\nInnovation | We adapt, innovate and improvise, and invest in new inventions\nValue for money | Enterprise-grade service at a cost that makes sense\nContinuous learning | Threats, standards and technology change, and so do our skills',26);
+INSERT IGNORE INTO `blocks` VALUES ('about_vision','About','Vision','textarea','To be the trusted partner that runs, secures and reinvents technology for organizations, from Pakistan to the world.',24);
+INSERT IGNORE INTO `blocks` VALUES ('careers_body','Careers','Main text (Markdown)','markdown','## Why work with us\n- Real responsibility for live client systems\n- Security and audit work to international standards\n- Invention projects in the Horizons lab\n- International exposure across six countries\n- Certification support: ITIL, CEH, OSCP, CISA, ISO 27001 Lead Auditor and more\n\n## Career areas\nManaged services · Cyber security & audit · Horizons R&D · Infrastructure & networks · Cloud · Software & ERP · Sales & business development\n\n## How to apply\nSend your CV and the area you\'re interested in through the contact form (choose **Careers**) or email careers@cybercraft.biz.',40);
+INSERT IGNORE INTO `blocks` VALUES ('careers_intro','Careers','Introduction','textarea','Service desk and NOC engineers, auditors and penetration testers, SOC analysts, solar and automation engineers, developers and ERP consultants.',39);
+INSERT IGNORE INTO `blocks` VALUES ('careers_title','Careers','Page title','text','Build a career that runs, secures and invents',38);
+INSERT IGNORE INTO `blocks` VALUES ('ceo_message','About','CEO message (Markdown)','markdown','When I started CyberCraft in 2007, our goal was simple: help businesses use technology to work better. Over the years we built software, ERP systems, data centers and networks, and our clients trusted us to keep running them. That trust is the heart of our first pillar, managed services.\n\nToday every organization faces the same two questions: is our technology secure, and can we prove it? Our second pillar, cyber security compliance and audit, exists to answer both, honestly and to international standards.\n\nOur third pillar, new inventions and horizons, is our commitment to the future. Clean energy, automation, embedded systems and AI will change how every business works, and we intend to help invent that change, not just watch it.\n\nBecoming CyberCraft Pvt. Ltd. in 2024, and expanding to the UAE, KSA, UK, Czech Republic and Canada, is a new chapter for us. What we stand for has not changed: accountability, honest advice and real value for every client.',19);
+INSERT IGNORE INTO `blocks` VALUES ('ceo_name','About','CEO name','text','Tauseef Ahmed',17);
+INSERT IGNORE INTO `blocks` VALUES ('ceo_quote','About','CEO pull-quote','textarea','Every organization now asks two questions: is our technology secure, and can we prove it? We exist to answer both, and to invent what comes next.',16);
+INSERT IGNORE INTO `blocks` VALUES ('ceo_role','About','CEO title','text','Founder & CEO, CyberCraft Pvt. Ltd.',18);
+INSERT IGNORE INTO `blocks` VALUES ('clients_intro','Clients','Introduction','textarea','Organizations in banking, government, healthcare, manufacturing, energy and hospitality rely on CyberCraft to run, secure and reinvent their technology.',37);
+INSERT IGNORE INTO `blocks` VALUES ('clients_title','Clients','Page title','text','Trusted across six countries',36);
+INSERT IGNORE INTO `blocks` VALUES ('contact_intro','Contact','Introduction','textarea','Tell us what you need and the right team will reply within one business day.',42);
+INSERT IGNORE INTO `blocks` VALUES ('contact_success','Contact','Message shown after sending','textarea','Thank you. Your message has reached the right team and we\'ll be in touch within one business day.',43);
+INSERT IGNORE INTO `blocks` VALUES ('contact_title','Contact','Page title','text','Let\'s talk',41);
+INSERT IGNORE INTO `blocks` VALUES ('home_clients_title','Home','Clients title','text','Trusted across six countries.',12);
+INSERT IGNORE INTO `blocks` VALUES ('home_cta_band_body','Home','Bottom call-to-action text','textarea','Tell us what you need. The right team, from managed services, compliance and audit or our Horizons lab, will reply within one business day.',15);
+INSERT IGNORE INTO `blocks` VALUES ('home_cta_band_title','Home','Bottom call-to-action title','text','Let\'s run, secure and build the future together',14);
+INSERT IGNORE INTO `blocks` VALUES ('home_cta_primary','Home','Primary button text','text','Talk to us',3);
+INSERT IGNORE INTO `blocks` VALUES ('home_cta_secondary','Home','Secondary button text','text','Explore what we do',4);
+INSERT IGNORE INTO `blocks` VALUES ('home_eyebrow','Home','Hero eyebrow','text','CyberCraft Pvt. Ltd. · An Innovation Technology Company',0);
+INSERT IGNORE INTO `blocks` VALUES ('home_industries_intro','Home','Industries introduction','textarea','Each pillar, applied to the realities of your sector: its regulators, its uptime demands and its opportunities.',9);
+INSERT IGNORE INTO `blocks` VALUES ('home_industries_title','Home','Industries title','text','Built for regulated, always-on industries.',8);
+INSERT IGNORE INTO `blocks` VALUES ('home_intro','Home','Hero introduction','textarea','We run your IT as your managed services provider, secure it and prove it through compliance and audit, and invent what comes next in our Horizons lab.',2);
+INSERT IGNORE INTO `blocks` VALUES ('home_meta','Home','Hero footer line (one item per line)','lines','Since 2007\nLahore · Dubai · Riyadh · London · Prague · Toronto\n24/7 NOC & SOC',5);
+INSERT IGNORE INTO `blocks` VALUES ('home_pillars_intro','Home','Pillars introduction','textarea','Seventeen years of building software, ERP, data centers and networks now power three things we do for every client.',7);
+INSERT IGNORE INTO `blocks` VALUES ('home_pillars_title','Home','Pillars title','text','Three pillars. One accountable partner.',6);
+INSERT IGNORE INTO `blocks` VALUES ('home_products_title','Home','Products title','text','Packaged, repeatable, ready to deploy.',11);
+INSERT IGNORE INTO `blocks` VALUES ('home_services_title','Home','Services title','text','From the service desk to the boardroom to the lab.',10);
+INSERT IGNORE INTO `blocks` VALUES ('home_title','Home','Hero title (one word per line)','lines','Run.\nSecure.\nInvent.',1);
+INSERT IGNORE INTO `blocks` VALUES ('home_why_title','Home','Why CyberCraft title','text','Ten reasons clients stay.',13);
+INSERT IGNORE INTO `blocks` VALUES ('industries_intro','Industries','Introduction','textarea','Each pillar, applied to the realities of your sector: its regulators, its uptime demands and its opportunities.',33);
+INSERT IGNORE INTO `blocks` VALUES ('industries_title','Industries','Page title','text','Built for regulated, always-on industries',32);
+INSERT IGNORE INTO `blocks` VALUES ('pillars_intro','Services','\"What we do\" introduction','textarea','We run your IT, secure it and prove it, and invent what comes next: three pillars under one accountable partner.',31);
+INSERT IGNORE INTO `blocks` VALUES ('pillars_title','Services','\"What we do\" page title','text','Run. Secure. Invent.',30);
+INSERT IGNORE INTO `blocks` VALUES ('privacy_body','Legal','Privacy policy (Markdown)','markdown','## Who we are\nCyberCraft Pvt. Ltd. (\"we\", \"us\") provides managed services, cyber security compliance and audit, and technology solutions. This policy explains how we handle personal data on this website.\n\n## What we collect\n- Details you send through our contact form: name, email, company, phone, country and your message.\n- Basic technical data needed to run the site securely, such as IP address and browser type.\n\n## How we use it\nWe use your details only to respond to your enquiry and to provide our services. We do not sell personal data.\n\n## Cookies\nThis website uses only essential cookies needed for security and forms. We do not use advertising cookies.\n\n## Your rights\nYou can ask us to access, correct or delete your data at any time by emailing info@cybercraft.biz.\n\n*[Placeholder policy. Please have it reviewed for each country where you operate before launch.]*',44);
+INSERT IGNORE INTO `blocks` VALUES ('products_intro','Products','Introduction','textarea','A lead product for each pillar, and two platforms built in-house.',35);
+INSERT IGNORE INTO `blocks` VALUES ('products_title','Products','Page title','text','Packaged, repeatable, ready to deploy',34);
+INSERT IGNORE INTO `blocks` VALUES ('services_intro','Services','Introduction','textarea','Three core pillars, backed by seventeen years of engineering. Take any service on its own or combine them under one agreement.',29);
+INSERT IGNORE INTO `blocks` VALUES ('services_title','Services','Page title','text','Everything we deliver',28);
+INSERT IGNORE INTO `blocks` VALUES ('terms_body','Legal','Terms of use (Markdown)','markdown','## Website terms\nThis website is provided by CyberCraft Pvt. Ltd. for general information about our services.\n\n## Services\nServices are provided under a separate client agreement, which takes precedence over anything on this website.\n\n## Contact\nQuestions about these terms: info@cybercraft.biz\n\n*[Placeholder terms. Please have them reviewed before launch.]*',45);
+CREATE TABLE IF NOT EXISTS `case_studies` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `client` varchar(150) DEFAULT NULL,
+  `pillar` varchar(100) DEFAULT NULL,
+  `country` varchar(8) DEFAULT NULL,
+  `challenge` text DEFAULT NULL,
+  `solution` text DEFAULT NULL,
+  `result` varchar(300) DEFAULT NULL,
+  `is_sample` tinyint(1) NOT NULL DEFAULT 0,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `case_studies` VALUES (1,'Complete IT outsourcing across two plants','Ravi Steel Works','Managed services','PK','High IT costs and an unreliable in-house setup across two plants.','CyberCraft Care Enterprise with resident engineers and a 24/7 NOC.','Predictable monthly IT cost, SLA-backed uptime',1,1,10);
+INSERT IGNORE INTO `case_studies` VALUES (2,'NCA compliance and 24/7 SOC','Najd Industrial Bank','Compliance & audit','SA','An NCA ECC deadline and no round-the-clock monitoring.','Secure Comply closed the gaps, then Secure SOC took over monitoring.','Inspection-ready controls, 24/7 SOC',1,1,20);
+INSERT IGNORE INTO `case_studies` VALUES (3,'ISO 27001 readiness in a year','Thamesbridge Finance','Compliance & audit','GB','A major client demanded ISO 27001 certification within a year.','Secure Audit, a policy framework, VAPT and internal audit.','Ready for the external certification audit',1,1,30);
+INSERT IGNORE INTO `case_studies` VALUES (4,'Solar and smart rooms','Desert Rose Hotels','Horizons','AE','Rising energy costs across three properties.','Horizons Energy solar with storage and Horizons Smart room controls.','Lower energy bills, better guest comfort',1,1,40);
+CREATE TABLE IF NOT EXISTS `clients` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `country` varchar(8) DEFAULT NULL,
+  `industry` varchar(100) DEFAULT NULL,
+  `logo_url` varchar(255) DEFAULT NULL,
+  `color` varchar(20) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `is_sample` tinyint(1) NOT NULL DEFAULT 0,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `clients` VALUES (1,'Ravi Steel Works','PK','Manufacturing','','#1F4FA8','',1,1,10);
+INSERT IGNORE INTO `clients` VALUES (2,'Margalla Health','PK','Healthcare','','#0E7490','',1,1,20);
+INSERT IGNORE INTO `clients` VALUES (3,'Indus Microfinance','PK','Banking & finance','','#7C3AED','',1,1,30);
+INSERT IGNORE INTO `clients` VALUES (4,'Shalimar Logistics','PK','Logistics','','#B45309','',1,1,40);
+INSERT IGNORE INTO `clients` VALUES (5,'Desert Rose Hotels','AE','Hospitality','','#BE123C','',1,1,50);
+INSERT IGNORE INTO `clients` VALUES (6,'Al Noor Trading','AE','Retail & FMCG','','#0F766E','',1,1,60);
+INSERT IGNORE INTO `clients` VALUES (7,'Palm Coast Energy','AE','Energy & utilities','','#CA8A04','',1,1,70);
+INSERT IGNORE INTO `clients` VALUES (8,'Najd Industrial Bank','SA','Banking & finance','','#15803D','',1,1,80);
+INSERT IGNORE INTO `clients` VALUES (9,'Hijaz Medical Center','SA','Healthcare','','#0369A1','',1,1,90);
+INSERT IGNORE INTO `clients` VALUES (10,'Qassim Agro','SA','Manufacturing','','#A16207','',1,1,100);
+INSERT IGNORE INTO `clients` VALUES (11,'Thamesbridge Finance','GB','Banking & finance','','#1E3A8A','',1,1,110);
+INSERT IGNORE INTO `clients` VALUES (12,'Pennine Engineering','GB','Manufacturing','','#9F1239','',1,1,120);
+INSERT IGNORE INTO `clients` VALUES (13,'Vltava Systems','CZ','Telecom & ISPs','','#0F766E','',1,1,130);
+INSERT IGNORE INTO `clients` VALUES (14,'Morava Glassworks','CZ','Manufacturing','','#6D28D9','',1,1,140);
+INSERT IGNORE INTO `clients` VALUES (15,'Maple North Logistics','CA','Logistics','','#B91C1C','',1,1,150);
+INSERT IGNORE INTO `clients` VALUES (16,'Laurentian Clinics','CA','Healthcare','','#0E7490','',1,1,160);
+INSERT IGNORE INTO `clients` VALUES (17,'Indus Cloud Telecom','PK','Telecom & ISPs','','#2563EB','',1,1,170);
+INSERT IGNORE INTO `clients` VALUES (18,'Gulf Crest Insurance','AE','Banking & finance','','#0E9AA7','',1,1,180);
+CREATE TABLE IF NOT EXISTS `commitments` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(150) NOT NULL,
+  `body` text DEFAULT NULL,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `commitments` VALUES (1,'We run it','Resident engineers and complete outsourcing.',10);
+INSERT IGNORE INTO `commitments` VALUES (2,'We prove it','Audits to international and regional standards.',20);
+INSERT IGNORE INTO `commitments` VALUES (3,'We invent','A dedicated lab for energy, automation and AI.',30);
+INSERT IGNORE INTO `commitments` VALUES (4,'One partner','Run, secure and innovate under one agreement.',40);
+INSERT IGNORE INTO `commitments` VALUES (5,'Lower cost','A Lahore delivery center and the resident model.',50);
+INSERT IGNORE INTO `commitments` VALUES (6,'Six countries','Local contact, global standards.',60);
+INSERT IGNORE INTO `commitments` VALUES (7,'Engineering depth','Our own ERP, software and network expertise.',70);
+INSERT IGNORE INTO `commitments` VALUES (8,'Scalable','Own teams plus a JV partner network.',80);
+INSERT IGNORE INTO `commitments` VALUES (9,'Honest audits','Independent teams, risk-rated findings.',90);
+INSERT IGNORE INTO `commitments` VALUES (10,'Personal attention','Leadership on every key account.',100);
+CREATE TABLE IF NOT EXISTS `faqs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `question` varchar(255) NOT NULL,
+  `answer` text DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `faqs` VALUES (1,'What does CyberCraft do?','Three things: we run your IT as a managed services provider, we secure it and prove it through cyber security compliance and audit, and we invent what comes next in our Horizons lab (clean energy, automation, IoT and AI).',1,10);
+INSERT IGNORE INTO `faqs` VALUES (2,'Can you audit systems you also manage for us?','Yes. When we both manage and audit a client\'s systems, the audit is performed by a separate team, and you can request third-party validation.',1,20);
+INSERT IGNORE INTO `faqs` VALUES (3,'Which standards can you prepare us for?','International standards such as ISO 27001, PCI DSS and SOC 2, and regional frameworks including SBP (Pakistan), NCA and SAMA (Saudi Arabia), UAE IA and DESC (UAE), Cyber Essentials (UK), GDPR and NIS2 (EU) and PIPEDA (Canada).',1,30);
+INSERT IGNORE INTO `faqs` VALUES (4,'What are resident engineers?','Qualified CyberCraft engineers placed full-time at your site. They work inside your team every day and are backed by our service desk, NOC and specialists.',1,40);
+INSERT IGNORE INTO `faqs` VALUES (5,'Do you work outside Pakistan?','Yes. We have a presence in the UAE, Saudi Arabia, the United Kingdom, the Czech Republic and Canada, backed by our 24/7 operations center in Lahore.',1,50);
+INSERT IGNORE INTO `faqs` VALUES (6,'How do we start?','Send us a message through the contact form or email info@cybercraft.biz. We begin with a short discovery call and a proposal.',1,60);
+CREATE TABLE IF NOT EXISTS `industries` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(120) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `icon` varchar(40) DEFAULT NULL,
+  `summary` varchar(300) DEFAULT NULL,
+  `intro` text DEFAULT NULL,
+  `msp` text DEFAULT NULL,
+  `audit` text DEFAULT NULL,
+  `horizons` text DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `industries` VALUES (1,'banking-finance','Banking & finance','bank','SBP and SAMA frameworks, PCI DSS, branch IT and 24/7 SOC.','','Branch IT, NOC and resident engineers','SBP / SAMA frameworks, PCI DSS, ISO 27001, VAPT','AI fraud detection and document automation',1,10);
+INSERT IGNORE INTO `industries` VALUES (2,'government','Government','gov','IT outsourcing, data center operations, national standards and smart city.','','IT outsourcing and data center operations','National standards, audits and awareness','Smart city and e-governance',1,20);
+INSERT IGNORE INTO `industries` VALUES (3,'telecom-isps','Telecom & ISPs','tower','Network operations, NOC, PTA requirements and tower solar power.','','Network operations and NOC','PTA requirements and VAPT','Tower solar power and IoT',1,30);
+INSERT IGNORE INTO `industries` VALUES (4,'healthcare','Healthcare','health','Hospital IT, HIPAA and ADHICS compliance, remote patient monitoring.','','Hospital IT management','HIPAA, ADHICS and data protection','Remote patient monitoring',1,40);
+INSERT IGNORE INTO `industries` VALUES (5,'manufacturing','Manufacturing','factory','Plant IT and OT support, OT security, automation and machine vision.','','Plant IT and OT support','OT security and ISO 27001','Industrial automation and machine vision',1,50);
+INSERT IGNORE INTO `industries` VALUES (6,'energy-utilities','Energy & utilities','bolt','Remote sites, satellite links, SCADA security, solar and smart metering.','','Remote site IT and satellite links','OT and SCADA security','Solar, SCADA and smart metering',1,60);
+INSERT IGNORE INTO `industries` VALUES (7,'retail-fmcg','Retail & FMCG','bag','Store and warehouse IT, PCI DSS, analytics and energy savings.','','Store and warehouse IT','PCI DSS and VAPT','Energy savings and analytics',1,70);
+INSERT IGNORE INTO `industries` VALUES (8,'education','Education','cap','Campus IT management, data protection and smart campus.','','Campus IT management','Data protection and awareness','Smart campus',1,80);
+INSERT IGNORE INTO `industries` VALUES (9,'real-estate','Real estate','building','Site connectivity, surveillance, access audits and smart buildings.','','Site connectivity and surveillance','Access-control audits','Smart buildings',1,90);
+INSERT IGNORE INTO `industries` VALUES (10,'logistics','Logistics','truck','Fleet and depot IT, data protection and fleet IoT.','','Fleet and depot IT','Data protection','Fleet IoT',1,100);
+INSERT IGNORE INTO `industries` VALUES (11,'hospitality','Hospitality','hotel','Hotel IT, guest Wi-Fi, PCI DSS and smart rooms.','','Hotel IT and guest Wi-Fi','PCI DSS','Smart rooms',1,110);
+INSERT IGNORE INTO `industries` VALUES (12,'ngos-development','NGOs & development','heart','Low-cost IT management, donor data protection, solar for communities.','','Low-cost IT management','Donor data protection','Solar for communities',1,120);
+CREATE TABLE IF NOT EXISTS `levels` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `audience` text DEFAULT NULL,
+  `items` text DEFAULT NULL,
+  `price_from` tinyint(1) NOT NULL DEFAULT 1,
+  `price_amount` varchar(50) DEFAULT NULL,
+  `price_unit` varchar(80) DEFAULT NULL,
+  `featured` tinyint(1) NOT NULL DEFAULT 0,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `levels` VALUES (1,'Care Essential','For small businesses that need reliable remote support.','Remote service desk\nMonitoring and patching\nBackup checks\nMonthly report',1,'','',0,10);
+INSERT IGNORE INTO `levels` VALUES (2,'Care Professional','For growing businesses that need people on site sometimes.','Everything in Essential\nScheduled onsite visits\nAMC for hardware and network\nAsset and license management',1,'','',0,20);
+INSERT IGNORE INTO `levels` VALUES (3,'Care Enterprise','For large organizations that want to outsource IT fully.','Complete IT outsourcing\n24/7 NOC\nDedicated service manager\nCustom SLAs and reporting',1,'','',1,30);
+INSERT IGNORE INTO `levels` VALUES (4,'Care Resident','For any size of organization that needs engineers on site full-time.','Dedicated resident engineers\nBackfill during absence\nRemote specialist escalation\nCyberCraft tools and processes',1,'','',0,40);
+CREATE TABLE IF NOT EXISTS `login_attempts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ip` varchar(45) NOT NULL,
+  `email` varchar(190) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ip_idx` (`ip`,`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `email` varchar(190) NOT NULL,
+  `company` varchar(190) DEFAULT NULL,
+  `phone` varchar(60) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `service` varchar(150) DEFAULT NULL,
+  `route_to` varchar(190) DEFAULT NULL,
+  `body` text NOT NULL,
+  `ip` varchar(45) DEFAULT NULL,
+  `user_agent` varchar(255) DEFAULT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'new',
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `status_idx` (`status`),
+  KEY `created_idx` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `offices` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country` varchar(100) NOT NULL,
+  `code` varchar(8) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `region` varchar(150) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `phone` varchar(60) DEFAULT NULL,
+  `email` varchar(190) DEFAULT NULL,
+  `is_hq` tinyint(1) NOT NULL DEFAULT 0,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `offices` VALUES (1,'Pakistan','PK','Lahore','Headquarters & delivery center','Managed services, 24/7 NOC and SOC, audit team and the Horizons lab.','','','pk@cybercraft.biz',1,10);
+INSERT IGNORE INTO `offices` VALUES (2,'United Arab Emirates','AE','Dubai','Middle East','Managed services, UAE IA and DESC compliance, smart solutions.','','','uae@cybercraft.biz',0,20);
+INSERT IGNORE INTO `offices` VALUES (3,'Saudi Arabia','SA','Riyadh','Middle East','Managed services, NCA and SAMA compliance, energy.','','','ksa@cybercraft.biz',0,30);
+INSERT IGNORE INTO `offices` VALUES (4,'United Kingdom','GB','London','Europe','Managed services, Cyber Essentials, ISO 27001 and UK GDPR.','','','uk@cybercraft.biz',0,40);
+INSERT IGNORE INTO `offices` VALUES (5,'Czech Republic','CZ','Prague','Central Europe','Managed services, GDPR and NIS2 readiness, automation.','','','cz@cybercraft.biz',0,50);
+INSERT IGNORE INTO `offices` VALUES (6,'Canada','CA','Toronto','North America','Managed services, PIPEDA and SOC 2 readiness.','','','ca@cybercraft.biz',0,60);
+CREATE TABLE IF NOT EXISTS `practices` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(100) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `short_name` varchar(60) DEFAULT NULL,
+  `promise` varchar(200) DEFAULT NULL,
+  `motto` varchar(150) DEFAULT NULL,
+  `summary` varchar(255) DEFAULT NULL,
+  `intro` text DEFAULT NULL,
+  `lead_product` varchar(150) DEFAULT NULL,
+  `accent` varchar(20) DEFAULT NULL,
+  `is_core` tinyint(1) NOT NULL DEFAULT 1,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `practices` VALUES (1,'managed-services','Managed Services Provider','Managed Services','We run your IT, so your team can run your business.','','Complete IT outsourcing, resident engineers, service desk and 24/7 NOC.','CyberCraft takes responsibility for your technology operations under agreed SLAs, with ITIL processes, monthly service reviews and security built into every managed environment.','CyberCraft Care','msp',1,10);
+INSERT IGNORE INTO `practices` VALUES (2,'compliance-audit','Cyber Security Compliance & Audit','Compliance & Audit','We secure it, and help you prove it.','','Security audits, VAPT, compliance readiness, GRC and managed SOC.','Independent, honest assessment against the standards your regulators, customers and board expect, followed by hands-on help to close the gaps. When we also manage your systems, a separate team performs the audit.','CyberCraft Secure','audit',1,20);
+INSERT IGNORE INTO `practices` VALUES (3,'horizons','New Inventions & Horizons','Horizons','We invent what comes next.','Adapt · Innovate · Improvise','Clean energy, automation, embedded systems, IoT, AI and future technology.','Adapt proven global technology to local conditions. Innovate new products in our Lahore lab. Improvise on the ground with power outages, remote sites, tight budgets and harsh environments.','CyberCraft Horizons','horizons',1,30);
+INSERT IGNORE INTO `practices` VALUES (4,'supporting','Supporting Services','Supporting','The engineering behind the pillars.','','Software and ERP, infrastructure and telecom, cloud, digitization, procurement and contact center.','Built since 2007, these services support everything we manage, secure and invent, and are also available on their own.','CyberERP · b2cloud.io','support',0,40);
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(120) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `summary` varchar(300) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `items` text DEFAULT NULL,
+  `accent` varchar(20) DEFAULT NULL,
+  `external_url` varchar(255) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `products` VALUES (1,'cybercraft-care','CyberCraft Care','Managed services','Managed IT plans from remote service desk to complete outsourcing.','','Care Essential\nCare Professional\nCare Enterprise\nCare Resident','msp','',1,10);
+INSERT IGNORE INTO `products` VALUES (2,'cybercraft-secure','CyberCraft Secure','Compliance & audit','Audit, compliance readiness and 24/7 managed security.','','Secure Audit\nSecure Comply\nSecure SOC\nSecure Shield\nSecure Aware\nSecure vCISO','audit','',1,20);
+INSERT IGNORE INTO `products` VALUES (3,'cybercraft-horizons','CyberCraft Horizons','New inventions','Products from our invention lab: adapt, innovate, improvise.','','Horizons Energy\nHorizons Automate\nHorizons IoT\nHorizons Smart\nHorizons AI\nHorizons Labs','horizons','',1,30);
+INSERT IGNORE INTO `products` VALUES (4,'cybererp','CyberERP','Platform','Our own ERP, from finance and HR to POS, manufacturing and BI.','','Retail & distribution\nManufacturing\nEducation\nHealthcare\nReal estate\nFinance','sky','',1,40);
+INSERT IGNORE INTO `products` VALUES (5,'b2cloud','b2cloud.io','Platform','Hosting and cloud, from one website to hosted ERP and disaster recovery.','','Hosting and VPS\nDedicated servers\nBusiness email and domains\nBackup and DR\nColocation\nERP cloud','support','https://b2cloud.io',1,50);
+CREATE TABLE IF NOT EXISTS `services` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `practice_id` int(10) unsigned DEFAULT NULL,
+  `slug` varchar(120) NOT NULL,
+  `tag` varchar(80) DEFAULT NULL,
+  `name` varchar(150) NOT NULL,
+  `summary` varchar(300) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `do_items` text DEFAULT NULL,
+  `get_items` text DEFAULT NULL,
+  `ideal` text DEFAULT NULL,
+  `price_from` tinyint(1) NOT NULL DEFAULT 1,
+  `price_amount` varchar(50) DEFAULT NULL,
+  `price_unit` varchar(80) DEFAULT NULL,
+  `external_url` varchar(255) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `practice_idx` (`practice_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `services` VALUES (1,1,'it-outsourcing','Outsourcing','Complete IT Outsourcing','We run your entire IT function for a fixed monthly cost.','CyberCraft takes over your whole IT function: infrastructure, users, applications, vendors and security, under one agreement and one fixed monthly cost.','Discovery, documentation and stabilization in the first 30–90 days\nDay-to-day operations of servers, network, cloud and end-user devices\nVendor and ISP management\nMonthly service reviews and roadmaps','Predictable monthly cost\nSLA-backed response and uptime\nOne accountable partner\nNo hiring or training overhead','Organizations without, or outgrowing, an in-house IT team.',1,'','',NULL,1,10,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (2,1,'resident-engineers','People','Resident Engineers','Qualified engineers placed full-time at your site, backed by CyberCraft.','Dedicated engineers who work inside your organization every day, supported remotely by our service desk, NOC and specialists.','Full-time onsite engineers\nBackfill during leave and absence\nRemote escalation to specialists\nIT staff augmentation on demand','A known face on site\nCyberCraft processes and tools\nFlexible scale up and down','Head offices, plants, campuses and branches that need people on site.',1,'','',NULL,1,20,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (3,1,'service-desk-noc','Support','Service Desk & 24/7 NOC','L1–L3 support and round-the-clock monitoring.','A multi-channel service desk and a 24/7 network operations center that watches your servers, networks, applications and links.','L1, L2 and L3 support by phone, email, chat, WhatsApp and remote session\n24/7 monitoring and alerting\nIncident, request, problem and change management (ITIL)\nMonthly SLA reporting','Faster resolution\nIssues caught before users notice\nFull ticket history and reports','Any organization that depends on IT being available.',1,'','',NULL,1,30,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (4,1,'managed-infrastructure-cloud','Infrastructure','Managed Infrastructure & Cloud','Servers, networks, backups and cloud, run and patched for you.','We operate your servers, storage, virtualization, networks, firewalls and cloud, on b2cloud.io, AWS, Azure, Google Cloud and Microsoft 365.','Servers, storage, virtualization, backups and patching\nLAN/WAN, Wi-Fi, SD-WAN and firewall management\nCloud and Microsoft 365 administration\nData center operations','Hardened, documented environments\nBackups that are tested\nCapacity and cost reviews','Organizations running on-premises, cloud or hybrid infrastructure.',1,'','',NULL,1,40,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (5,1,'managed-workplace','Workplace','Managed Workplace','Communications, surveillance and devices, managed as a service.','IP telephony, video conferencing, contact center platforms, IP CCTV, access control, laptops, desktops and printers, all managed by CyberCraft.','IP PBX, VoIP and video conferencing\nIP CCTV, access control and central monitoring\nLaptops, desktops, printers and device lifecycle\nAMC, asset, license and vendor management','One team for every device\nPredictable support costs\nUp-to-date asset records','Offices, branches, hotels and campuses.',1,'','',NULL,1,50,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (6,1,'virtual-cio','Advisory','Virtual CIO','IT strategy, budgets and roadmaps for growing companies.','Senior IT leadership on a part-time basis: strategy, budgets, vendor selection and board reporting.','IT strategy and roadmaps\nBudgeting and vendor selection\nProject and risk oversight\nBoard and management reporting','Senior expertise without a full-time hire\nClear technology priorities','Growing companies without a CIO.',1,'','',NULL,1,60,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (7,2,'security-audit-vapt','Audit','Security Audit & VAPT','Independent audits and penetration testing with a risk-rated report.','Information security audits, gap assessments and vulnerability assessment and penetration testing for networks, web, mobile, APIs, cloud and wireless.','Security audits and gap assessments\nVAPT: network, web, mobile, API, cloud, wireless\nRed teaming and phishing simulation\nHardening, code and IT general controls reviews\nThird-party and OT/SCADA assessments','Risk-rated findings with clear remediation steps\nRe-test to confirm closure\nIndependent audit team','Banks, insurers, telecoms, government and any regulated organization.',1,'','',NULL,1,70,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (8,2,'compliance-readiness','Compliance','Compliance Readiness','Get ready for ISO 27001, PCI DSS, SOC 2 and regional regulators.','Gap assessment, remediation roadmap, policies, evidence collection, internal audit and support during certification and regulatory inspection.','Gap assessment and remediation roadmap\nPolicies, standards and procedures\nEvidence collection and internal audit\nSupport during certification and regulator audits\nContinuous compliance dashboards','Audit-ready, regulator-ready controls\nA clear path to certification','Organizations facing a certification, regulator or customer deadline.',1,'','',NULL,1,80,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (9,2,'grc-privacy','Governance','Governance, Risk & Privacy','Risk registers, business continuity, privacy programs and a virtual CISO.','The governance that keeps security working: risk management, business continuity, privacy and leadership.','Risk registers and treatment plans\nBusiness continuity and DR planning and testing\nPrivacy programs, DPIAs and DPO support\nSecurity awareness training\nVirtual CISO and board reporting','Security leadership on demand\nBoard-ready reporting','Boards and executives accountable for cyber risk.',1,'','',NULL,1,90,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (10,2,'managed-soc','SOC','Managed SOC & Security','24/7 monitoring, detection, response and protection.','A 24/7 security operations center with SIEM monitoring, incident response, and managed protection for endpoints, email, firewalls and identity.','24/7 SOC and SIEM monitoring\nIncident response and digital forensics\nManaged EDR, email, firewall, MFA, PAM and DLP\nVulnerability management, DDoS protection and WAF','Threats detected and contained around the clock\nMonthly security reports','Organizations without a 24/7 security team.',1,'','',NULL,1,100,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (11,3,'solar-clean-energy','Energy','Solar & Clean Energy','Solar, storage and EV charging for homes, businesses and telecom sites.','Residential, commercial and industrial solar; hybrid and solar–wind systems for telecom sites; battery storage, net metering and EV charging, with monitoring and O&M.','On-grid, off-grid and hybrid solar\nSolar–wind hybrids for telecom sites\nBattery energy storage and net metering\nEV charging\nEnergy monitoring software and O&M','Lower energy bills\nBackup through outages\nMonitored performance','Homes, factories, hotels, telecom towers and remote sites.',1,'','',NULL,1,110,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (12,3,'industrial-automation','Automation','Industrial Automation','PLC, SCADA, MES, machine vision and Industry 4.0.','Automation and control for plants and utilities, from PLC and SCADA to MES, machine vision and predictive maintenance.','PLC, SCADA, HMI and DCS\nMES and Industry 4.0\nMachine vision and quality inspection\nControl panels, drives and instrumentation\nPredictive maintenance and digital twins','Higher throughput and quality\nReal-time production visibility','Manufacturing, food & beverage, water and energy.',1,'','',NULL,1,120,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (13,3,'embedded-iot','IoT','Embedded Systems & IoT','Custom hardware, firmware, sensors and remote monitoring.','We design and build custom electronics and connected devices, and the platforms that monitor them.','Custom hardware and PCB design\nFirmware development\nSensors, gateways and telemetry\nRemote monitoring dashboards and M2M connectivity','Devices built for your problem\nData from the field in real time','Utilities, agriculture, logistics and product companies.',1,'','',NULL,1,130,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (14,3,'smart-living-cities','Smart','Smart Living & Smart Cities','Smart homes, buildings, metering and intelligent transport.','Home automation, smart buildings and BMS, smart metering, street lighting, intelligent transport and city surveillance.','Home automation\nSmart buildings and BMS\nSmart metering and street lighting\nIntelligent transport and city surveillance','Lower running costs\nSafer, more comfortable spaces','Developers, hotels, municipalities and campuses.',1,'','',NULL,1,140,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (15,3,'artificial-intelligence','AI','Artificial Intelligence','AI assistants, document AI, analytics and computer vision.','Practical AI that saves time and money: assistants and chatbots, intelligent document processing, predictive analytics, computer vision and agentic automation.','AI assistants and chatbots\nIntelligent document processing\nPredictive analytics and computer vision\nAgentic AI automation','Less manual work\nFaster decisions from your data','Banks, insurers, retailers, hospitals and government.',1,'','',NULL,1,150,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (16,3,'robotics-health-tech','R&D','Robotics, Health-tech & Beyond','Drones, remote patient monitoring and emerging technology R&D.','Research and pilots in robotics, drones, health-tech, biotech, blockchain and AR/VR.','Inspection, survey and agriculture drones\nRemote patient monitoring and wearables\nBiotech and life-science technology\nBlockchain and AR/VR','Pilots built with you\nA path from prototype to product','Organizations exploring new technology.',1,'','',NULL,1,160,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (17,4,'software-erp','Software','Software & ERP','Web, mobile and desktop apps; CyberERP, Dynamics 365, SAP and Oracle.','Custom software and our own ERP platform CyberERP, plus implementation, consultancy and support for Microsoft Dynamics 365, SAP and Oracle.','Web, mobile and desktop applications\nAPIs, integration, UI/UX, QA and DevOps\nCyberERP implementation\nDynamics 365, SAP and Oracle implementation and support\nIndustry solutions for hospitals, schools, distribution and lending','Software that fits how you work\nOne partner from build to support','Organizations that need custom systems or ERP.',1,'','',NULL,1,170,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (18,4,'infrastructure-telecom','Infrastructure','Infrastructure & Telecom','Data centers, fiber, networks, satellite links, IP telephony and surveillance.','Design and build of data centers, networks and communications.','Data center design and build\nLAN/WAN, fiber and structured cabling, Wi-Fi, SD-WAN\nWireless and satellite links, tower and fiber rollout\nIP PBX, unified communications, IP surveillance and access control','Standards-based design\nDocumented handover\nOption to have us run it','New offices, plants, campuses and telecom operators.',1,'','',NULL,1,180,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (19,4,'cloud-digitization','Cloud','Cloud & Digitization','b2cloud.io hosting, cloud migration, scanning and document management.','Hosting and cloud through our brand b2cloud.io, migrations to AWS, Azure and Google Cloud, and digitization of paper records.','Hosting, VPS, email and ERP hosting on b2cloud.io\nCloud migration and management\nDocument scanning and digital archives\nDocument management systems and workflows','Local and global cloud options\nSearchable, secure records','Organizations moving to the cloud or going paperless.',1,'','',NULL,1,190,'2026-10-16 11:40:57');
+INSERT IGNORE INTO `services` VALUES (20,4,'procurement-contact-center','Services','Procurement & Contact Center','Licensing, hardware supply, and an omnichannel contact center with AI agents.','Software licensing and IT hardware supply, plus inbound and outbound contact center services with omnichannel support and AI voice agents.','Software licensing and IT hardware supply\nInbound and outbound contact center\nOmnichannel: voice, chat, email, social, WhatsApp\nAI voice agents alongside human agents','One supplier for licenses and hardware\nCustomer support in English, Urdu, Arabic and more','Growing companies and customer-facing businesses.',1,'','',NULL,1,200,'2026-10-16 11:40:57');
+CREATE TABLE IF NOT EXISTS `settings` (
+  `k` varchar(100) NOT NULL,
+  `v` text DEFAULT NULL,
+  PRIMARY KEY (`k`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `settings` VALUES ('animations','1');
+INSERT IGNORE INTO `settings` VALUES ('announcement','');
+INSERT IGNORE INTO `settings` VALUES ('b2cloud_url','https://b2cloud.io');
+INSERT IGNORE INTO `settings` VALUES ('client_login_url','');
+INSERT IGNORE INTO `settings` VALUES ('email_accounts','accounts@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_audit','audit@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_careers','careers@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_ceo','ceo@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_horizons','horizons@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_info','info@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_msp','msp@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_noc','noc@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_partners','partners@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_sales','sales@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_security','security@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('email_support','support@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('footer_text','Managed services, cyber security compliance and audit, and new inventions, from Pakistan to the world.');
+INSERT IGNORE INTO `settings` VALUES ('legal_name','CyberCraft Pvt. Ltd.');
+INSERT IGNORE INTO `settings` VALUES ('meta_description','CyberCraft Pvt. Ltd. is a managed services provider and cyber security compliance and audit firm with its own invention lab. Founded in Lahore in 2007, with a presence in Pakistan, the UAE, Saudi Arabia, the UK, the Czech Republic and Canada.');
+INSERT IGNORE INTO `settings` VALUES ('notify_email','info@cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('notify_enabled','1');
+INSERT IGNORE INTO `settings` VALUES ('notify_route','1');
+INSERT IGNORE INTO `settings` VALUES ('phone','');
+INSERT IGNORE INTO `settings` VALUES ('show_sample_badges','1');
+INSERT IGNORE INTO `settings` VALUES ('site_name','CyberCraft');
+INSERT IGNORE INTO `settings` VALUES ('site_url','https://www.cybercraft.biz');
+INSERT IGNORE INTO `settings` VALUES ('social_facebook','');
+INSERT IGNORE INTO `settings` VALUES ('social_instagram','');
+INSERT IGNORE INTO `settings` VALUES ('social_linkedin','');
+INSERT IGNORE INTO `settings` VALUES ('social_x','');
+INSERT IGNORE INTO `settings` VALUES ('social_youtube','');
+INSERT IGNORE INTO `settings` VALUES ('stats','17+ | Years in technology\n6 | Countries\n24/7 | Operations & security\n20+ | Standards we audit to\n3 | Core pillars');
+INSERT IGNORE INTO `settings` VALUES ('tagline','An Innovation Technology Company');
+INSERT IGNORE INTO `settings` VALUES ('whatsapp','');
+CREATE TABLE IF NOT EXISTS `standards` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `region` varchar(100) NOT NULL,
+  `items` text DEFAULT NULL,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `standards` VALUES (1,'International','ISO 27001\nISO 27701\nISO 22301\nISO 20000\nPCI DSS\nSOC 2\nNIST CSF\nCIS Controls\nHIPAA',10);
+INSERT IGNORE INTO `standards` VALUES (2,'Pakistan','SBP frameworks\nSECP\nPTA\nPECA 2016',20);
+INSERT IGNORE INTO `standards` VALUES (3,'Saudi Arabia','NCA ECC\nSAMA CSF\nKSA PDPL',30);
+INSERT IGNORE INTO `standards` VALUES (4,'United Arab Emirates','UAE IA\nDESC ISR\nADHICS\nUAE PDPL',40);
+INSERT IGNORE INTO `standards` VALUES (5,'United Kingdom','Cyber Essentials\nUK GDPR',50);
+INSERT IGNORE INTO `standards` VALUES (6,'European Union','GDPR\nNIS2',60);
+INSERT IGNORE INTO `standards` VALUES (7,'Canada','PIPEDA',70);
+CREATE TABLE IF NOT EXISTS `steps` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(150) NOT NULL,
+  `body` text DEFAULT NULL,
+  `sort` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT IGNORE INTO `steps` VALUES (1,'Run','Take over and stabilize your IT under a managed services agreement.',10);
+INSERT IGNORE INTO `steps` VALUES (2,'Secure','Audit, harden and bring the environment to compliance, then monitor it continuously.',20);
+INSERT IGNORE INTO `steps` VALUES (3,'Invent','Introduce new technology (energy, automation, AI) that lowers cost or creates new capability.',30);
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `email` varchar(190) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `role` varchar(20) NOT NULL DEFAULT 'editor',
+  `created_at` datetime NOT NULL,
+  `last_login_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
