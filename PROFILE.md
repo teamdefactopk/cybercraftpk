@@ -39,7 +39,7 @@
 
 1. **We run their IT.** As a **Managed Services Provider**, CyberCraft takes responsibility for a client's technology operations: from a help desk and resident engineers to complete IT outsourcing at a fixed, competitive cost.
 2. **We secure it and prove it.** Through **Cyber Security Compliance & Audit**, we assess, certify-ready and continuously monitor our clients against the standards their regulators, customers and boards expect.
-3. **We invent what comes next.** Through **New Inventions & Horizons**, we develop and deploy new technology in clean energy, automation, embedded systems, IoT and AI.
+3. **We invent what comes next.** Through **New Inventions & Horizons**, we adapt, innovate and improvise to develop and deploy new technology in clean energy, automation, embedded systems, IoT and AI.
 
 Founded in **2007** in **Lahore, Pakistan**, CyberCraft spent its first 17 years building software, ERP systems, data centers and networks for organizations across Pakistan. That engineering depth is the foundation of everything we manage, secure and invent today. In **2024** the company was incorporated as **CyberCraft Pvt. Ltd.** and now operates in **Pakistan, the UAE, Saudi Arabia, the United Kingdom, the Czech Republic and Canada**.
 
@@ -51,7 +51,7 @@ CyberCraft delivers through its own teams and a network of **joint-venture (JV) 
 
 | | **1. Managed Services Provider** | **2. Cyber Security Compliance & Audit** | **3. New Inventions & Horizons** |
 |---|---|---|---|
-| **Promise** | *We run your IT* | *We secure it and prove it* | *We invent what comes next* |
+| **Promise** | *We run your IT* | *We secure it and prove it* | *We invent what comes next: Adapt · Innovate · Improvise* |
 | **What it covers** | Complete IT outsourcing, resident engineers, service desk, 24/7 NOC, infrastructure, cloud and communications, run as a service | Security audits, VAPT, compliance readiness for international and regional standards, GRC, managed SOC, virtual CISO | R&D and deployment of clean energy, automation, embedded systems, IoT, AI, robotics and health-tech |
 | **Client outcome** | Predictable cost, SLA-backed uptime, no hiring overhead | Audit-ready, regulator-ready, measurably safer | New capabilities, lower energy cost, competitive edge |
 | **Lead product family** | **CyberCraft Care** | **CyberCraft Secure** | **CyberCraft Horizons** |
@@ -117,7 +117,7 @@ In **2024** we incorporated as **CyberCraft Pvt. Ltd.**, expanded to five more c
 | **Accountability** | When we manage a system, we own its outcome |
 | **Integrity** | Honest findings in every audit and honest advice in every proposal |
 | **Vigilance** | Security and compliance are continuous work, not an annual event |
-| **Innovation** | We invest in new inventions, not just existing products |
+| **Innovation** | We adapt, innovate and improvise, and invest in new inventions, not just existing products |
 | **Value for Money** | Enterprise-grade service at a cost that makes sense |
 | **Continuous Learning** | Threats, standards and technology change, and so do our skills |
 
@@ -268,7 +268,13 @@ We prepare clients for certification and regulatory inspection: gap assessment, 
 
 ## 10. Pillar 3 — New Inventions & Horizons
 
-> ***We invent what comes next.*** The CyberCraft Horizons lab turns emerging technology into practical products and deployments for our clients.
+> ***We invent what comes next.*** **Adapt · Innovate · Improvise.** The CyberCraft Horizons lab turns emerging technology into practical products and deployments that work in the real world.
+
+| | |
+|---|---|
+| **Adapt** | Take proven global technology and fit it to local conditions, budgets, regulations and climates |
+| **Innovate** | Design new products and solutions in our lab, from embedded devices to AI and energy systems |
+| **Improvise** | Solve problems on the ground with what is available: power outages, remote sites, tight budgets and harsh environments |
 
 ### 10.1 Horizon Areas
 
