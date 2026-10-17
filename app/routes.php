@@ -63,8 +63,17 @@ function industries(): array
     return Db::all('SELECT * FROM industries WHERE is_active = 1 ORDER BY sort, id');
 }
 
+/** Products are hidden until "Show the Products section" is ticked in Settings. */
+function show_products(): bool
+{
+    return setting('show_products', '0') === '1';
+}
+
 function products(): array
 {
+    if (!show_products()) {
+        return [];
+    }
     return Db::all('SELECT * FROM products WHERE is_active = 1 ORDER BY sort, id');
 }
 
@@ -108,8 +117,7 @@ function contact_topics(): array
             'msp' => 'email_msp', 'audit' => 'email_audit', 'horizons' => 'email_horizons', default => 'email_sales',
         };
     }
-    return $topics + [
-        'Products (CyberERP, b2cloud.io)' => 'email_sales',
+    return $topics + (show_products() ? ['Products (CyberERP, b2cloud.io)' => 'email_sales'] : []) + [
         'Partnership / JV' => 'email_partners',
         'Careers' => 'email_careers',
         'Something else' => 'email_info',
@@ -212,6 +220,9 @@ function site_dispatch(string $path): void
             render('site', 'site/industry', $common + ['title' => $ind['name'], 'description' => $ind['summary'], 'ind' => $ind, 'clients' => $clients, 'others' => industries()]);
 
         case $path === 'products':
+            if (!show_products()) {
+                redirect('/services');
+            }
             render('site', 'site/products', $common + ['title' => 'Products', 'description' => block('products_intro'), 'products' => products()]);
 
         case $path === 'clients':
@@ -321,7 +332,7 @@ function search_page(array $common): never
         foreach (Db::all('SELECT slug, name, summary FROM industries WHERE is_active = 1 AND (name LIKE ? OR summary LIKE ? OR msp LIKE ? OR audit LIKE ? OR horizons LIKE ?) ORDER BY sort', array_fill(0, 5, $like)) as $i) {
             $results[] = ['type' => 'Industry', 'title' => $i['name'], 'text' => $i['summary'], 'url' => url('industries/' . $i['slug'])];
         }
-        foreach (Db::all('SELECT slug, name, summary FROM products WHERE is_active = 1 AND (name LIKE ? OR summary LIKE ? OR items LIKE ?) ORDER BY sort', array_fill(0, 3, $like)) as $p) {
+        foreach (!show_products() ? [] : Db::all('SELECT slug, name, summary FROM products WHERE is_active = 1 AND (name LIKE ? OR summary LIKE ? OR items LIKE ?) ORDER BY sort', array_fill(0, 3, $like)) as $p) {
             $results[] = ['type' => 'Product', 'title' => $p['name'], 'text' => $p['summary'], 'url' => url('products#' . $p['slug'])];
         }
         foreach (Db::all('SELECT region, items FROM standards WHERE region LIKE ? OR items LIKE ? ORDER BY sort', [$like, $like]) as $st) {
@@ -347,6 +358,9 @@ function sitemap(): never
 {
     header('Content-Type: application/xml; charset=utf-8');
     $paths = ['', 'what-we-do', 'services', 'industries', 'products', 'clients', 'about', 'careers', 'faq', 'contact', 'privacy', 'terms'];
+    if (!show_products()) {
+        $paths = array_values(array_diff($paths, ['products']));
+    }
     foreach (Db::all('SELECT slug FROM practices') as $p) {
         $paths[] = 'what-we-do/' . $p['slug'];
     }

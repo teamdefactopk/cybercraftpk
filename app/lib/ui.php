@@ -14,7 +14,7 @@ function accent_var(?string $accent): string
 /** "Sample" badge, shown while placeholders are still on the site. */
 function sample_badge(array $row): string
 {
-    return !empty($row['is_sample']) && setting('show_sample_badges', '1') === '1' ? ' <span class="sample">Sample</span>' : '';
+    return !empty($row['is_sample']) && setting('show_sample_badges', '0') === '1' ? ' <span class="sample">Sample</span>' : '';
 }
 
 /** Client logo image, or a monogram built from the client's initials. */

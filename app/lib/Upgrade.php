@@ -8,7 +8,7 @@ declare(strict_types=1);
  */
 final class Upgrade
 {
-    private const VERSION = '5';
+    public const VERSION = '6';
 
     /** Service slugs from earlier versions that the 16 service areas replace. */
     private const OLD_SERVICES = [
@@ -138,6 +138,9 @@ final class Upgrade
                 Db::insert('slides', ['image' => $img, 'title' => $t, 'subtitle' => $sub, 'link' => $link, 'is_active' => 1, 'sort' => ($i + 1) * 10]);
             }
         }
+
+        // Version 6: no "Sample" labels on the public site (turn back on under Settings if wanted)
+        Db::exec("UPDATE settings SET v = '0' WHERE k = 'show_sample_badges'");
 
         Db::exec('INSERT INTO settings (k, v) VALUES (?, ?) ON DUPLICATE KEY UPDATE v = VALUES(v)', ['content_version', self::VERSION]);
     }

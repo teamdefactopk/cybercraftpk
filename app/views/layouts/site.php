@@ -73,7 +73,7 @@ $footInds = array_slice(industries(), 0, 6);
           <div class="mega-all"><span><?= e(setting('tagline')) ?> · <?= e(block('home_tagline', 'Run. Secure. Innovate.')) ?></span><a class="text-link" href="<?= e(url('services')) ?>">All services <?= icon('arrow', 'ico ico-xs') ?></a></div>
         </div>
       </div>
-      <a href="<?= e(url('products')) ?>"<?= $active('products') ?>>Products</a>
+      <?php if (show_products()): ?><a href="<?= e(url('products')) ?>"<?= $active('products') ?>>Products</a><?php endif ?>
       <a href="<?= e(url('clients')) ?>"<?= $active('clients') ?>>Clients</a>
       <a href="<?= e(url('about')) ?>"<?= $active('about') ?>>Company</a>
       <a href="<?= e(url('careers')) ?>"<?= $active('careers') ?>>Careers</a>
@@ -140,7 +140,7 @@ $footInds = array_slice(industries(), 0, 6);
     <div class="footer-col">
       <h3>Company</h3>
       <a href="<?= e(url('about')) ?>">About us</a>
-      <a href="<?= e(url('products')) ?>">Products</a>
+      <?php if (show_products()): ?><a href="<?= e(url('products')) ?>">Products</a><?php endif ?>
       <a href="<?= e(url('clients')) ?>">Clients</a>
       <a href="<?= e(url('careers')) ?>">Careers</a>
       <a href="<?= e(url('faq')) ?>">FAQ</a>

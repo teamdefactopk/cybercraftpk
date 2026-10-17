@@ -16,6 +16,7 @@ function settings_schema(): array
             ['stats', 'Numbers band', 'lines', 'One per line: number | label. Shown under the homepage hero.'],
             ['show_sample_badges', 'Mark sample clients and case studies with a "Sample" badge', 'checkbox', 'Keep on until all placeholders are replaced with real clients.'],
             ['animations', 'Enable animations', 'checkbox', 'Turn off to show the site without motion.'],
+            ['show_products', 'Show the Products section (CyberERP, b2cloud.io)', 'checkbox', 'Off: the Products page, menu link and homepage section are hidden.'],
         ],
         'Email addresses' => [
             ['email_info', 'General enquiries', 'email', ''],

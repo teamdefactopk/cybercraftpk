@@ -57,6 +57,7 @@ function run_installer(): never
                 Db::pdo()->exec($stmt);
             }
             Seed::run();
+            Upgrade::run(); // brings content from an earlier version (or an older SQL import) up to date
             Db::exec('INSERT INTO settings (k, v) VALUES (?, ?) ON DUPLICATE KEY UPDATE v = VALUES(v)', ['site_url', rtrim($old['site_url'], '/')]);
             if (!Db::value('SELECT id FROM users WHERE email = ?', [strtolower($old['admin_email'])])) {
                 Db::insert('users', [

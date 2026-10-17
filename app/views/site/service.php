@@ -1,4 +1,4 @@
-<?= view('partials/page-hero', ['crumbs' => ['What we do' => 'what-we-do', $svc['practice_name'] => 'what-we-do/' . $svc['practice_slug'], $svc['name'] => null], 'eyebrow' => $svc['practice_name'] . ($svc['tag'] ? ' · ' . $svc['tag'] : ''), 'heading' => $svc['name'], 'lead' => $svc['description'], 'accent' => $svc['practice_accent'], 'image' => $svc['image']]) ?>
+<?= view('partials/page-hero', ['crumbs' => ['What we do' => 'what-we-do', $svc['practice_name'] => 'what-we-do/' . $svc['practice_slug'], $svc['name'] => null], 'eyebrow' => $svc['practice_name'] . ($svc['tag'] ? ' · ' . $svc['tag'] : ''), 'heading' => $svc['name'], 'lead' => $svc['description'], 'accent' => $svc['practice_accent'], 'image' => $svc['image'] ?? '']) ?>
 <section class="section">
   <div class="wrap svc-detail">
     <div class="svc-detail-main">

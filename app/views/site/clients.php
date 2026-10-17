@@ -1,4 +1,4 @@
-<?php $showSample = setting('show_sample_badges', '1') === '1' && (array_filter($clients, fn($c) => $c['is_sample']) || array_filter($cases, fn($c) => $c['is_sample'])); ?>
+<?php $showSample = setting('show_sample_badges', '0') === '1' && (array_filter($clients, fn($c) => $c['is_sample']) || array_filter($cases, fn($c) => $c['is_sample'])); ?>
 <?= view('partials/page-hero', ['crumbs' => ['Clients' => null], 'eyebrow' => 'Clients', 'heading' => block('clients_title'), 'lead' => block('clients_intro')]) ?>
 <section class="section">
   <div class="wrap">

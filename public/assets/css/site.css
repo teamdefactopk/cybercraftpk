@@ -244,6 +244,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* CEO quote */
 .quote { background: var(--tint); padding-block: 72px; }
+.quote.on-white { background: var(--bg); }
+.section-tint + .quote.on-white { border-top: 0; }
 .quote .wrap { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; }
 .who { display: grid; justify-items: start; gap: 4px; }
 .who b { color: var(--ink); margin-top: 10px; }

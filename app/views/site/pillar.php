@@ -1,4 +1,4 @@
-<?= view('partials/page-hero', ['crumbs' => ['What we do' => 'what-we-do', $pillar['short_name'] ?: $pillar['name'] => null], 'eyebrow' => $pillar['is_core'] ? block('home_tagline', 'Run. Secure. Innovate.') : 'What we do', 'image' => $pillar['image'], 'heading' => $pillar['name'], 'promise' => $pillar['promise'], 'motto' => $pillar['motto'], 'lead' => $pillar['intro'], 'accent' => $pillar['accent'], 'cta' => ['Talk to our ' . ($pillar['short_name'] ?: 'service') . ' team', 'contact?service=' . rawurlencode($pillar['name'])]]) ?>
+<?= view('partials/page-hero', ['crumbs' => ['What we do' => 'what-we-do', $pillar['short_name'] ?: $pillar['name'] => null], 'eyebrow' => $pillar['is_core'] ? block('home_tagline', 'Run. Secure. Innovate.') : 'What we do', 'image' => $pillar['image'] ?? '', 'heading' => $pillar['name'], 'promise' => $pillar['promise'], 'motto' => $pillar['motto'], 'lead' => $pillar['intro'], 'accent' => $pillar['accent'], 'cta' => ['Talk to our ' . ($pillar['short_name'] ?: 'service') . ' team', 'contact?service=' . rawurlencode($pillar['name'])]]) ?>
 
 <?php if ($pillar['accent'] === 'horizons' && $pillar['motto']): ?>
 <section class="section section-tint">
@@ -18,7 +18,7 @@
     <div class="svc-rows">
       <?php foreach ($pillar['services'] as $s): ?>
       <article class="svc-row reveal">
-        <?php if (trim((string)$s['image']) !== ''): ?><img src="<?= e(image_url($s['image'])) ?>" alt="" loading="lazy"><?php endif ?>
+        <?php if (trim((string)($s['image'] ?? '')) !== ''): ?><img src="<?= e(image_url($s['image'])) ?>" alt="" loading="lazy"><?php endif ?>
         <div class="svc-row-main">
           <span class="svc-tag"><?= e($s['tag']) ?></span>
           <h3><a href="<?= e(url('services/' . $s['slug'])) ?>"><?= e($s['name']) ?></a></h3>

@@ -179,8 +179,10 @@ STEP 11: SIGN IN AND REPLACE THE PLACEHOLDERS
   7. Users: add your team as Editors (content and messages) or
      Administrators (also settings and users).
 
-  When every sample is replaced, Settings > untick "Mark sample clients
-  and case studies with a Sample badge".
+  The "Sample" badge is off by default. To show it while you replace the
+  placeholders, tick Settings > "Mark sample clients and case studies".
+  The Products section (CyberERP, b2cloud.io) is hidden for now. To show
+  it, tick Settings > "Show the Products section".
 
 
 STEP 12: SSL (HTTPS)
@@ -200,6 +202,9 @@ STEP 13: EMAIL DELIVERY (RECOMMENDED)
 
 UPDATING THE WEBSITE LATER
 --------------------------
+  If an earlier version is already installed, just upload the new files
+  (Steps 4 and 5, keeping config.php and storage) and open the site once.
+  Do not run install.php again and do not import an old cybercraft.sql.
   Your content is never lost in an update. The first time the updated site
   is opened, it adds any new tables and default content by itself, and only
   replaces text that you have not edited in the dashboard.

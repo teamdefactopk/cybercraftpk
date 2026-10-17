@@ -2,10 +2,10 @@
 $pillars = core_pillars();
 $stats = pairs(setting('stats'));
 $words = array_values(array_filter(array_map('trim', explode('.', block('home_tagline', 'Run. Secure. Innovate.')))));
-$showSample = setting('show_sample_badges', '1') === '1' && array_filter($clients, fn($c) => $c['is_sample']);
+$showSample = setting('show_sample_badges', '0') === '1' && array_filter($clients, fn($c) => $c['is_sample']);
 $auditPhoto = 'photos/audit-compliance.jpg';
 foreach ($areas as $a) {
-    if ($a['slug'] === 'audit-compliance' && trim((string)$a['image']) !== '') $auditPhoto = $a['image'];
+    if ($a['slug'] === 'audit-compliance' && trim((string)($a['image'] ?? '')) !== '') $auditPhoto = $a['image'];
 }
 ?>
 <section class="hero" aria-roledescription="carousel" aria-label="What CyberCraft does" data-carousel>
@@ -64,12 +64,12 @@ foreach ($areas as $a) {
     <div class="core">
       <?php foreach ($pillars as $i => $p): ?>
       <a class="svc reveal" style="--d:<?= $i ?>" href="<?= e(url('what-we-do/' . $p['slug'])) ?>">
-        <?php if (trim((string)$p['image']) !== ''): ?><img src="<?= e(image_url($p['image'])) ?>" alt="" loading="lazy"><?php endif ?>
+        <?php if (trim((string)($p['image'] ?? '')) !== ''): ?><img src="<?= e(image_url($p['image'])) ?>" alt="" loading="lazy"><?php endif ?>
         <div class="in">
           <?php if (isset($words[$i])): ?><p class="word"><?= e($words[$i]) ?></p><?php endif ?>
           <p class="label"><?= e($p['name']) ?></p>
           <h3><?= e($p['promise']) ?></h3>
-          <?php $hl = lines((string)$p['highlights']); if ($hl): ?>
+          <?php $hl = lines((string)($p['highlights'] ?? '')); if ($hl): ?>
           <ul class="ticks"><?php foreach ($hl as $h): ?><li><?= icon('check') ?><?= e($h) ?></li><?php endforeach ?></ul>
           <?php endif ?>
           <span class="more"><?= e($p['short_name'] ?: $p['name']) ?> <?= icon('arrow', 'ico ico-xs') ?></span>
@@ -142,7 +142,7 @@ foreach ($areas as $a) {
 <?php endif ?>
 
 <?php if ($clients): ?>
-<section class="section" id="clients">
+<section class="section<?= $products ? '' : ' section-tint' ?>" id="clients">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="kicker">Clients</p>
@@ -155,7 +155,7 @@ foreach ($areas as $a) {
 </section>
 <?php endif ?>
 
-<section class="quote" aria-label="Message from the CEO">
+<section class="quote<?= $products ? '' : ' on-white' ?>" aria-label="Message from the CEO">
   <div class="wrap">
     <div class="who"><div class="av" aria-hidden="true"><?= e(implode('', array_map(fn($w) => mb_substr($w, 0, 1), array_slice(preg_split('/\s+/', block('ceo_name', 'Tauseef Ahmed')) ?: [], 0, 2)))) ?></div><b><?= e(block('ceo_name')) ?></b><span><?= e(block('ceo_role')) ?></span></div>
     <blockquote>

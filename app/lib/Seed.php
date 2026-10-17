@@ -38,10 +38,10 @@ final class Seed
             'social_youtube' => '',
             'announcement' => '',
             'animations' => '1',
+            'show_products' => '0',
             'stats' => "17+ | Years in IT & telecom\n6 | Countries\n16 | Service areas\n24/7 | NOC & SOC\n20+ | Standards we audit to",
             'footer_text' => 'Run. Secure. Innovate. Corporate managed IT, cyber security and telecom services, from Lahore since 2007.',
-            'show_sample_badges' => '1',
-            'content_version' => '5',
+            'show_sample_badges' => '0',
         ];
     }
 
@@ -308,8 +308,10 @@ final class Seed
             Db::exec('INSERT IGNORE INTO blocks (k, page, label, type, v, sort) VALUES (?,?,?,?,?,?)', [$k, $page, $label, $type, $v, $i]);
         }
         if ((int)Db::value('SELECT COUNT(*) FROM practices') > 0) {
-            return; // content already present
+            return; // content already present: Upgrade::run() brings it up to date
         }
+        // Brand-new content is already current, so mark it with the content version
+        Db::exec('INSERT INTO settings (k, v) VALUES (?, ?) ON DUPLICATE KEY UPDATE v = VALUES(v)', ['content_version', Upgrade::VERSION]);
         $pids = [];
         foreach (self::practices() as $i => [$slug, $name, $short, $promise, $motto, $summary, $intro, $lead, $accent, $core, $img, $hl]) {
             $pids[$slug] = Db::insert('practices', ['slug' => $slug, 'name' => $name, 'short_name' => $short, 'promise' => $promise, 'motto' => $motto, 'summary' => $summary, 'intro' => $intro, 'lead_product' => $lead, 'accent' => $accent, 'is_core' => $core, 'image' => $img, 'highlights' => $hl, 'sort' => ($i + 1) * 10]);

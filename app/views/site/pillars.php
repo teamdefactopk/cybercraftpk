@@ -5,7 +5,7 @@
     <div class="core">
       <?php foreach (core_pillars() as $i => $p): ?>
       <a class="svc reveal" style="--d:<?= $i ?>" href="<?= e(url('what-we-do/' . $p['slug'])) ?>">
-        <?php if (trim((string)$p['image']) !== ''): ?><img src="<?= e(image_url($p['image'])) ?>" alt="" loading="lazy"><?php endif ?>
+        <?php if (trim((string)($p['image'] ?? '')) !== ''): ?><img src="<?= e(image_url($p['image'])) ?>" alt="" loading="lazy"><?php endif ?>
         <div class="in">
           <?php if (isset($words[$i])): ?><p class="word"><?= e($words[$i]) ?></p><?php endif ?>
           <p class="label"><?= e($p['name']) ?></p>

@@ -18,7 +18,7 @@
 <?php if ($clients): ?>
 <section class="section section-tint">
   <div class="wrap">
-    <div class="sec-head reveal"><p class="kicker">Clients in <?= e(mb_strtolower($ind['name'])) ?></p><h2>Who we work with<?= array_filter($clients, fn($c) => $c['is_sample']) && setting('show_sample_badges', '1') === '1' ? ' <span class="sample">Sample</span>' : '' ?></h2></div>
+    <div class="sec-head reveal"><p class="kicker">Clients in <?= e(mb_strtolower($ind['name'])) ?></p><h2>Who we work with<?= array_filter($clients, fn($c) => $c['is_sample']) && setting('show_sample_badges', '0') === '1' ? ' <span class="sample">Sample</span>' : '' ?></h2></div>
     <?= view('partials/client-wall', ['clients' => $clients]) ?>
   </div>
 </section>
