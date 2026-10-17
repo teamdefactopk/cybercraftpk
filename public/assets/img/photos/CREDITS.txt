@@ -5,25 +5,43 @@ https://unsplash.com/license
 file | photographer | source
 audit-compliance.jpg | Vitaly Gariev (@silverkblack) | https://unsplash.com/photos/a-group-of-people-sitting-around-a-table-omGSZqBXkqY
 cloud-hosting.jpg | Christina @ wocintechchat.com M (@wocintechchat) | https://unsplash.com/photos/woman-in-black-top-using-surface-laptop-glRqyWJgUeY
-cloud-servers.jpg | Domaintechnik (@fslfsl) | https://unsplash.com/photos/server-rack-with-blinking-green-lights-VHmBX7FnXw0
-company-team.jpg | Christina @ wocintechchat.com M (@wocintechchat) | https://unsplash.com/photos/group-of-people-sitting-beside-rectangular-wooden-table-with-laptops-faEfWCdOKIg
 corporate-enterprise.jpg | Florian Weyluebeck (@kreatariat) | https://unsplash.com/photos/a-very-tall-building-with-a-lot-of-windows-DqJShEb1Xl4
-cyber-security.jpg | KeepCoding (@keepcoding_school) | https://unsplash.com/photos/man-in-black-jacket-using-computer-lVF2HLzjopw
+cyber-security.jpg | Boitumelo (@writecodenow) | https://unsplash.com/photos/a-desk-with-several-monitors-o_tcYADlSt8
 data-center.jpg | Paul Hanaoka (@plhnk) | https://unsplash.com/photos/a-long-hallway-with-glass-doors-leading-to-another-room-s0XabTAKvak
 education.jpg | Wonderlane (@wonderlane) | https://unsplash.com/photos/people-walking-near-paccar-hall-university-of-washington-during-daytime-6zlgM-GUd6I
 energy-utilities.jpg | American Public Power Association (@publicpowerorg) | https://unsplash.com/photos/green-and-grey-transmission-tower-during-nighttime-AA5v6sMcalY
 government.jpg | Katie Moum (@katiemoum) | https://unsplash.com/photos/white-concrete-building-under-sky-o0kbc907i20
 healthcare.jpg | Hush Naidoo Jade Photography (@hush52) | https://unsplash.com/photos/person-walking-on-hallway-in-blue-scrub-suit-near-incubator-ZCO_5Y29s8k
-hero-operations-center.jpg | Tasha Kostyuk (@tashakostyuk) | https://unsplash.com/photos/a-man-sitting-in-front-of-multiple-monitors-TtMKq3lJm-U
+hero-cloud-hosting.jpg | Paul Hanaoka (@plhnk) | https://unsplash.com/photos/a-long-hallway-with-glass-doors-leading-to-another-room-s0XabTAKvak
+hero-connectivity.jpg | Zac Gudakov (@zacgudakov) | https://unsplash.com/photos/a-tall-antenna-tower-24NVYCwg1E0
+hero-cyber-security.jpg | KeepCoding (@keepcoding_school) | https://unsplash.com/photos/man-in-black-jacket-using-computer-lVF2HLzjopw
+hero-managed-it.jpg | RUT MIIT (@rutmiit) | https://unsplash.com/photos/a-group-of-people-sitting-at-a-table-with-computers-RbC4-8CdbVQ
+hero-smart-technology.jpg | Natalia Dziubek (@kawasakiroboticsceehub) | https://unsplash.com/photos/a-man-and-a-woman-standing-in-front-of-a-robot-ehPAxjAtw8Q
+hero-software-erp.jpg | path digital (@pathdigital) | https://unsplash.com/photos/black-and-silver-laptop-computer-tR0jvlsmCuQ
 hospitality.jpg | Aalo Lens (@aalolens) | https://unsplash.com/photos/modern-hotel-lobby-with-sleek-reception-desk-and-seating-Accg0bUgp7k
+innovation-ai.jpg | Igor Omilaev (@omilaev) | https://unsplash.com/photos/a-computer-chip-with-the-letter-a-on-top-of-it-eGGFZ5X2LnA
+innovation-robotics.jpg | Homa Appliances (@homaappliances) | https://unsplash.com/photos/blue-industrial-robot-arm-in-factory-sz1CHL7Pky0
+innovation-smart-home.jpg | Dan LeFebvre (@danlefeb) | https://unsplash.com/photos/gray-nest-thermostat-displaying-at-63-RFAHj4tI37Y
 innovation-solar.jpg | Markus Spiske (@markusspiske) | https://unsplash.com/photos/a-person-working-on-a-solar-panel-rNn_TU8dvoY
 logistics.jpg | Marcin Jozwiak (@marcinjozwiak) | https://unsplash.com/photos/parked-trucks-kGoPcmpPT7c
 managed-it.jpg | Valentin Lacoste (@valentinlacoste) | https://unsplash.com/photos/technician-inspecting-server-racks-with-a-handheld-diagnostic-tool-A-b2nPSSK6E
 manufacturing.jpg | Homa Appliances (@homaappliances) | https://unsplash.com/photos/a-large-machine-in-a-large-building-pWUyHVJgLhg
-network.jpg | Lightsaber Collection (@lightsabercollection) | https://unsplash.com/photos/a-bunch-of-wires-that-are-connected-to-a-server-T-IN5o3kxyA
 ngos-development.jpg | Rashpal Singh (@rashpalsingh) | https://unsplash.com/photos/three-men-wearing-yellow-volunteers-shirts-qKVSEuBT5EY
 real-estate.jpg | Pavel Avakumov (@ava_kum) | https://unsplash.com/photos/skyscrapers-under-construction-with-cranes-against-sky-QMUnDRfJ4vg
 retail-fmcg.jpg | Lance Chang (@carmendis) | https://unsplash.com/photos/a-large-warehouse-filled-with-lots-of-shelves-h3pVxOIpnzk
 software-erp.jpg | Carlos Muza (@kmuza) | https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU
-software-team.jpg | Apex Virtual Education (@apexvirtualeducation) | https://unsplash.com/photos/woman-working-on-laptop-with-charts-and-graphs-KNQUEQwTCY4
+svc-ai-data.jpg | Growtika (@growtika) | https://unsplash.com/photos/an-abstract-image-of-a-sphere-with-dots-and-lines-nGoCBxiaRO0
+svc-automation.jpg | Toon Lambrechts (@mycellhub) | https://unsplash.com/photos/a-few-people-in-blue-lab-coats-looking-at-a-computer-screen-FYToaJdSTWA
+svc-cloud.jpg | Growtika (@growtika) | https://unsplash.com/photos/3d-render-of-cloud-computing-concept-Am6pBe2FpJw
+svc-contact-center.jpg | Musemind UX Agency (@musemindagency) | https://unsplash.com/photos/a-large-open-office-space-with-many-desks-and-chairs-Mgm6aq1UYpI
+svc-data-center.jpg | Taylor Vick (@tvick) | https://unsplash.com/photos/cable-network-M5tzZtFCOfs
+svc-hardware.jpg | Nubelson Fernandes (@nublson) | https://unsplash.com/photos/black-and-silver-asus-laptop-computer-MuP--rlVZaA
+svc-networks.jpg | Denny Müller (@redaquamedia) | https://unsplash.com/photos/white-and-blue-light-on-dark-room-JyRTi3LoQnc
+svc-noc.jpg | Jefferson Santos (@jefflssantos) | https://unsplash.com/photos/person-using-laptop-computers-9SoCnyQmkzI
+svc-outsourcing.jpg | Arlington Research (@arlington_research) | https://unsplash.com/photos/man-sitting-in-front-of-table-Kz8nHVg_tGI
+svc-security.jpg | Dan Nelson (@danny144) | https://unsplash.com/photos/person-using-macbook-pro-on-white-table-AvSFPw5Tp68
+svc-software.jpg | Campaign Creators (@campaign_creators) | https://unsplash.com/photos/person-using-macbook-pro-pypeCEaJeZY
+svc-surveillance.jpg | Pawel Czerwinski (@pawel_czerwinski) | https://unsplash.com/photos/white-security-camera-on-post-zBTYRFCeaS0
+svc-telecom.jpg | Bernd 📷 Dittrich (@hdbernd) | https://unsplash.com/photos/large-satellite-dish-against-a-blue-sky-FIdxhTGKmps
+svc-unified-comms.jpg | Julian Hochgesang (@julianhochgesang) | https://unsplash.com/photos/black-ip-desk-phone-on-black-wooden-table-Dkn8-zPIbwo
 telecom-isps.jpg | Kabiur Rahman Riyad (@riiyad) | https://unsplash.com/photos/black-metal-tower-under-blue-sky-YzZJUXjb9aw
