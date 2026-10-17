@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS practices (
   accent VARCHAR(20) NULL,
   is_core TINYINT(1) NOT NULL DEFAULT 1,
   image VARCHAR(255) NULL,
+  highlights TEXT NULL,
   sort INT NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -48,6 +49,7 @@ CREATE TABLE IF NOT EXISTS services (
   price_unit VARCHAR(80) NULL,
   external_url VARCHAR(255) NULL,
   is_active TINYINT(1) NOT NULL DEFAULT 1,
+  image VARCHAR(255) NULL,
   sort INT NOT NULL DEFAULT 0,
   updated_at DATETIME NULL,
   KEY practice_idx (practice_id)
@@ -121,6 +123,7 @@ CREATE TABLE IF NOT EXISTS products (
   items TEXT NULL,
   accent VARCHAR(20) NULL,
   external_url VARCHAR(255) NULL,
+  image VARCHAR(255) NULL,
   is_active TINYINT(1) NOT NULL DEFAULT 1,
   sort INT NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -212,4 +215,14 @@ CREATE TABLE IF NOT EXISTS activity (
   details VARCHAR(255) NULL,
   created_at DATETIME NOT NULL,
   KEY created_idx (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS slides (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  image VARCHAR(255) NULL,
+  title VARCHAR(120) NOT NULL,
+  subtitle VARCHAR(200) NULL,
+  link VARCHAR(255) NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort INT NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

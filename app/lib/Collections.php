@@ -8,20 +8,34 @@ declare(strict_types=1);
 final class Collections
 {
     /** Order of the content links in the dashboard sidebar. */
-    public const NAV = ['practices', 'services', 'levels', 'industries', 'products', 'clients', 'cases', 'standards', 'commitments', 'steps', 'faqs', 'offices'];
+    public const NAV = ['slides', 'practices', 'services', 'levels', 'industries', 'products', 'clients', 'cases', 'standards', 'commitments', 'steps', 'faqs', 'offices'];
 
     public static function all(): array
     {
         $practiceOptions = fn() => array_column(Db::all('SELECT id, name FROM practices ORDER BY sort, id'), 'name', 'id');
-        $accents = fn() => ['msp' => 'Blue (Managed services)', 'audit' => 'Teal (Compliance & audit)', 'horizons' => 'Amber (Horizons)', 'sky' => 'Sky blue', 'support' => 'Slate (Supporting)'];
+        $accents = fn() => ['msp' => 'Blue (Managed services)', 'audit' => 'Teal (Compliance & audit)', 'horizons' => 'Amber (Innovation)', 'sky' => 'Sky blue', 'support' => 'Slate (IT & Telecom)'];
         $countries = fn() => ['PK' => 'Pakistan', 'AE' => 'United Arab Emirates', 'SA' => 'Saudi Arabia', 'GB' => 'United Kingdom', 'CZ' => 'Czech Republic', 'CA' => 'Canada', 'XX' => 'Other'];
         $icons = fn() => array_combine(INDUSTRY_ICONS, array_map('ucfirst', INDUSTRY_ICONS));
-        $pillarNames = fn() => ['Managed services' => 'Managed services', 'Compliance & audit' => 'Compliance & audit', 'Horizons' => 'Horizons', 'Supporting' => 'Supporting services'];
+        $pillarNames = fn() => ['Managed IT' => 'Managed IT', 'Cyber security & audit' => 'Cyber security & audit', 'Innovation' => 'Innovation', 'IT & Telecom' => 'IT & Telecom'];
 
         return [
+            'slides' => [
+                'title' => 'Carousel slides', 'singular' => 'slide', 'table' => 'slides', 'icon' => 'layers',
+                'help' => 'The photos that rotate behind the homepage headline, one per line of work. Five or six slides work best.',
+                'order' => 'sort, id',
+                'columns' => ['title' => 'Title', 'subtitle' => 'Subtitle', 'is_active' => 'Visible', 'sort' => 'Order'],
+                'fields' => [
+                    ['title', 'Title', 'text', true, 'Shown on the slide button, e.g. Cyber security.'],
+                    ['subtitle', 'Subtitle', 'text', false, 'A few words under the title, e.g. Audit, VAPT, 24/7 SOC.'],
+                    ['image', 'Photo', 'image', false, 'JPG, PNG or WebP, up to 5 MB, wide (about 2000 × 1000 px).'],
+                    ['link', 'Link (optional)', 'text', false, 'Page the slide points to, e.g. services/cloud-hosting.'],
+                    ['is_active', 'Visible on website', 'checkbox', false],
+                    ['sort', 'Order', 'number', false, 'Lower numbers appear first.'],
+                ],
+            ],
             'practices' => [
-                'title' => 'Pillars', 'singular' => 'pillar', 'table' => 'practices', 'icon' => 'layers',
-                'help' => 'The three core pillars (and Supporting services). Each pillar has its own page and groups its services.',
+                'title' => 'Core services', 'singular' => 'core service', 'table' => 'practices', 'icon' => 'layers',
+                'help' => 'The three core services (Run, Secure, Innovate) and IT & Telecom Solutions. Each has its own page and groups its service areas.',
                 'order' => 'sort, id',
                 'columns' => ['name' => 'Pillar', 'promise' => 'Promise', 'is_core' => 'Core pillar', 'sort' => 'Order'],
                 'fields' => [
@@ -35,6 +49,7 @@ final class Collections
                     ['lead_product', 'Lead product', 'text', false],
                     ['accent', 'Colour', 'selectstr', false, '', $accents],
                     ['image', 'Photo', 'image', false, 'JPG, PNG or WebP, up to 5 MB, landscape (about 1600 × 1100 px). Shown on the homepage card and at the top of the page.'],
+                    ['highlights', 'Homepage bullet points', 'lines', false, 'One per line. Shown on the homepage card.'],
                     ['is_core', 'Show as a core pillar on the homepage', 'checkbox', false],
                     ['sort', 'Order', 'number', false, 'Lower numbers appear first.'],
                 ],
@@ -48,7 +63,8 @@ final class Collections
                     ['name', 'Service name', 'text', true],
                     ['slug', 'URL slug', 'slug', false, 'Used in the page address, e.g. /services/managed-soc. Leave empty to create it from the name.'],
                     ['practice_id', 'Pillar', 'select', true, '', $practiceOptions],
-                    ['tag', 'Label', 'text', false, 'Short label shown above the name, e.g. SOC'],
+                    ['tag', 'Label', 'text', false, 'Short label shown above the name: Run, Secure, Connect, Build, Supply or Innovate.'],
+                    ['image', 'Photo', 'image', false, 'JPG, PNG or WebP, up to 5 MB, landscape. Shown on the homepage and at the top of the service page.'],
                     ['summary', 'Short summary', 'text', false, 'One line shown on cards and in search results.'],
                     ['description', 'Description', 'textarea', false],
                     ['do_items', 'What we do', 'lines', false, 'One item per line.'],
@@ -111,6 +127,7 @@ final class Collections
                     ['items', 'Editions / modules', 'lines', false, 'One per line.'],
                     ['accent', 'Colour', 'selectstr', false, '', $accents],
                     ['external_url', 'External link (optional)', 'url', false],
+                    ['image', 'Photo', 'image', false, 'JPG, PNG or WebP, up to 5 MB, landscape.'],
                     ['is_active', 'Visible on website', 'checkbox', false],
                     ['sort', 'Order', 'number', false],
                 ],
@@ -230,7 +247,7 @@ final class Collections
         $file = $_FILES[$n . '_file'] ?? null;
         if (!$file || ($file['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE) {
             if ($typed !== '' && (str_contains($typed, '..') || !preg_match('#^(https://|/|[a-z0-9][a-z0-9/_.-]*$)#i', $typed))) {
-                return [$typed, 'Enter a path like scenes/managed-it.svg or an address starting with https://'];
+                return [$typed, 'Enter a path like photos/managed-it.jpg or an address starting with https://'];
             }
             return [$typed, ''];
         }

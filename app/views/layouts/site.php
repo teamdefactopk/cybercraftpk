@@ -18,18 +18,18 @@ $footInds = array_slice(industries(), 0, 6);
 <title><?= e($pageTitle) ?></title>
 <meta name="description" content="<?= e(mb_substr($desc, 0, 300)) ?>">
 <link rel="canonical" href="<?= e($canonical) ?>">
-<meta name="theme-color" content="#0A1630">
+<meta name="theme-color" content="#0B1B3A">
 <link rel="icon" href="<?= e(url('favicon.svg')) ?>" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="<?= e($siteName) ?>">
 <meta property="og:title" content="<?= e($pageTitle) ?>">
 <meta property="og:description" content="<?= e(mb_substr($desc, 0, 300)) ?>">
 <meta property="og:url" content="<?= e($canonical) ?>">
-<meta property="og:image" content="<?= e(full_url('assets/img/logo-color.svg')) ?>">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="<?= e(full_url('assets/img/photos/hero-managed-it.jpg')) ?>">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="<?= e(asset('css/site.css')) ?>">
 <script type="application/ld+json"><?= json_encode([
     '@context' => 'https://schema.org', '@type' => 'Organization', 'name' => setting('legal_name', $siteName),
@@ -57,9 +57,10 @@ $footInds = array_slice(industries(), 0, 6);
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Main">
+      <a href="<?= e(url('industries')) ?>"<?= $active('industries') ?>>Industries</a>
       <div class="nav-item has-menu">
-        <a href="<?= e(url('what-we-do')) ?>"<?= $active('what-we-do') ?: $active('services') ?>>What we do <?= icon('chev', 'ico chev') ?></a>
-        <div class="mega" role="group" aria-label="What we do">
+        <a href="<?= e(url('services')) ?>"<?= $active('what-we-do') ?: $active('services') ?>>Services <?= icon('chev', 'ico chev') ?></a>
+        <div class="mega" role="group" aria-label="Services">
           <?php foreach ($nav as $p): ?>
           <div class="mega-col" style="--c:<?= accent_var($p['accent']) ?>">
             <a class="mega-head" href="<?= e(url('what-we-do/' . $p['slug'])) ?>"><?= practice_icon((string)$p['accent'], 'ico') ?><span><?= e($p['short_name'] ?: $p['name']) ?></span></a>
@@ -69,9 +70,9 @@ $footInds = array_slice(industries(), 0, 6);
             <?php endforeach ?>
           </div>
           <?php endforeach ?>
+          <div class="mega-all"><span><?= e(setting('tagline')) ?> · <?= e(block('home_tagline', 'Run. Secure. Innovate.')) ?></span><a class="text-link" href="<?= e(url('services')) ?>">All services <?= icon('arrow', 'ico ico-xs') ?></a></div>
         </div>
       </div>
-      <a href="<?= e(url('industries')) ?>"<?= $active('industries') ?>>Industries</a>
       <a href="<?= e(url('products')) ?>"<?= $active('products') ?>>Products</a>
       <a href="<?= e(url('clients')) ?>"<?= $active('clients') ?>>Clients</a>
       <a href="<?= e(url('about')) ?>"<?= $active('about') ?>>Company</a>
@@ -109,7 +110,7 @@ $footInds = array_slice(industries(), 0, 6);
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a class="footer-logo" href="<?= e(url('/')) ?>"><img src="<?= e(asset('img/logo-color.svg')) ?>" alt="<?= e($siteName) ?>" width="200" height="45" loading="lazy"></a>
+      <a class="footer-logo" href="<?= e(url('/')) ?>"><img src="<?= e(asset('img/logo-white.svg')) ?>" alt="<?= e($siteName) ?>" width="200" height="49" loading="lazy"></a>
       <p><?= e(setting('footer_text')) ?></p>
       <div class="socials" aria-label="Social media">
         <?php foreach ($socials as $k => $label): $u = setting('social_' . $k); ?>
@@ -127,7 +128,7 @@ $footInds = array_slice(industries(), 0, 6);
       </div>
     </div>
     <div class="footer-col">
-      <h3>What we do</h3>
+      <h3>Services</h3>
       <?php foreach ($nav as $p): ?><a href="<?= e(url('what-we-do/' . $p['slug'])) ?>"><?= e($p['short_name'] ?: $p['name']) ?></a><?php endforeach ?>
       <a href="<?= e(url('services')) ?>">All services</a>
     </div>

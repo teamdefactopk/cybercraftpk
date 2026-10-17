@@ -12,7 +12,7 @@
 <?php if ($cases): ?>
 <section class="section section-tint">
   <div class="wrap">
-    <div class="sec-head reveal"><div><p class="kicker">Case studies</p><h2>Results across our three pillars</h2></div></div>
+    <div class="sec-head reveal"><p class="kicker">Case studies</p><h2>Results for our clients</h2></div>
     <?= view('partials/case-cards', ['cases' => $cases, 'full' => true]) ?>
   </div>
 </section>

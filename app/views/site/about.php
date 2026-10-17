@@ -25,7 +25,7 @@
 </section>
 <section class="section section-tint" id="offices">
   <div class="wrap">
-    <div class="sec-head reveal"><div><p class="kicker">Global presence</p><h2>Six countries, one 24/7 operations center</h2></div><p class="lead">Clients in every region work with a local point of contact, backed by our operations, security and engineering center in Lahore.</p></div>
+    <div class="sec-head reveal"><p class="kicker">Global presence</p><h2>Six countries, one 24/7 operations center</h2><p class="lead">Clients in every region work with a local point of contact, backed by our operations, security and engineering center in Lahore.</p></div>
     <?= view('partials/offices', ['offices' => $offices, 'full' => true]) ?>
   </div>
 </section>
@@ -38,7 +38,7 @@
 <?php if ($reasons): ?>
 <section class="section section-tint">
   <div class="wrap">
-    <div class="sec-head reveal"><div><p class="kicker">Why CyberCraft</p><h2><?= e(block('home_why_title')) ?></h2></div></div>
+    <div class="sec-head reveal"><p class="kicker">Why CyberCraft</p><h2><?= e(block('home_why_title')) ?></h2></div>
     <div class="why"><?php foreach ($reasons as $i => $r): ?><div class="reveal" style="--d:<?= $i % 5 ?>"><i><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></i><b><?= e($r['title']) ?></b><p><?= e($r['body']) ?></p></div><?php endforeach ?></div>
   </div>
 </section>

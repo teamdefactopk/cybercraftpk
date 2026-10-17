@@ -65,7 +65,7 @@
       <div class="contact-card reveal">
         <h2>Email the right team</h2>
         <dl class="emails">
-          <?php foreach (['email_info' => 'General enquiries', 'email_sales' => 'Sales & quotations', 'email_msp' => 'Managed services', 'email_audit' => 'Compliance & audit', 'email_horizons' => 'Horizons lab', 'email_security' => 'Report a security incident', 'email_support' => 'Service desk (clients)', 'email_partners' => 'Partnerships & JV', 'email_careers' => 'Careers'] as $k => $label): if (setting($k) === '') continue; ?>
+          <?php foreach (['email_info' => 'General enquiries', 'email_sales' => 'Sales & quotations', 'email_msp' => 'Managed services', 'email_audit' => 'Compliance & audit', 'email_horizons' => 'Innovation team', 'email_security' => 'Report a security incident', 'email_support' => 'Service desk (clients)', 'email_partners' => 'Partnerships & JV', 'email_careers' => 'Careers'] as $k => $label): if (setting($k) === '') continue; ?>
           <div><dt><?= e($label) ?></dt><dd><a href="mailto:<?= e(setting($k)) ?>"><?= e(setting($k)) ?></a></dd></div>
           <?php endforeach ?>
         </dl>

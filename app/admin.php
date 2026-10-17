@@ -25,7 +25,7 @@ function settings_schema(): array
             ['email_noc', 'NOC alerts', 'email', ''],
             ['email_audit', 'Compliance & audit', 'email', ''],
             ['email_security', 'Report a security incident', 'email', ''],
-            ['email_horizons', 'Horizons lab', 'email', ''],
+            ['email_horizons', 'Innovation team (solar, automation, AI)', 'email', ''],
             ['email_partners', 'Partnerships & JV', 'email', ''],
             ['email_careers', 'Careers', 'email', ''],
             ['email_accounts', 'Accounts & billing', 'email', ''],

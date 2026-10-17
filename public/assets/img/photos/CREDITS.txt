@@ -45,3 +45,4 @@ svc-surveillance.jpg | Pawel Czerwinski (@pawel_czerwinski) | https://unsplash.c
 svc-telecom.jpg | Bernd 📷 Dittrich (@hdbernd) | https://unsplash.com/photos/large-satellite-dish-against-a-blue-sky-FIdxhTGKmps
 svc-unified-comms.jpg | Julian Hochgesang (@julianhochgesang) | https://unsplash.com/photos/black-ip-desk-phone-on-black-wooden-table-Dkn8-zPIbwo
 telecom-isps.jpg | Kabiur Rahman Riyad (@riiyad) | https://unsplash.com/photos/black-metal-tower-under-blue-sky-YzZJUXjb9aw
+innovation-collage.jpg | Composite of innovation-solar, innovation-robotics, innovation-smart-home and innovation-ai (credits above) | -

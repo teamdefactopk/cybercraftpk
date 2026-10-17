@@ -1,52 +1,53 @@
 <?php
 $pillars = core_pillars();
 $stats = pairs(setting('stats'));
+$words = array_values(array_filter(array_map('trim', explode('.', block('home_tagline', 'Run. Secure. Innovate.')))));
 $showSample = setting('show_sample_badges', '1') === '1' && array_filter($clients, fn($c) => $c['is_sample']);
+$auditPhoto = 'photos/audit-compliance.jpg';
+foreach ($areas as $a) {
+    if ($a['slug'] === 'audit-compliance' && trim((string)$a['image']) !== '') $auditPhoto = $a['image'];
+}
 ?>
-<section class="hero">
-  <canvas class="net" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <p class="kicker rise"><?= e(block('home_label')) ?></p>
-    <h1 class="rise d1"><?= e(block('home_headline')) ?></h1>
-    <p class="lead rise d2"><?= e(block('home_sub')) ?></p>
-    <div class="hero-ctas rise d3">
-      <a class="btn btn-light" href="<?= e(url('contact')) ?>"><?= e(block('home_cta_primary', 'Talk to us')) ?> <?= icon('arrow') ?></a>
-      <a class="btn btn-outline-light" href="<?= e(url('what-we-do')) ?>"><?= e(block('home_cta_secondary', 'Explore what we do')) ?></a>
+<section class="hero" aria-roledescription="carousel" aria-label="What CyberCraft does" data-carousel>
+  <div class="slides">
+    <?php foreach ($slides as $i => $s): ?>
+    <div class="slide<?= $i === 0 ? ' on' : '' ?>" role="group" aria-roledescription="slide" aria-label="<?= $i + 1 ?> of <?= count($slides) ?>: <?= e($s['title']) ?>">
+      <?php if (trim((string)$s['image']) !== ''): ?><img src="<?= e(image_url($s['image'])) ?>" alt=""<?= $i === 0 ? ' fetchpriority="high"' : ' loading="lazy"' ?>><?php endif ?>
     </div>
+    <?php endforeach ?>
+  </div>
+  <div class="wrap">
+    <div class="copy">
+      <?php if ($words): ?><p class="tagline"><?php foreach ($words as $w): ?><span><?= e($w) ?>.</span><?php endforeach ?></p><?php endif ?>
+      <p class="label"><?= e(block('home_label')) ?></p>
+      <h1><?= e(block('home_headline')) ?></h1>
+      <p class="sub"><?= e(block('home_sub')) ?></p>
+      <div class="hero-ctas">
+        <a class="btn btn-white" href="<?= e(url('contact')) ?>"><?= e(block('home_cta_primary', 'Get a free consultation')) ?> <?= icon('arrow') ?></a>
+        <a class="btn btn-line" href="#all-services"><?= e(block('home_cta_secondary', 'See all services')) ?></a>
+      </div>
+    </div>
+    <?php if (count($slides) > 1): ?>
+    <div class="slide-tabs" role="group" aria-label="Choose a line of work" style="--n:<?= count($slides) ?>">
+      <?php foreach ($slides as $i => $s): ?>
+      <button class="slide-tab" type="button" aria-pressed="<?= $i === 0 ? 'true' : 'false' ?>" data-slide="<?= $i ?>"><b><?= e($s['title']) ?></b><?php if ($s['subtitle']): ?><span><?= e($s['subtitle']) ?></span><?php endif ?></button>
+      <?php endforeach ?>
+    </div>
+    <?php endif ?>
   </div>
 </section>
 
 <?php if ($stats): ?>
-<section class="numbers" aria-label="CyberCraft in numbers">
-  <div class="wrap"><?php foreach ($stats as [$n, $l]): ?><div class="num"><b><?= e($n) ?></b><span><?= e($l) ?></span></div><?php endforeach ?></div>
+<section class="stats" aria-label="CyberCraft in numbers">
+  <div class="wrap" style="--n:<?= count($stats) ?>"><?php foreach ($stats as [$n, $l]): ?><div><b><?= e($n) ?></b><span><?= e($l) ?></span></div><?php endforeach ?></div>
 </section>
 <?php endif ?>
-
-<section class="section" id="pillars">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div><p class="kicker">What we do</p><h2><?= e(block('home_pillars_title')) ?></h2></div>
-      <p class="lead"><?= e(block('home_pillars_intro')) ?></p>
-    </div>
-    <div class="panels">
-      <?php foreach ($pillars as $i => $p): ?>
-      <a class="panel reveal" style="--d:<?= $i ?>" href="<?= e(url('what-we-do/' . $p['slug'])) ?>">
-        <?= pillar_art((string)$p['accent']) ?>
-        <span class="no"><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?> · <?= e($p['short_name']) ?></span>
-        <h3><?= e($p['name']) ?></h3>
-        <p class="promise"><?= e($p['promise']) ?></p>
-        <?php if ($p['motto']): ?><p class="motto"><?= e($p['motto']) ?></p><?php endif ?>
-        <span class="go">Explore <?= e(mb_strtolower($p['short_name'])) ?></span>
-      </a>
-      <?php endforeach ?>
-    </div>
-  </div>
-</section>
 
 <section class="section section-tint" id="industries">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><p class="kicker">Sectors &amp; industries</p><h2><?= e(block('home_industries_title')) ?></h2></div>
+      <p class="kicker">Industries we serve</p>
+      <h2><?= e(block('home_industries_title')) ?></h2>
       <p class="lead"><?= e(block('home_industries_intro')) ?></p>
     </div>
     <?= view('partials/industry-grid', ['industries' => $industries]) ?>
@@ -56,62 +57,100 @@ $showSample = setting('show_sample_badges', '1') === '1' && array_filter($client
 <section class="section" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><p class="kicker">Services</p><h2>What each service includes</h2></div>
-      <p class="lead">Choose a service to see what we deliver.</p>
+      <p class="kicker">What we do</p>
+      <h2><?= e(block('home_pillars_title')) ?></h2>
+      <p class="lead"><?= e(block('home_pillars_intro')) ?></p>
     </div>
-    <div class="tabs" role="tablist" aria-label="Services">
+    <div class="core">
       <?php foreach ($pillars as $i => $p): ?>
-      <button class="tab" type="button" role="tab" id="t-<?= e($p['slug']) ?>" aria-controls="p-<?= e($p['slug']) ?>" aria-selected="<?= $i ? 'false' : 'true' ?>"<?= $i ? ' tabindex="-1"' : '' ?>><?= e($p['short_name']) ?></button>
+      <a class="svc reveal" style="--d:<?= $i ?>" href="<?= e(url('what-we-do/' . $p['slug'])) ?>">
+        <?php if (trim((string)$p['image']) !== ''): ?><img src="<?= e(image_url($p['image'])) ?>" alt="" loading="lazy"><?php endif ?>
+        <div class="in">
+          <?php if (isset($words[$i])): ?><p class="word"><?= e($words[$i]) ?></p><?php endif ?>
+          <p class="label"><?= e($p['name']) ?></p>
+          <h3><?= e($p['promise']) ?></h3>
+          <?php $hl = lines((string)$p['highlights']); if ($hl): ?>
+          <ul class="ticks"><?php foreach ($hl as $h): ?><li><?= icon('check') ?><?= e($h) ?></li><?php endforeach ?></ul>
+          <?php endif ?>
+          <span class="more"><?= e($p['short_name'] ?: $p['name']) ?> <?= icon('arrow', 'ico ico-xs') ?></span>
+        </div>
+      </a>
       <?php endforeach ?>
     </div>
-    <?php foreach ($pillars as $i => $p): ?>
-    <div class="tabpanel" role="tabpanel" id="p-<?= e($p['slug']) ?>" aria-labelledby="t-<?= e($p['slug']) ?>" style="--c:<?= accent_var($p['accent']) ?>"<?= $i ? ' hidden' : '' ?>>
-      <div class="tp-intro">
-        <p class="kicker" style="color:var(--c)">Service <?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></p>
-        <h3><?= e($p['name']) ?></h3>
-        <p class="promise"><?= e($p['promise']) ?><?= $p['motto'] ? ' ' . e($p['motto']) . '.' : '' ?></p>
-        <p><?= e($p['intro']) ?></p>
-        <?php if ($p['lead_product']): ?><div class="badge-prod"><small>Lead product</small><b><?= e($p['lead_product']) ?></b></div><?php endif ?>
-        <a class="text-link" href="<?= e(url('what-we-do/' . $p['slug'])) ?>">All about <?= e(mb_strtolower($p['short_name'])) ?> <?= icon('arrow', 'ico ico-xs') ?></a>
-      </div>
-      <div class="tp-grid">
-        <?php foreach ($p['services'] as $s): ?>
-        <a href="<?= e(url('services/' . $s['slug'])) ?>"><h4><?= e($s['name']) ?></h4><p><?= e($s['summary']) ?></p></a>
-        <?php endforeach ?>
-      </div>
-    </div>
-    <?php endforeach ?>
-    <?php $sup = array_values(array_filter($nav, fn($p) => !$p['is_core'])); if ($sup): ?>
-    <div class="support reveal">
-      <?php foreach ($sup[0]['services'] as $s): ?>
-      <a href="<?= e(url('services/' . $s['slug'])) ?>"><h4><?= e($s['name']) ?></h4><p><?= e($s['summary']) ?></p></a>
-      <?php endforeach ?>
-    </div>
-    <?php endif ?>
   </div>
 </section>
 
-<section class="section section-tint" id="products">
+<?php if ($areas): ?>
+<section class="section section-tint" id="all-services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><p class="kicker">Products &amp; platforms</p><h2><?= e(block('home_products_title')) ?></h2></div>
-      <p class="lead"><?= e(block('products_intro')) ?></p>
+      <p class="kicker">All services</p>
+      <h2><?= e(block('home_areas_title')) ?></h2>
+      <p class="lead"><?= e(block('home_areas_intro')) ?></p>
     </div>
+    <?= view('partials/service-areas', ['areas' => $areas]) ?>
+    <div class="help reveal"><p>Not sure which service you need? Describe the problem and we'll recommend the right one.</p><a class="btn btn-primary" href="<?= e(url('contact')) ?>">Ask an expert <?= icon('arrow') ?></a></div>
+  </div>
+</section>
+<?php endif ?>
+
+<?php if ($levels): ?>
+<section class="section" id="plans">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker">Managed IT service plans</p>
+      <h2><?= e(block('home_plans_title')) ?></h2>
+      <p class="lead"><?= e(block('home_plans_intro')) ?></p>
+    </div>
+    <?= view('partials/levels', ['levels' => $levels]) ?>
+  </div>
+</section>
+<?php endif ?>
+
+<?php if ($standards): ?>
+<section class="section section-tint" id="compliance">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">Compliance &amp; audit</p>
+      <h2><?= e(block('home_compliance_title')) ?></h2>
+      <p class="lead"><?= e(block('home_compliance_intro')) ?></p>
+      <div class="regions">
+        <?php foreach ($standards as $st): ?><div class="region"><b><?= e($st['region']) ?></b><ul class="chips"><?php foreach (lines($st['items']) as $it): ?><li><?= e($it) ?></li><?php endforeach ?></ul></div><?php endforeach ?>
+      </div>
+    </div>
+    <figure class="reveal" style="--d:1"><img src="<?= e(image_url($auditPhoto)) ?>" alt="Consultants reviewing audit findings in a meeting" loading="lazy"></figure>
+  </div>
+</section>
+<?php endif ?>
+
+<?php if ($steps): ?>
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="kicker">How we work</p><h2>From first call to running service in <?= count($steps) ?> steps.</h2></div>
+    <?= view('partials/steps', ['steps' => $steps]) ?>
+  </div>
+</section>
+<?php endif ?>
+
+<?php if ($products): ?>
+<section class="section section-tint" id="products">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="kicker">Our products</p><h2><?= e(block('home_products_title')) ?></h2></div>
     <?= view('partials/product-grid', ['products' => $products]) ?>
   </div>
 </section>
+<?php endif ?>
 
-<?= view('partials/standards-marquee', ['standards' => $standards]) ?>
-
-<?php if ($clients || $cases): ?>
+<?php if ($clients): ?>
 <section class="section" id="clients">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><p class="kicker">Clients</p><h2><?= e(block('home_clients_title')) ?><?= $showSample ? ' <span class="sample">Sample</span>' : '' ?></h2></div>
-      <p class="lead"><?= $showSample ? 'Every name and logo here is a placeholder, grouped by the countries we serve, until real clients are added in the dashboard.' : e(block('clients_intro')) ?></p>
+      <p class="kicker">Clients</p>
+      <h2><?= e(block('home_clients_title')) ?><?= $showSample ? ' <span class="sample">Sample</span>' : '' ?></h2>
+      <p class="lead"><?= $showSample ? 'These names are placeholders until real client logos are added in the dashboard.' : e(block('clients_intro')) ?></p>
     </div>
-    <?= view('partials/client-wall', ['clients' => $clients]) ?>
-    <?= view('partials/case-cards', ['cases' => array_slice($cases, 0, 4)]) ?>
+    <?= view('partials/client-wall', ['clients' => array_slice($clients, 0, 12)]) ?>
+    <p class="reveal" style="margin-top:24px"><a class="text-link" href="<?= e(url('clients')) ?>">All clients and case studies <?= icon('arrow', 'ico ico-xs') ?></a></p>
   </div>
 </section>
 <?php endif ?>
@@ -121,38 +160,22 @@ $showSample = setting('show_sample_badges', '1') === '1' && array_filter($client
     <div class="who"><div class="av" aria-hidden="true"><?= e(implode('', array_map(fn($w) => mb_substr($w, 0, 1), array_slice(preg_split('/\s+/', block('ceo_name', 'Tauseef Ahmed')) ?: [], 0, 2)))) ?></div><b><?= e(block('ceo_name')) ?></b><span><?= e(block('ceo_role')) ?></span></div>
     <blockquote>
       <p class="big">"<?= e(block('ceo_quote')) ?>"</p>
-      <a class="text-link light" href="<?= e(url('about#ceo')) ?>">Read the full message <?= icon('arrow', 'ico ico-xs') ?></a>
+      <a class="text-link" href="<?= e(url('about#ceo')) ?>">Read the full message <?= icon('arrow', 'ico ico-xs') ?></a>
     </blockquote>
   </div>
 </section>
 
+<?php if ($offices): ?>
 <section class="section" id="company">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><p class="kicker">Company</p><h2><?= e(block('about_title')) ?></h2></div>
-      <p class="lead"><?= e(block('about_intro')) ?></p>
+      <p class="kicker">Where we are</p>
+      <h2>Headquartered in Lahore, with a presence in <?= count($offices) ?> countries.</h2>
+      <p class="lead">Our Lahore delivery center runs the 24/7 NOC and SOC. Local teams and JV partners support clients in the Gulf, Europe and North America.</p>
     </div>
     <?= view('partials/offices', ['offices' => $offices]) ?>
-    <p class="reveal" style="margin-top:32px"><a class="text-link" href="<?= e(url('about')) ?>">About CyberCraft <?= icon('arrow', 'ico ico-xs') ?></a></p>
-  </div>
-</section>
-
-<?php if ($reasons): ?>
-<section class="section section-tint" id="why">
-  <div class="wrap">
-    <div class="sec-head reveal"><div><p class="kicker">Why CyberCraft</p><h2><?= e(block('home_why_title')) ?></h2></div></div>
-    <div class="why">
-      <?php foreach ($reasons as $i => $r): ?><div class="reveal" style="--d:<?= $i % 5 ?>"><i><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></i><b><?= e($r['title']) ?></b><p><?= e($r['body']) ?></p></div><?php endforeach ?>
-    </div>
   </div>
 </section>
 <?php endif ?>
-
-<section class="careers-band">
-  <div class="wrap">
-    <div><h2><?= e(block('careers_title')) ?></h2><p><?= e(block('careers_intro')) ?></p></div>
-    <a class="btn btn-light" href="<?= e(url('careers')) ?>">Join CyberCraft <?= icon('arrow') ?></a>
-  </div>
-</section>
 
 <?= view('partials/cta-band') ?>

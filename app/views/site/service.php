@@ -1,5 +1,5 @@
-<?= view('partials/page-hero', ['crumbs' => ['What we do' => 'what-we-do', $svc['practice_name'] => 'what-we-do/' . $svc['practice_slug'], $svc['name'] => null], 'eyebrow' => $svc['practice_name'] . ($svc['tag'] ? ' · ' . $svc['tag'] : ''), 'heading' => $svc['name'], 'lead' => $svc['description'], 'accent' => $svc['practice_accent']]) ?>
-<section class="section" style="--c:<?= accent_var($svc['practice_accent']) ?>">
+<?= view('partials/page-hero', ['crumbs' => ['What we do' => 'what-we-do', $svc['practice_name'] => 'what-we-do/' . $svc['practice_slug'], $svc['name'] => null], 'eyebrow' => $svc['practice_name'] . ($svc['tag'] ? ' · ' . $svc['tag'] : ''), 'heading' => $svc['name'], 'lead' => $svc['description'], 'accent' => $svc['practice_accent'], 'image' => $svc['image']]) ?>
+<section class="section">
   <div class="wrap svc-detail">
     <div class="svc-detail-main">
       <div class="detail-lists">
@@ -20,8 +20,8 @@
 <?php if ($related): ?>
 <section class="section section-tint">
   <div class="wrap">
-    <div class="sec-head reveal"><div><p class="kicker">Related</p><h2>More in <?= e($svc['practice_name']) ?></h2></div></div>
-    <div class="svc-cards"><?php foreach ($related as $s): ?><a class="svc-card reveal" href="<?= e(url('services/' . $s['slug'])) ?>"><span class="svc-tag"><?= e($s['tag']) ?></span><h3><?= e($s['name']) ?></h3><p><?= e($s['summary']) ?></p><span class="go"><?= icon('arrow') ?></span></a><?php endforeach ?></div>
+    <div class="sec-head reveal"><p class="kicker">Related</p><h2>More in <?= e($svc['practice_name']) ?></h2></div>
+    <?= view('partials/service-areas', ['areas' => $related]) ?>
   </div>
 </section>
 <?php endif ?>

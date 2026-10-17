@@ -1,5 +1,5 @@
 // CyberCraft site interactions: header state, mobile menu, mega menu, search panel,
-// scroll reveals, service tabs, hero network animation, cookie notice, back-to-top and disabled-item toasts.
+// scroll reveals, homepage carousel, cookie notice, back-to-top and disabled-item toasts.
 (function () {
   'use strict';
   var doc = document.documentElement;
@@ -69,8 +69,21 @@
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -5% 0px', threshold: 0 });
     reveals.forEach(function (el) { io.observe(el); });
+    // Fast scrolling or jump links can skip the observer: show everything at or above the viewport
+    var pending = false;
+    window.addEventListener('scroll', function () {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(function () {
+        pending = false;
+        var limit = window.innerHeight;
+        reveals.forEach(function (el) {
+          if (!el.classList.contains('in') && el.getBoundingClientRect().top < limit) { el.classList.add('in'); io.unobserve(el); }
+        });
+      });
+    }, { passive: true });
   } else {
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
@@ -98,6 +111,31 @@
   });
 
   // Hero network: slow-moving nodes in brand blues (static frame with reduced motion)
+
+  // Homepage carousel: one photo per line of work; pauses on hover or keyboard focus
+  document.querySelectorAll('[data-carousel]').forEach(function (hero) {
+    var slides = hero.querySelectorAll('.slide');
+    var tabs = hero.querySelectorAll('.slide-tab');
+    if (slides.length < 2) return;
+    var i = 0, timer = null, DUR = 6000;
+    var motionOff = reduce || !doc.classList.contains('anim');
+    hero.style.setProperty('--dur', DUR + 'ms');
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+      tabs.forEach(function (t, k) { t.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } hero.classList.add('paused'); }
+    function play() { if (motionOff) return; stop(); hero.classList.remove('paused'); timer = setInterval(function () { show(i + 1); }, DUR); }
+    tabs.forEach(function (t, k) { t.addEventListener('click', function () { show(k); play(); }); });
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', play);
+    hero.addEventListener('focusin', stop);
+    hero.addEventListener('focusout', play);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else play(); });
+    play();
+  });
+
   var still = reduce || !doc.classList.contains('anim');
   document.querySelectorAll('canvas.net').forEach(function (c) {
     if (!c.getContext) return;

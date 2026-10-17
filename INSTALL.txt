@@ -7,6 +7,24 @@ What you need
     (made with: sh tools/build-zip.sh  ->  build/cybercraft-website.zip)
   - About 15 minutes
 
+
+SETTINGS CHECKLIST (fill this in as you go)
+-------------------------------------------
+  PHP version ............ 8.2 or 8.3 (Step 8)
+  PHP extensions ......... pdo_mysql, mbstring (usually on by default)
+  Database name .......... cpaneluser_website        (Step 9)
+  Database user .......... cpaneluser_website        (Step 9)
+  Database password ...... ____________________      (Step 9)
+  Database host / port ... localhost / 3306          (Step 10)
+  Site address ........... https://www.cybercraft.biz (Step 10)
+  Admin email/password ... ____________________      (Step 10, 10+ characters)
+  Folder permissions ..... cybercraft_app 755, cybercraft_app/storage 755,
+                           public_html/assets/img/uploads 755 (Step 6)
+  Mailboxes to create .... info@ sales@ msp@ support@ noc@ audit@ security@
+                           horizons@ partners@ careers@ accounts@ ceo@
+                           pk@ uae@ ksa@ uk@ cz@ ca@   (Step 11)
+  SSL .................... AutoSSL, then force HTTPS (Step 12)
+
 In these steps your cPanel user is called "cybercraft", so your home folder
 is /home/cybercraft. Replace it with your own cPanel username.
 
@@ -82,6 +100,8 @@ STEP 6: SET PERMISSIONS
      > set 755 (Owner: Read Write Execute, Group: Read Execute,
        World: Read Execute) > Change Permissions.
   2. Open cybercraft_app, right-click "storage" > Change Permissions > 755.
+  3. Open public_html/assets/img, right-click "uploads" > Change Permissions
+     > 755. (Photos you upload in the dashboard are saved here.)
   Files can stay at 644.
 
 
@@ -150,7 +170,13 @@ STEP 11: SIGN IN AND REPLACE THE PLACEHOLDERS
      public_html/assets/img/clients/ and enter /assets/img/clients/name.svg
   4. Case studies: replace the 4 samples the same way.
   5. Page text > Legal: have the privacy policy and terms reviewed.
-  6. Users: add your team as Editors (content and messages) or
+  6. Photos: the site comes with licensed stock photos (Unsplash License,
+     credits in public_html/assets/img/photos/CREDITS.txt). To use your own,
+     open Carousel slides, Core services, Services, Industries or Products,
+     choose a JPG, PNG or WebP file (up to 5 MB) under "Photo" and save.
+     Homepage text, including "Run. Secure. Innovate." and the headline, is
+     under Page text > Home.
+  7. Users: add your team as Editors (content and messages) or
      Administrators (also settings and users).
 
   When every sample is replaced, Settings > untick "Mark sample clients
@@ -174,6 +200,10 @@ STEP 13: EMAIL DELIVERY (RECOMMENDED)
 
 UPDATING THE WEBSITE LATER
 --------------------------
+  Your content is never lost in an update. The first time the updated site
+  is opened, it adds any new tables and default content by itself, and only
+  replaces text that you have not edited in the dashboard.
+
   Option A: cPanel > Git(TM) Version Control > clone this repository >
   "Deploy HEAD Commit". .cpanel.yml copies public/ into public_html and
   app/ into ~/cybercraft_app. Your config.php and storage are never

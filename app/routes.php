@@ -83,6 +83,17 @@ function standards(): array
     return Db::all('SELECT * FROM standards ORDER BY sort, id');
 }
 
+/** All visible services in homepage order, each with its pillar's slug and colour. */
+function service_areas(): array
+{
+    return Db::all('SELECT s.*, p.slug AS practice_slug, p.accent AS practice_accent FROM services s LEFT JOIN practices p ON p.id = s.practice_id WHERE s.is_active = 1 ORDER BY s.sort, s.id');
+}
+
+function slides(): array
+{
+    return Db::all('SELECT * FROM slides WHERE is_active = 1 ORDER BY sort, id');
+}
+
 function offices(): array
 {
     return Db::all('SELECT * FROM offices ORDER BY sort, id');
@@ -129,6 +140,15 @@ function site_dispatch(string $path): void
     $common = ['nav' => practices_with_services()];
 
     switch (true) {
+        case $path === 'what-we-do/horizons':
+            redirect('/what-we-do/innovation', 301);
+
+        case $path === 'what-we-do/supporting':
+            redirect('/what-we-do/solutions', 301);
+
+        case $path === 'industries/banking-finance':
+            redirect('/industries', 301);
+
         case $path === '':
             render('site', 'site/home', $common + [
                 'title' => setting('tagline'),
@@ -137,8 +157,11 @@ function site_dispatch(string $path): void
                 'clients' => clients_list(),
                 'cases' => case_studies(),
                 'standards' => standards(),
-                'reasons' => Db::all('SELECT * FROM commitments ORDER BY sort, id'),
                 'offices' => offices(),
+                'slides' => slides(),
+                'areas' => service_areas(),
+                'levels' => Db::all('SELECT * FROM levels ORDER BY sort, id'),
+                'steps' => Db::all('SELECT * FROM steps ORDER BY sort, id'),
             ]);
 
         case $path === 'what-we-do':
@@ -167,7 +190,7 @@ function site_dispatch(string $path): void
             redirect('/what-we-do/managed-services', 301);
 
         case $path === 'services':
-            render('site', 'site/services', $common + ['title' => 'Services', 'description' => block('services_intro')]);
+            render('site', 'site/services', $common + ['title' => 'Services', 'description' => block('services_intro'), 'areas' => service_areas()]);
 
         case (bool)preg_match('#^services/([a-z0-9-]+)$#', $path, $m):
             $svc = Db::one('SELECT s.*, p.name AS practice_name, p.slug AS practice_slug, p.accent AS practice_accent FROM services s LEFT JOIN practices p ON p.id = s.practice_id WHERE s.slug = ? AND s.is_active = 1', [$m[1]]);

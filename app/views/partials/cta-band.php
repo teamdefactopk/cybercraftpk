@@ -2,7 +2,7 @@
   <div class="wrap cta-row">
     <div>
       <p class="kicker light">Let's talk</p>
-      <h2><?= e(block('home_cta_band_title', "Let's run, secure and build the future together")) ?></h2>
+      <h2><?= e(block('home_cta_band_title', 'Talk to us about your IT and security')) ?></h2>
       <p><?= e(block('home_cta_band_body')) ?></p>
     </div>
     <div class="cta-actions">
